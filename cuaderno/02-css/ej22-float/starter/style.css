@@ -19,12 +19,12 @@ section { background:#fff; border:1px solid #e5e7eb; padding:1rem; }
 }
 .card {
   width: 48%;
-  /\* TODO: flotar izq/der *\/
+  /* TODO: flotar izq/der
   background:#e0f2fe; border:1px solid #94a3b8; padding:.5rem; min-height: 80px;
 }
-.c1 { /* float:left; */ }
-.c2 { /* float:right; */ }
-*/
+.c1 { float:left; }
+.c2 { float:right; }
+
 
 /* === C.1) TODO: clearfix en .wrap (pseudo-elemento) === */
 /*

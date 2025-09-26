@@ -12,7 +12,7 @@
 /* (Opcional) Tema
 @layer theme{
   .theme-dark{
-    /* sobrescribe tokens de :root aquí */
+    sobrescribe tokens de :root aquí
   }
 }
 */

@@ -61,10 +61,10 @@ a { color: var(--primary); }
   .site-header, .site-footer, .btn { box-shadow:none; background:#fff; }
   .btn { border-color:#aaa; }
   /* Ocultar elementos puramente decorativos si hubiera */
-  /* .card { break-inside: avoid; } */
+  /*.card { break-inside: avoid; }
   a::after { content: " (" attr(href) ")"; font-size:.9em; color:#444; }
-} */
-
+}
+*/
 /* === 6) Altura reducida (opcional) === */
 /* @media (max-height: 700px) {
   .site-header { padding: .5rem 1rem; }

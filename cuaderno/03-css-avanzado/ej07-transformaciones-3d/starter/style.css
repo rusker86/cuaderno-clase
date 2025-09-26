@@ -15,12 +15,17 @@ section { background:#fff; border:1px solid #e5e7eb; padding:1rem; border-radius
   border:1px dashed #cbd5e1;
 }
 .box3d {
-  width:160px; height:100px; display:grid; place-items:center;
-  background:#e0f2fe; color:#0f172a; font-weight:700;
-  border:1px solid #94a3b8; border-radius:.5rem;
+  width: 160px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  background: #e0f2fe;
+  color: #0f172a;
+  font-weight: 700;
+  border: 1px solid #94a3b8;
+  border-radius: .5rem;
   /* transform: ... */
 }
-
 /* === A) rotateX / rotateY con perspectiva en el contenedor === */
 /* .demoA .escena { perspective: 800px; }
 .a { transform: rotateX(25deg); }
@@ -34,4 +39,4 @@ section { background:#fff; border:1px solid #e5e7eb; padding:1rem; border-radius
 .d-mas   { transform: translateZ(40px); }
 .d-menos { transform: translateZ(-40px); } */
 
-/
+
