@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej17 — class e id</title>
+</head>
+
+<body>
+    <header>
+        <h1>Uso de class e id en HTML</h1>
+    </header>
+
+    <main>
+        <!-- id debe ser único -->
+        <section id="intro">
+            <h2>Introducción</h2>
+            <p>
+                El atributo <code>id</code> identifica un único elemento en todo el
+                documento. En cambio, <code>class</code> puede repetirse en varios
+                elementos para agruparlos con un mismo estilo o función.
+            </p>
+        </section>
+
+        <!-- class puede repetirse -->
+        <h2>Lista de elementos</h2>
+        <ul>
+            <li class="item">Elemento uno</li>
+            <li class="item" id="especial">Elemento dos (con id único)</li>
+            <li class="item">Elemento tres</li>
+        </ul>
+
+        <!-- Enlace interno que apunta al id -->
+        <p>
+            <a href="#intro">Volver a la introducción</a>
+        </p>
+    </main>
+
+    <footer>
+        <p>Ejercicio realizado por Tu Nombre — 2025</p>
+    </footer>
+</body>
+
+</html>

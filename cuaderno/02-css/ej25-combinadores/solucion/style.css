@@ -1,0 +1,72 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+.card {
+  border: 1px solid #cbd5e1;
+  padding: 0.75rem;
+  background: #fff;
+}
+
+/* A) Descendiente: .card a — aplica solo a los <a> dentro de .card */
+.card a {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+.fuera {
+  color: #0f172a;
+} /* enlace fuera no afectado por .card a */
+
+/* B) Hijo directo: solo li directos de ul dentro de .list */
+.list > ul > li {
+  font-weight: 600;
+  background: #f1f5f9;
+}
+.list > ul > li > ul > li {
+  font-weight: 400;
+  background: #ffffff;
+}
+
+/* C) Hermano adyacente: h4 + p */
+h4 + p {
+  color: #0ea5e9;
+  font-weight: 600;
+}
+
+/* D) Hermanos generales: h4 ~ p (todos los p siguientes con el mismo padre) */
+#d h4 ~ p {
+  color: #16a34a;
+}
+
+/* (Opcional) Encadenamiento: todos los li excepto el primero */
+.opcional > ul > li + li {
+  border-top: 1px dashed #cbd5e1;
+  padding-top: 0.25rem;
+}
+
+/* Notas:
+   - Descendiente A B cruza cualquier profundidad.
+   - A > B limita al hijo inmediato.
+   - A + B solo el primer hermano inmediato.
+   - A ~ B todos los hermanos posteriores.
+   - La especificidad es la suma de los selectores simples implicados. */

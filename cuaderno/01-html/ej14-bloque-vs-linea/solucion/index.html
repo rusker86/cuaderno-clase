@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ej14 — Bloque vs En línea (solución)</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Elementos de bloque vs elementos en línea</h1>
+        <p>Comparativa práctica de comportamiento por defecto y con cambios de <code>display</code>.</p>
+    </header>
+
+    <main>
+        <!-- Sección: Bloque -->
+        <section class="panel">
+            <h2>Bloque</h2>
+            <div class="box">Soy un <strong>div</strong> (bloque): ocupo todo el ancho y fuerzo salto de línea.</div>
+            <p class="box">Soy un <strong>p</strong> (bloque): también ocupo 100% del contenedor.</p>
+            <section class="box">Soy un <strong>section</strong> (bloque): apilo debajo del anterior.</section>
+            <h2 class="box">Soy un <strong>h2</strong> (bloque): genero salto antes y después.</h2>
+        </section>
+
+        <!-- Sección: En línea -->
+        <section class="panel">
+            <h2>En línea</h2>
+            <p class="box" style="white-space:normal">
+                <span class="inline-demo">span 1</span>
+                <a href="#" class="inline-demo">enlace</a>
+                <strong class="inline-demo">strong</strong>
+                <em class="inline-demo">em</em>
+                <!-- img inline con data URI (SVG 24x16) para no depender de ficheros -->
+                <img alt="Rectángulo" class="inline-demo" width="24" height="16"
+                    src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16"><rect width="24" height="16" fill="%23a7f3d0"/></svg>' />
+                <span class="inline-demo">span 2</span>
+                <!-- Observa: todos fluyen en la MISMA línea hasta que no cabe -->
+            </p>
+        </section>
+
+        <!-- Sección: Experimentos -->
+        <section class="panel">
+            <h2>Experimentos</h2>
+
+            <h3>Experimento A — Márgenes y padding en inline vs bloque</h3>
+            <div class="rule"></div>
+            <!-- Bloque con margin-top/padding-top: empuja y aumenta área -->
+            <div class="box" style="margin-top:16px; padding-top:16px;">
+                Bloque con <code>margin-top:16px</code> y <code>padding-top:16px</code>.
+                El margen desplaza el elemento respecto al anterior.
+            </div>
+            <!-- Inline con margin-top/padding-top: el margin-top no desplaza la línea; padding sí crece el fondo del inline -->
+            <p class="box" style="white-space:normal">
+                Texto normal
+                <span class="inline-demo" style="margin-top:16px; padding-top:16px;">
+                    inline con margin-top/padding-top
+                </span>
+                texto tras inline.
+                <!-- Comentario:
+               En inline, el margin-top no empuja como un bloque; el padding sí se percibe dentro del fondo del span -->
+            </p>
+
+            <h3>Experimento B — Cambiando display</h3>
+            <div class="rule"></div>
+            <p class="box">
+                <span class="inline-demo as-block">span ahora es display:block</span>
+                <a href="#" class="inline-demo as-inline-block" style="width:160px; height:40px;">
+                    enlace con display:inline-block (width/height aplican)
+                </a>
+                <!-- Comentario:
+               block fuerza salto y ocupa ancho completo; inline-block mantiene flujo en línea
+               pero permite width/height y respeta márgenes verticales de forma más predecible -->
+            </p>
+
+            <h3>Experimento C — width/height</h3>
+            <div class="rule"></div>
+            <p class="box">
+                <span class="inline-demo" style="width:180px; height:40px;">
+                    inline con width/height (no surte efecto real)
+                </span>
+                <span class="inline-demo as-inline-block"
+                    style="width:180px; height:40px; line-height:40px; text-align:center;">
+                    inline-block con width/height (sí funciona)
+                </span>
+                <!-- Comentario:
+               width/height en inline no aplica; en inline-block sí -->
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Ejercicio realizado por Tu Nombre — 2025</p>
+    </footer>
+</body>
+
+</html>

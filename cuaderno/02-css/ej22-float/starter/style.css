@@ -1,0 +1,47 @@
+/* Base mínima */
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, sans-serif; background:#f8fafc; color:#0f172a; line-height:1.6; }
+h1 { margin:1rem; }
+.panel { padding:1rem; display:grid; gap:1.25rem; }
+section { background:#fff; border:1px solid #e5e7eb; padding:1rem; }
+
+/* === A) TODO: imagen a la izquierda con float y margen === */
+/* .img-left { float:left; margin: 0 .75rem .5rem 0; } */
+
+/* === B) TODO: imagen a la derecha con float y margen === */
+/* .img-right { float:right; margin: 0 0 .5rem .75rem; } */
+
+/* === C) TODO: dos cards flotadas dentro de .wrap === */
+/*
+.wrap {
+  /\* sin clearfix aún: el contenedor colapsará *\/
+  background:#f1f5f9; border:1px solid #cbd5e1; padding:.5rem;
+}
+.card {
+  width: 48%;
+  /\* TODO: flotar izq/der *\/
+  background:#e0f2fe; border:1px solid #94a3b8; padding:.5rem; min-height: 80px;
+}
+.c1 { /* float:left; */ }
+.c2 { /* float:right; */ }
+*/
+
+/* === C.1) TODO: clearfix en .wrap (pseudo-elemento) === */
+/*
+.wrap::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+*/
+
+/* === D) TODO: usar clear para bajar un elemento bajo los floats === */
+/* .fin { clear: both; background:#bbf7d0; border:1px solid #22c55e; padding:.5rem; } */
+
+/* (Opcional) Inicial capitular flotada */
+/*
+.dropcap {
+  float: left;
+  font-size: 3.2rem;
+  line-height: 1;
+  mar

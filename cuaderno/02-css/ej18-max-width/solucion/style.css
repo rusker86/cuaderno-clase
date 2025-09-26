@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.5;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+}
+section {
+  margin-bottom: 1rem;
+}
+
+.caja {
+  border: 1px solid #94a3b8;
+  padding: 1rem;
+  background: #fff;
+}
+
+/* A) Sin límite: ocupa 100% del contenedor */
+.caja-a {
+  width: 100%;
+  background: #e0f2fe;
+}
+
+/* B) max-width fijo: nunca supera 600px */
+.caja-b {
+  max-width: 600px;
+  background: #bbf7d0;
+}
+
+/* C) max-width relativo y centrado */
+.caja-c {
+  max-width: 90%;
+  margin: 0 auto;
+  background: #fde68a;
+}
+
+/* D) width fijo: puede causar scroll horizontal en pantallas pequeñas */
+.caja-d {
+  width: 600px;
+  background: #fecaca;
+  margin-bottom: 0.5rem;
+}
+
+/* E) max-width: 600px se adapta a pantallas pequeñas */
+.caja-e {
+  max-width: 600px;
+  background: #c7d2fe;
+}
+
+/* Comentarios:
+   - width: fija siempre el tamaño exacto (puede romper en pantallas pequeñas).
+   - max-width: limita el tamaño máximo, pero permite reducirlo si no hay espacio.
+   - Para textos largos, max-width mejora la legibilidad (líneas no demasiado largas).
+   - Por eso se usa mucho en contenedores de artículos/blogs. */

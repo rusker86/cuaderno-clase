@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ej03 — Atributos globales (solución)</title>
+</head>
+
+<body>
+    <header id="site-header" class="container" title="Cabecera principal del sitio">
+        <h1>Noticias y Recursos</h1>
+        <nav aria-label="Principal">
+            <ul>
+                <li><a href="#" tabindex="1" title="Ir a inicio">Inicio</a></li>
+                <li><a href="#" tabindex="2" title="Leer artículos">Artículos</a></li>
+                <li><a href="#" tabindex="3" title="Contacta con nosotros">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="contenido" class="container" title="Contenido principal">
+        <section id="tecnologia" class="bloque">
+            <article id="art-001" class="tarjeta destacado" data-categoria="tecnologia" data-autor="Anon">
+                <h2>Avances en la Web</h2>
+                <p>
+                    La plataforma web evoluciona a gran velocidad.
+                    <strong>HTML</strong> y <em>APIs del navegador</em> aportan nuevas capacidades.
+                    Publicado el <time datetime="2025-09-01">1 de septiembre de 2025</time>.
+                </p>
+                <p contenteditable="true" title="Este párrafo es editable por el usuario">
+                    Puedes editar este texto para añadir tus notas rápidas.
+                </p>
+                <p>
+                    Nota: <abbr title="World Wide Web Consortium">W3C</abbr> y WHATWG mantienen
+                    especificaciones y estándares que guían la evolución de la Web.
+                </p>
+            </article>
+        </section>
+
+        <section id="internacional" class="bloque">
+            <article id="art-002" class="tarjeta">
+                <h2 lang="en" title="Article title in English">Global Web Trends</h2>
+                <p lang="en">
+                    The <mark>open web</mark> fosters innovation and accessibility for everyone.
+                </p>
+                <p dir="rtl" title="Ejemplo de derecha a izquierda">
+                    مثال قصير
+                </p>
+                <!-- Elemento inicialmente oculto para lanzar más tarde como aviso o promoción -->
+                <p hidden id="promo-pendiente">Próximamente: lanzamiento de nuestro boletín.</p>
+                <p><small>Fuente: informes públicos y blogs técnicos.</small></p>
+            </article>
+        </section>
+    </main>
+
+    <footer id="site-footer" class="container">
+        <p>&copy; 2025 — Tu Nombre</p>
+    </footer>
+</body>
+
+</html>

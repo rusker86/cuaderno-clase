@@ -1,0 +1,69 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+.card {
+  border: 1px solid #94a3b8;
+  padding: 0.75rem;
+}
+
+/* A) Conflicto de reglas */
+/* especificidad: p = 0,0,1 */
+p {
+  color: teal;
+}
+
+/* .card p → 0,1,1 (clase + etiqueta) */
+.card p {
+  color: darkorange;
+}
+
+/* #especial → 1,0,0 */
+#especial {
+  color: blue;
+}
+
+/* Inline style → 1,0,0,0 (máxima, gana) */
+
+/* B) !important */
+.caja {
+  background: blue;
+} /* especificidad 0,1,0 */
+div.caja {
+  background: green;
+} /* especificidad 0,1,1 */
+.caja {
+  background: red !important;
+} /* !important gana incluso sobre selectores más específicos */
+
+/* (Opcional) Mal uso */
+* {
+  margin: 0 !important;
+} /* Esto borra márgenes de todo y luego es difícil sobrescribir */
+
+/* Notas:
+   - La cascada: último gana si la especificidad es igual.
+   - Especificidad: IDs > clases/atributos/pseudoclases > etiquetas.
+   - Inline style gana sobre reglas externas.
+   - !important sobrescribe incluso reglas más específicas, pero debe evitarse en la práctica diaria
+     salvo casos puntuales (utilidades temporales, librerías externas). */

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej20 — Contenido embebido con iframe (solución)</title>
+</head>
+
+<body>
+    <header>
+        <h1>Contenido embebido con &lt;iframe&gt;</h1>
+        <p>
+            A continuación se muestran ejemplos de incrustación de un vídeo, un mapa y un documento,
+            aplicando atributos de accesibilidad y seguridad.
+        </p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Vídeo incrustado</h2>
+            <!-- Buenas prácticas: title accesible, lazy, referrerpolicy y permisos mínimos -->
+            <iframe title="Reproductor de vídeo: Introducción a HTML" width="560" height="315"
+                src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen">
+                Tu navegador no puede mostrar este vídeo embebido.
+                Abre el enlace directamente: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+            </iframe>
+        </section>
+
+        <section>
+            <h2>Mapa incrustado</h2>
+            <iframe title="Mapa de ejemplo centrado en Murcia" width="560" height="315" loading="lazy"
+                referrerpolicy="no-referrer" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99715.622...">
+                No se puede cargar el mapa incrustado.
+                Puedes abrirlo en una pestaña nueva y usar la navegación del proveedor.
+            </iframe>
+        </section>
+
+        <section>
+            <h2>Documento local incrustado</h2>
+            <!-- Ejemplo con un recurso local ficticio: docs/guia.pdf (o docs/indice.html) -->
+            <iframe title="Guía del curso en PDF" width="560" height="315" loading="lazy" src="docs/guia.pdf">
+                No se puede mostrar el documento incrustado.
+                Descárgalo aquí si lo prefieres.
+            </iframe>
+            <p>
+                Enlace alternativo:
+                <a href="docs/guia.pdf" download>Descargar guía (PDF)</a>
+                <!-- El enlace alternativo permite acceder al contenido si el iframe falla o está bloqueado -->
+            </p>
+        </section>
+
+        <section>
+            <h2>Iframe con política de seguridad (sandbox)</h2>
+            <!-- sandbox aísla el contenido embebido.
+             Por defecto, sandbox bloquea casi todo; vamos habilitando lo mínimo:
+             - allow-scripts: permite ejecutar scripts dentro del iframe.
+             - allow-same-origin: trata el iframe como del mismo origen (necesario para que scripts lean cookies/localStorage).
+             Ajusta con cuidado: menos permisos = más seguro. -->
+            <iframe title="Demostración segura con sandbox" width="560" height="200" src="docs/indice.html"
+                sandbox="allow-same-origin allow-scripts" loading="lazy">
+                Contenido no visible. Abre: docs/indice.html
+            </iframe>
+        </section>
+
+        <section>
+            <h2>Buenas prácticas</h2>
+            <ul>
+                <li>Usa <strong>title</strong> descriptivo en todos los iframes (accesibilidad).</li>
+                <li>Activa <code>loading="lazy"</code> para mejorar el rendimiento.</li>
+                <li>Restringe capacidades con <code>sandbox</code> y usa <code>allow</code> solo para lo necesario.</li>
+                <li>Controla la privacidad con <code>referrerpolicy</code>.</li>
+                <li>Proporciona <strong>texto alternativo</strong> y enlaces de acceso directo si falla el embed.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Ejercicio realizado por Tu Nombre — 2025</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+/* ===== Base mínima ===== */
+* {
+  box-sizing: border-box;
+}
+html {
+  /* Puedes ajustar el root para ver efecto en rem */ /* font-size: 16px; */
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #0f172a;
+  background: #f8fafc;
+}
+a {
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Skip link (accesibilidad) ===== */
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  background: #fff;
+  border: 1px solid #94a3b8;
+  padding: 0.25rem 0.5rem;
+}
+
+/* ===== Header + Nav ===== */
+.site-header {
+  /* TODO: estilo de cabecera (background, delimitar alto, sticky opcional) */
+}
+.brand {
+  /* TODO: logo tipográfico */
+}
+.site-nav a {
+  /* TODO: estilos + estados :hover/:focus/:active */
+}
+
+/* ===== Hero ===== */
+.hero {
+  /* TODO: max-width, centrado, espaciado, CTA (enlace estilo botón) */
+}
+.hero .cta {
+  /* TODO: botón-enlace */
+}
+
+/* ===== Cards (inline-block para 3 columnas) ===== */
+.cards {
+  /* contenedor; puedes usar font-size:0 para eliminar gaps si lo deseas */
+}
+.card {
+  /* TODO: display:inline-block; width en % o rem; min-height; padding; border; background; vertical-align:top */
+}
+
+/* ===== Imagen flotada ===== */
+.float-left {
+  /* TODO: float:left; margin-right; margin-bottom; border; */
+}
+
+/* ===== Tabla precios ===== */
+.pricing table {
+  /* TODO: width:100%; border-collapse; */
+}
+.pricing th,
+.pricing td {
+  /* TODO: border; padding; align */
+}
+.pricing thead th {
+  /* TODO: fondo distinto */
+}
+.pricing tbody tr:nth-child(even) {
+  /* TODO: zebra */
+}
+.pricing tbody tr:hover {
+  /* TODO: hover */
+}
+
+/* ===== Testimonios (lista con ::marker) ===== */
+.testimonios ul {
+  /* TODO: padding-left */
+}
+/* .testimonios li::marker { content:"➜ "; color:#0ea5e9; } */
+
+/* ===== Formulario ===== */
+.contacto form {
+  /* TODO: grid simple o bloques; sin flex/grid, usa block + margin */
+}
+.contacto label {
+  display: block;
+  margin-top: 0.5rem;
+}
+.contacto input,
+.contacto textarea,
+.contacto select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.375rem;
+}
+.contacto input:focus,
+.contacto textarea:focus {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+}
+.contacto input::placeholder {
+  /* TODO: estilo placeholder */
+}
+.contacto .fila {
+  /* contenedor de dos campos en línea usando inline-block */
+}
+/* .campo { display:inline-block; width:48%; } */
+
+/* ===== Enlaces por atributo ===== */
+/* a[href^="mailto:"] { }    /\* mail *\/ */
+/* a[href$=".pdf"] { }       /\* PDF *\/ */
+
+/* ===== Botón back to top ===== */
+.backtop {
+  /* TODO: position:fixed; bottom/right; z-index alto; aspecto botón circular */
+}
+
+/* ===== Responsive ===== */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-inline: 1rem;
+}
+@media (max-width: 720px) {
+  /* TODO: apilar cards, ajustar paddings, tamaños de fuente, etc. */
+}
+
+/* Comentarios sugeridos:
+ - Por qué usar inline-block en lugar de float para las cards (respeta width/height y fluye en línea).
+ - Por qué max-width mejora legibilidad.
+ - Diferencia :focus / :focus-visible si decides usarlo. */

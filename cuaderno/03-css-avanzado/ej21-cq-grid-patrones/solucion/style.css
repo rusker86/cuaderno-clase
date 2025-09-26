@@ -1,0 +1,192 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --bg: #f8fafc;
+  --fg: #0f172a;
+  --muted: #475569;
+  --border: #e5e7eb;
+  --card: #fff;
+  --primary: #0ea5e9;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+.wrap {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 1rem;
+}
+h1,
+h2,
+h3 {
+  margin: 0.5rem 0 1rem;
+}
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+.btn {
+  display: inline-block;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  color: var(--fg);
+  background: #fff;
+  transition: box-shadow 0.2s ease, transform 0.08s ease;
+}
+.btn:hover {
+  box-shadow: 0 1px 2px rgba(2, 6, 23, 0.06), 0 8px 16px rgba(2, 6, 23, 0.12);
+}
+.btn:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* === Shell (CONTENEDOR) === */
+.shell {
+  container-type: inline-size;
+  container-name: shell;
+  display: grid;
+  gap: clamp(0.75rem, 2cqw, 1.25rem);
+  padding: clamp(0.75rem, 2cqw, 1.25rem);
+  border: 1px dashed var(--border);
+  border-radius: 0.75rem;
+  background: #fff;
+}
+.shell--narrow {
+  inline-size: 460px;
+}
+.shell--wide {
+  inline-size: 100%;
+}
+
+/* === Widget (también contenedor) === */
+.widget {
+  container-type: inline-size;
+  container-name: widget;
+  display: grid;
+  grid-template-areas:
+    "img"
+    "title"
+    "meta"
+    "body"
+    "cta"
+    "stats";
+  grid-template-columns: 1fr;
+  gap: clamp(0.75rem, 2cqw, 1rem);
+  padding: clamp(0.75rem, 2cqw, 1.25rem);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--card);
+}
+
+.w__img {
+  grid-area: img;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+}
+.w__title {
+  grid-area: title;
+  margin: 0;
+  font: 800 1.1rem/1.2 system-ui, sans-serif;
+}
+.w__meta {
+  grid-area: meta;
+  color: #64748b;
+  margin: -0.25rem 0 0;
+  font-size: 0.95rem;
+}
+.w__body {
+  grid-area: body;
+  margin: 0;
+  color: var(--muted);
+}
+.w__cta {
+  grid-area: cta;
+}
+.w__stats {
+  grid-area: stats;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(7rem, 20cqw, 10rem), 1fr)
+  );
+  gap: clamp(0.5rem, 2cqw, 1rem);
+}
+.stat {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  background: #f8fafc;
+  display: grid;
+}
+.stat strong {
+  font: 800 1.1rem/1 system-ui, sans-serif;
+}
+.stat span {
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+/* ===== @container por ancho del WIDGET ===== */
+
+/* ≥420px → 2 columnas (imagen + contenido) */
+@container widget (min-width: 420px) {
+  .widget {
+    grid-template-columns: 40% 1fr;
+    grid-template-areas:
+      "img title"
+      "img meta"
+      "img body"
+      "img cta"
+      "stats stats";
+    align-items: start;
+  }
+  .w__img {
+    max-block-size: min(42cqh, 320px);
+    object-fit: cover;
+  }
+}
+
+/* ≥640px → añade columna lateral para CTA */
+@container widget (min-width: 640px) {
+  .widget {
+    grid-template-columns: 38% 1fr auto;
+    grid-template-areas:
+      "img title  cta"
+      "img meta   cta"
+      "img body   cta"
+      "stats stats stats";
+    column-gap: clamp(1rem, 2.5cqw, 1.5rem);
+  }
+  .w__cta {
+    align-self: start;
+  }
+}
+
+/* A11y / preferencias */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
+  }
+}
+
+/* Notas:
+ - Los widgets reaccionan a su propio ancho (no al viewport).
+ - Las unidades cqw/cqh escalan padding/gaps/alturas en función del contenedor.
+ - grid-template-areas facilita reordenar semánticamente sin tocar el HTML. */

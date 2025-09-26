@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Proyecto integrador — HTML</title>
+    <meta name="description"
+        content="Mini-proyecto integrador de HTML: estructura, textos, listas, tablas, imágenes, multimedia, embebidos y formularios accesibles." />
+</head>
+
+<body>
+    <!-- Enlace de salto para accesibilidad con teclado -->
+    <a href="#contenido">Saltar al contenido</a>
+
+    <header>
+        <h1>Conferencia Web 2025 — Sitio de ejemplo</h1>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="#intro">Introducción</a></li>
+                <li><a href="#tabla">Programa</a></li>
+                <li><a href="#imagenes">Galería</a></li>
+                <li><a href="#multimedia">Multimedia</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="contenido">
+        <section id="intro">
+            <h2>Bienvenida e introducción</h2>
+            <p>
+                La <abbr title="HyperText Markup Language">HTML</abbr> Conf reúne a expertos del sector.
+                Este año <strong>ampliamos</strong> contenidos y ponemos el foco en
+                <em>accesibilidad</em> y rendimiento. <mark>Entrada gratuita</mark> hasta completar aforo.
+            </p>
+
+            <p>
+                Cita inspiradora: <q>La simplicidad es la máxima sofisticación</q>.
+                Consulta el reglamento &ndash;incluye acceso preferente para estudiantes&ndash; y colabora con la
+                comunidad.
+            </p>
+
+            <h3>Listas y agenda</h3>
+            <ul>
+                <li>Charlas</li>
+                <li>Talleres
+                    <ul>
+                        <li>HTML Semántico</li>
+                        <li>Accesibilidad</li>
+                    </ul>
+                </li>
+                <li>Networking</li>
+            </ul>
+            <ol>
+                <li>Registro</li>
+                <li>Bienvenida</li>
+                <li>Keynote</li>
+                <li>Tracks paralelos</li>
+                <li>Clausura</li>
+            </ol>
+        </section>
+
+        <section id="tabla">
+            <h2>Programa resumido</h2>
+            <table>
+                <caption>Agenda — Día 1</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Sala</th>
+                        <th scope="col">Sesión</th>
+                        <th scope="col">Ponente</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">09:00</th>
+                        <td>Auditorio</td>
+                        <td colspan="2">Registro y café de bienvenida</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10:00</th>
+                        <td>Auditorio</td>
+                        <td>Keynote</td>
+                        <td rowspan="2">Invitado/a</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">11:00</th>
+                        <td>Sala A</td>
+                        <td>HTML semántico</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">12:00</th>
+                        <td>Sala B</td>
+                        <td>Accesibilidad básica</td>
+                        <td>Equipo A11y</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">Programa sujeto a cambios. Actualizado 01/09/2025.</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="imagenes">
+            <h2>Galería</h2>
+
+            <!-- Imagen informativa: alt describe la información relevante. width/height evita CLS -->
+            <img src="images/auditorio-640.jpg" alt="Auditorio con asistentes siguiendo una charla técnica" width="640"
+                height="360" decoding="async" fetchpriority="high">
+
+            <!-- Imagen decorativa: alt vacío para ignorarla en lectores de pantalla -->
+            <img src="images/patron-decorativo.png" alt="" width="200" height="200">
+
+            <!-- Figure + figcaption -->
+            <figure>
+                <img src="images/ponente-800.jpg" alt="Ponente explicando un diagrama en una pantalla" width="800"
+                    height="450" decoding="async">
+                <figcaption>Ponencia sobre estándares web y compatibilidad entre navegadores.</figcaption>
+            </figure>
+
+            <!-- (Opcional) imagen responsive -->
+            <h3>Portada responsive</h3>
+            <img src="images/portada-640.jpg" srcset="
+            images/portada-320.jpg 320w,
+            images/portada-640.jpg 640w,
+            images/portada-1024.jpg 1024w
+          " sizes="(max-width: 600px) 320px, (max-width: 900px) 640px, 1024px"
+                alt="Portada del evento con tipografía grande y fondo abstracto" width="1024" height="576"
+                loading="lazy" decoding="async">
+        </section>
+
+        <section id="multimedia">
+            <h2>Multimedia</h2>
+
+            <h3>Audio: presentación del evento</h3>
+            <!-- preload="metadata": conocer duración sin descargar todo -->
+            <audio controls preload="metadata">
+                <source src="audio/presentacion.mp3" type="audio/mpeg">
+                <source src="audio/presentacion.ogg" type="audio/ogg">
+                Tu navegador no soporta audio HTML5. Descarga el
+                <a href="audio/presentacion.mp3">MP3</a>.
+            </audio>
+
+            <h3>Vídeo: highlights del año pasado</h3>
+            <video controls preload="metadata" poster="images/poster.jpg" playsinline width="640" height="360">
+                <source src="video/highlights.mp4" type="video/mp4">
+                <source src="video/highlights.webm" type="video/webm">
+                <track kind="subtitles" src="video/highlights.es.vtt" srclang="es" label="Español" default>
+                Tu navegador no soporta vídeo HTML5.
+                Puedes <a href="video/highlights.mp4">descargar el MP4</a>.
+            </video>
+        </section>
+
+        <section id="embed">
+            <h2>Ubicación</h2>
+            <iframe title="Mapa del recinto" width="560" height="315" loading="lazy" referrerpolicy="no-referrer"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-1.2,37.9,-1.0,38.1">
+                No se puede cargar el mapa embebido. Abre el mapa en su sitio oficial.
+            </iframe>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto y registro</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Datos personales</legend>
+
+                    <p>
+                        <label for="nombre">Nombre</label><br>
+                        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" autocomplete="name"
+                            required>
+                    </p>
+
+                    <p id="ayuda-email">Usaremos tu email para enviarte la confirmación.</p>
+                    <p>
+                        <label for="email">Correo electrónico</label><br>
+                        <input id="email" name="email" type="email" aria-describedby="ayuda-email" autocomplete="email"
+                            required>
+                    </p>
+
+                    <p>
+                        <label for="web">Sitio web (opcional)</label><br>
+                        <input id="web" name="web" type="url" placeholder="https://tusitio.com" autocomplete="url">
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferencias</legend>
+                    <p>
+                        <label for="asistentes">Número de asistentes (1–5)</label><br>
+                        <input id="asistentes" name="asistentes" type="number" min="1" max="5" step="1" value="1"
+                            inputmode="numeric">
+                    </p>
+
+                    <p>
+                        <label for="fecha">Fecha preferida</label><br>
+                        <input id="fecha" name="fecha" type="date">
+                    </p>
+
+                    <p>
+                        <label for="nivel">Interés (0–100)</label><br>
+                        <input id="nivel" name="nivel" type="range" min="0" max="100" step="10" value="50"
+                            oninput="salida.value = nivel.value">
+                        <output id="salida" for="nivel">50</output>
+                    </p>
+
+                    <p>
+                        <label for="track">Track</label><br>
+                        <select id="track" name="track">
+                            <option value="general">General</option>
+                            <option value="a11y">Accesibilidad</option>
+                            <option value="perf">Rendimiento</option>
+                            <option value="apis">APIs Web</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label><input type="checkbox" name="newsletter" value="1"> Recibir newsletter</label>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Mensaje</legend>
+                    <p>
+                        <label for="mensaje">Comentarios</label><br>
+                        <textarea id="mensaje" name="mensaje" rows="4"
+                            placeholder="Cuéntanos tus expectativas..."></textarea>
+                    </p>
+                </fieldset>
+
+                <p><small>Este formulario es una demo; el envío no se procesa (action="#").</small></p>
+                <p>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Restablecer</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 — Conferencia Web</p>
+    </footer>
+</body>
+
+</html>

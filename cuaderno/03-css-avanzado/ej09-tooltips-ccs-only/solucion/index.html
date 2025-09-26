@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Avanzado — Ej09 Tooltips (solución)</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Ej09: Tooltips solo con CSS</h1>
+    </header>
+
+    <main class="panel">
+        <section>
+            <h2>A) Tooltip básico (arriba)</h2>
+            <button class="tip tip--top">
+                Guardar
+                <span class="tip-content" role="tooltip">Guarda cambios</span>
+            </button>
+        </section>
+
+        <section>
+            <h2>B) Tooltip con data-attribute</h2>
+            <button class="tip tip--top" data-tooltip="Acción irreversible">Borrar</button>
+        </section>
+
+        <section>
+            <h2>C) Variantes de posición</h2>
+            <div class="row">
+                <a href="#" class="tip tip--top" data-tooltip="Arriba">Top</a>
+                <a href="#" class="tip tip--right" data-tooltip="Derecha">Right</a>
+                <a href="#" class="tip tip--bottom" data-tooltip="Abajo">Bottom</a>
+                <a href="#" class="tip tip--left" data-tooltip="Izquierda">Left</a>
+            </div>
+        </section>
+
+        <section>
+            <h2>D) Accesible con aria-describedby</h2>
+            <button class="tip tip--bottom" aria-describedby="t1">Enviar</button>
+            <span id="t1" class="sr-only">Envía el formulario</span>
+            <p class="nota">El texto se anuncia por lector de pantalla aunque el CSS falle.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Curso CSS Avanzado</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ej27 — Atributos de “calidad de vida” (solución)</title>
+</head>
+
+<body>
+    <header>
+        <h1>Atributos “de calidad de vida” en HTML</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Idiomas y dirección</h2>
+            <p>
+                <!-- lang en línea ayuda a lectores de pantalla y correctores a interpretar la pronunciación y reglas -->
+                Cita en inglés: <q lang="en">Simplicity is the ultimate sophistication.</q>
+            </p>
+            <p>
+                <!-- dir="rtl" fuerza dirección derecha-a-izquierda (ejemplo con árabe) -->
+                <span dir="rtl">مثال عربي</span> — Texto en dirección RTL de ejemplo.
+            </p>
+        </section>
+
+        <section>
+            <h2>Edición y revisión</h2>
+            <!-- contenteditable: convierte el elemento en editable en el navegador
+             spellcheck="true": activa revisión ortográfica donde esté disponible -->
+            <p contenteditable="true" spellcheck="true" title="Puedes editar este texto">
+                Este párrafo es <strong>editable</strong>. Corrige o añade texto para probar la revisión.
+            </p>
+
+            <!-- Desactivar corrección cuando el contenido no debe cambiarse por autocorrección (p. ej., código o claves) -->
+            <pre contenteditable="true" spellcheck="false">
+Fragmento_de_codigo = "doNotAutoCorrectMe()";
+        </pre>
+
+            <!-- autocapitalize/ autocorrect: en móviles controla mayúsculas y corrección automática -->
+            <p>
+                <label for="nombre">Nombre propio (autocapitalize "words")</label><br>
+                <input id="nombre" name="nombre" type="text" placeholder="Escribe tu Nombre y Apellidos"
+                    autocapitalize="words" autocorrect="on">
+                <!-- Nota: autocorrect no está estandarizado en todos los navegadores -->
+            </p>
+        </section>
+
+        <section>
+            <h2>Arrastrar y traducción</h2>
+            <!-- translate="no": evita que herramientas de traducción cambien el texto (útil para marcas, nombres propios) -->
+            <p translate="no">Marca: UltraCode Pro</p>
+
+            <!-- draggable="true": marca el elemento como arrastrable; sin JS no habrá destino de soltar -->
+            <p draggable="true" title="Puedes intentar arrastrar este párrafo">
+                Este elemento está marcado como arrastrable (solo demostración).
+            </p>
+        </section>
+
+        <section>
+            <h2>Teclado y entrada en móviles</h2>
+            <p>
+                <label for="telefono">Teléfono</label><br>
+                <input id="telefono" name="telefono" type="tel" placeholder="+34 600 000 000" inputmode="numeric"
+                    enterkeyhint="done" autocomplete="tel">
+                <!-- inputmode sugiere un teclado numérico; enterkeyhint cambia la etiqueta de la tecla Enter en móviles -->
+            </p>
+
+            <p>
+                <label for="correo">Correo electrónico</label><br>
+                <input id="correo" name="correo" type="email" placeholder="tucorreo@example.com" autocomplete="email"
+                    enterkeyhint="next">
+            </p>
+
+            <p>
+                <label for="busqueda">Búsqueda</label><br>
+                <input id="busqueda" name="busqueda" type="search" placeholder="Buscar…" enterkeyhint="search">
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Ejercicio realizado por Tu Nombre — 2025</p>
+    </footer>
+</body>
+
+</html>

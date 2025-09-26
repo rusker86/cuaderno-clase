@@ -1,0 +1,114 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #0b1020;
+  color: #e5e7eb;
+  line-height: 1.5;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+section {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.demo {
+  margin: 0;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.neon,
+.emboss,
+.stroke,
+.grad,
+.img-in-text {
+  font-size: clamp(2rem, 6vw, 4rem);
+}
+
+/* A) Neón sutil: varias sombras, contraste alto */
+.neon {
+  color: #e2f3ff;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 2px 6px rgba(14, 165, 233, 0.45), 0 0 24px rgba(124, 58, 237, 0.35);
+  transition: text-shadow 0.25s ease;
+}
+.neon:hover {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 3px 10px rgba(14, 165, 233, 0.6), 0 0 36px rgba(124, 58, 237, 0.5);
+}
+
+/* B) Emboss / relieve: dos sombras opuestas */
+.emboss {
+  color: #e5e7eb;
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.08),
+    1px 1px 1px rgba(0, 0, 0, 0.35);
+}
+
+/* C) Contorno (stroke) — fallback legible si no hay soporte */
+.stroke {
+  color: transparent;
+  -webkit-text-stroke: 2px #93c5fd;
+  text-stroke: 2px #93c5fd; /* no estándar */
+}
+/* Fallback: si se quisiera, duplicar regla alternativa:
+@supports not (-webkit-text-stroke: 1px #000) {
+  .stroke { color:#93c5fd; }  // texto normal
+}
+*/
+
+/* D) Gradiente en texto */
+.grad {
+  background: linear-gradient(90deg, #22d3ee, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* E) Imagen recortada en texto */
+.img-in-text {
+  background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* F) Subrayados modernos en enlaces */
+.copy {
+  font-size: 1.125rem;
+  text-align: center;
+}
+.link {
+  color: #93c5fd;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(147, 197, 253, 0.9);
+}
+.link:hover {
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+/* Opcional: mezcla (knockout) — comentar si se usa fondo claro detrás
+.demo.mix { mix-blend-mode: screen; }
+*/
+
+/* Notas:
+   - text-shadow: múltiples capas separadas por comas; controla blur y opacidad para evitar “glow” excesivo.
+   - -webkit-text-stroke aún es la vía práctica para contornos; añade fallback legible.
+   - background-clip:text requiere color:transparent; si falla, el texto debe permanecer visible con otra regla.
+   - Usa subrayados modernos para mejorar legibilidad y estado :hover sin depender solo del color. */

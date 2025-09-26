@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>JS — Ej38 DOM avanzado (starter)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        :root {
+            font-family: system-ui, sans-serif;
+            line-height: 1.55;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .ph {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: #eee;
+            border-radius: .5rem;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: .5rem;
+            display: block;
+            opacity: .001;
+            transition: opacity .4s ease;
+        }
+
+        img.loaded {
+            opacity: 1;
+        }
+
+        section {
+            border: 1px solid #ddd;
+            border-radius: .75rem;
+            padding: 1rem;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            img {
+                transition: none;
+            }
+
+            .reveal {
+                transform: none;
+            }
+        }
+
+        #feed article {
+            border: 1px solid #e6e6e6;
+            border-radius: .5rem;
+            padding: .75rem;
+            background: #fafafa;
+        }
+
+        #sentinel {
+            height: 1px;
+        }
+
+        .row {
+            display: flex;
+            gap: .5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JS — Ej38 DOM avanzado</h1>
+
+    <div class="row">
+        <button id="stop" type="button">Detener observadores</button>
+        <span id="log" aria-live="polite" class="muted"></span>
+    </div>
+
+    <h2>1) Lazy-loading de imágenes</h2>
+    <div class="grid" id="gallery">
+        <!-- Usa data-src para las imágenes reales; src un placeholder mínimo -->
+        <img alt="Foto 1" src="data:image/gif;base64,R0lGODlhAQABAAD/ACw="
+            data-src="https://picsum.photos/seed/1/600/380" />
+        <img alt="Foto 2" src="data:image/gif;base64,R0lGODlhAQABAAD/ACw="
+            data-src="https://picsum.photos/seed/2/600/380" />
+        <img alt="Foto 3" src="data:image/gif;base64,R0lGODlhAQABAAD/ACw="
+            data-src="https://picsum.photos/seed/3/600/380" />
+        <img alt="Foto 4" src="data:image/gif;base64,R0lGODlhAQABAAD/ACw="
+            data-src="https://picsum.photos/seed/4/600/380" />
+    </div>
+
+    <h2>2) Revelar secciones on-scroll</h2>
+    <section class="reveal">
+        <h3>Bloque A</h3>
+        <p>Contenido que se revela.</p>
+    </section>
+    <section class="reveal">
+        <h3>Bloque B</h3>
+        <p>Contenido que se revela.</p>
+    </section>
+    <section class="reveal">
+        <h3>Bloque C</h3>
+        <p>Contenido que se revela.</p>
+    </section>
+
+    <h2>3) Infinite scroll + 4) MutationObserver</h2>
+    <div id="feed" class="grid" aria-live="polite">
+        <!-- artículos se añadirán aquí -->
+    </div>
+    <div id="sentinel" aria-hidden="true"></div>
+
+    <!-- <script src="./main.js"></script> -->
+</body>
+
+</html>

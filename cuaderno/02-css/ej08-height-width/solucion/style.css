@@ -1,0 +1,57 @@
+/* Base visual */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+.box {
+  border: 2px solid #94a3b8;
+  padding: 1rem;
+  background: #f1f5f9;
+}
+
+/* A) Ancho y alto fijos (px) */
+.box-a {
+  width: 200px;
+  height: 100px;
+  background: #bfdbfe; /* azul claro */
+}
+
+/* B) Ancho relativo (%) → respecto al contenedor padre (.panel) */
+.box-b {
+  width: 50%;
+  background: #bbf7d0; /* verde claro */
+}
+
+/* C) min-width y max-width → la caja se ajusta entre 150px y 400px */
+.box-c {
+  min-width: 150px;
+  max-width: 400px;
+  background: #fde68a; /* amarillo */
+}
+
+/* D) min-height y max-height → si se supera max-height, aparece scroll */
+.box-d {
+  min-height: 60px;
+  max-height: 120px;
+  overflow: auto;
+  background: #fecaca; /* rojo claro */
+}
+
+/* E) vw/vh → unidades relativas al viewport */
+.box-e {
+  width: 50vw; /* 50% del ancho de la ventana */
+  height: 20vh; /* 20% de la altura de la ventana */
+  background: #c4b5fd; /* violeta claro */
+}

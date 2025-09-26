@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# Archives
+*.zip
+
+#WebStorm
+.idea
+
+#Visual Studio Code
+.vscode

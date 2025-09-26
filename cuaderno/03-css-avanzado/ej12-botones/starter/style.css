@@ -1,0 +1,127 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --c-text: #0f172a;
+  --c-muted: #475569;
+  --c-primary: #0ea5e9;
+  --c-primary-600: #0284c7;
+  --c-primary-700: #0369a1;
+  --c-danger: #ef4444;
+  --c-danger-600: #dc2626;
+  --c-border: #cbd5e1;
+  --c-bg: #fff;
+  --c-bg-soft: #f8fafc;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--c-bg-soft);
+  color: var(--c-text);
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* === Núcleo del botón === */
+.btn {
+  /* TODO: base visual y layout */
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--c-border);
+  font-weight: 600;
+  text-decoration: none;
+  user-select: none;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease, transform 0.08s ease;
+}
+.btn:focus-visible {
+  outline: 3px solid var(--c-primary);
+  outline-offset: 2px;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Tamaños */
+/* .btn--sm{ padding:.35rem .6rem; font-size:.875rem; }
+.btn--md{ padding:.5rem .9rem; font-size:1rem; }
+.btn--lg{ padding:.7rem 1.1rem; font-size:1.125rem; } */
+
+/* Variantes (completa en tu CSS) */
+/* .btn--solid{ background:var(--c-primary); color:#fff; border-color:var(--c-primary-600); }
+.btn--solid:hover{ background:var(--c-primary-600); }
+.btn--outline{ background:transparent; color:var(--c-text); border-color:var(--c-primary-600); }
+.btn--outline:hover{ background:rgba(2,132,199,.08); }
+.btn--ghost{ background:transparent; color:var(--c-text); border-color:transparent; }
+.btn--ghost:hover{ background:#f1f5f9; }
+.btn--danger{ background:var(--c-danger); color:#fff; border-color:var(--c-danger-600); }
+.btn--danger:hover{ background:var(--c-danger-600); }
+.btn--link{ background:transparent; color:var(--c-primary-600); border-color:transparent; text-decoration:underline; text-underline-offset:2px; } */
+
+/* Icono inline */
+/* .btn .icon{ display:inline-block; inline-size:1em; } */
+
+/* Pill (opcional) */
+/* .btn--pill{ border-radius:9999px; } */
+
+/* Loading: oculta texto y muestra spinner con ::after */
+/* .btn--loading{ position:relative; }
+.btn--loading > span{ opacity:0; }
+.btn--loading::after{
+  content:""; position:absolute; inset:0; margin:auto; inline-size:1em; block-size:1em;
+  border-radius:999px; border:2px solid #e2e8f0; border-top-color:var(--c-primary);
+  animation:spin .9s linear infinite;
+} */
+
+/* Grupo de botones */
+/* .btn-group{ display:inline-flex; }
+.btn-group .btn{ border-radius:0; }
+.btn-group .btn:first-child{ border-radius:.5rem 0 0 .5rem; }
+.btn-group .btn:last-child{ border-radius:0 .5rem .5rem 0; }
+.btn-group .btn + .btn{ margin-left:-1px; } */
+
+/* Motion reduce */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Notas:
+ - Mantén foco visible (no lo desactives).
+ - Contrastes: evita texto claro sobre fondos claros.
+ - Loading: mantén ancho estable; no reflow al ocultar el texto. */

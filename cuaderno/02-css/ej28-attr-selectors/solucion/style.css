@@ -1,0 +1,77 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+.links {
+  padding-left: 1.25rem;
+}
+a {
+  text-underline-offset: 2px;
+}
+
+/* Presencia: cualquier elemento con required */
+[required] {
+  outline: 2px dashed #f59e0b;
+}
+
+/* Prefijo: mailto */
+a[href^="mailto:"] {
+  color: #16a34a;
+}
+
+/* Sufijo: PDF */
+a[href$=".pdf"] {
+  color: #dc2626;
+}
+
+/* Subcadena en placeholder */
+input[placeholder*="nombre"] {
+  border-color: #0ea5e9;
+}
+
+/* Internos vs externos */
+a[href^="#"] {
+  color: #0f172a;
+}
+a[href^="http"] {
+  color: #1d4ed8;
+}
+
+/* Igualdad exacta (demostrativa) */
+a[href="https://example.com"]
+{
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+}
+
+/* class con lista de palabras */
+[class~="tag"] {
+  background: #fff7ed;
+  border: 1px solid #f59e0b;
+}
+
+/* lang 'en' o 'en-*' */
+[lang|="en"] {
+  font-style: italic;
+  color: #64748b;
+}
+
+/* Notas:
+   ^= empieza por; $= termina en; *= contiene.
+   ~=: palabra completa en lista de clases.
+   |=: 'en' o 'en-*' (útil para lenguaje y subcódigos). */

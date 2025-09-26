@@ -1,0 +1,175 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --bg: #f8fafc;
+  --fg: #0f172a;
+  --muted: #475569;
+  --card: #fff;
+  --border: #e5e7eb;
+  --primary: #0ea5e9;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+.wrap {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 1rem;
+}
+h1,
+h2,
+h3 {
+  margin: 0.5rem 0 1rem;
+}
+a {
+  color: var(--primary);
+}
+
+.site-header,
+.site-footer {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.site-footer {
+  border-top: 1px solid var(--border);
+  border-bottom: 0;
+}
+
+.nav {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  text-decoration: none;
+  color: var(--fg);
+  background: var(--card);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Grid móvil por defecto */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 1) Rangos modernos */
+@media (640px <= width < 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (width >= 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 2) Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1220;
+    --fg: #e5e7eb;
+    --muted: #94a3b8;
+    --card: #0f172a;
+    --border: #1e293b;
+    --primary: #7dd3fc;
+  }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+  }
+  .btn {
+    border-color: var(--border);
+  }
+  .card {
+    border-color: var(--border);
+  }
+}
+
+/* 3) Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .card {
+    transition: none;
+  }
+}
+
+/* 4) Hover/Pointer */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(2, 6, 23, 0.16);
+  }
+}
+@media (pointer: coarse) {
+  .btn {
+    padding: 0.6rem 1rem;
+  } /* más área de toque */
+}
+
+/* 5) Print */
+@media print {
+  :root {
+    --bg: #fff;
+    --fg: #000;
+    --card: #fff;
+    --border: #999;
+  }
+  body {
+    background: #fff;
+    color: #000;
+  }
+  .site-header,
+  .site-footer,
+  .btn {
+    background: #fff;
+    box-shadow: none;
+  }
+  .btn {
+    border-color: #aaa;
+  }
+  .card {
+    break-inside: avoid;
+  }
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.9em;
+    color: #444;
+  }
+}
+
+/* 6) Altura reducida (opcional) */
+@media (max-height: 700px) {
+  .site-header {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Comentarios:
+ - Mobile-first: definimos 1 columna por defecto y ampliamos en rangos.
+ - Sintaxis de rangos reduce ambigüedad con límites y evita solapes.
+ - Dark mode altera tokens (CSS custom properties) → todo el tema cambia.
+ - Hover solo en dispositivos que lo soportan; en táctiles priorizamos accesibilidad. */

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>JS — Ej36 DOM + Fetch (solución)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        :root {
+            font-family: system-ui, sans-serif;
+            line-height: 1.5;
+        }
+
+        .app {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: .5rem;
+            padding: 1rem;
+        }
+
+        .row {
+            display: flex;
+            gap: .5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li+li {
+            margin-top: .5rem;
+        }
+
+        .muted {
+            color: #666;
+            font-size: .9rem;
+        }
+
+        #status {
+            min-height: 1.2em;
+        }
+
+        .post {
+            display: flex;
+            gap: .5rem;
+            align-items: center;
+        }
+
+        .post h4 {
+            margin: 0;
+            font-size: 1rem;
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JS — Ej36 DOM + Fetch — Solución</h1>
+    <section id="status" class="muted" aria-live="polite"></section>
+
+    <div class="app">
+        <section class="card" id="list-card" aria-busy="false">
+            <header class="row">
+                <h2 style="margin:0">Posts</h2>
+                <div class="row" style="margin-left:auto">
+                    <button id="prev" type="button" disabled>Anterior</button>
+                    <span id="page" class="muted">pág. 1</span>
+                    <button id="next" type="button">Siguiente</button>
+                </div>
+            </header>
+            <ul id="posts"></ul>
+        </section>
+
+        <section class="card">
+            <h2 style="margin-top:0">Detalle</h2>
+            <div id="detail" class="muted">Selecciona un post…</div>
+
+            <hr />
+
+            <h3>Crear post</h3>
+            <form id="new-post" class="row">
+                <input type="text" name="title" placeholder="Título" required />
+                <input type="text" name="body" placeholder="Contenido" required />
+                <button type="submit">Crear</button>
+            </form>
+            <p id="create-result" class="muted" aria-live="polite"></p>
+        </section>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

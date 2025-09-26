@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej10 — Enlaces en HTML5</title>
+</head>
+
+<body>
+    <header>
+        <h1>Ejemplos de enlaces en HTML5</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Lista de enlaces</h2>
+            <ul>
+                <li>
+                    <a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer"
+                        title="Visitar MDN Web Docs">
+                        Recurso externo: MDN
+                    </a>
+                </li>
+                <li>
+                    <a href="#seccion-interna" title="Ir a la sección interna">
+                        Enlace interno en este documento
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:profesor@example.com">Enviar un correo</a>
+                </li>
+                <li>
+                    <a href="tel:+34999999999">Llamar al teléfono</a>
+                </li>
+                <li>
+                    <a href="documento.pdf" download="documento.pdf">
+                        Descargar documento PDF
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Párrafo con enlace contextual</h2>
+            <p>
+                Para más información sobre HTML, visita
+                <a href="https://www.w3.org/TR/html52/" target="_blank" rel="noopener">
+                    la especificación oficial
+                </a>.
+            </p>
+        </section>
+
+        <section id="seccion-interna">
+            <h2>Destino del enlace interno</h2>
+            <p>
+                Has llegado a la sección interna del documento gracias a un enlace con `href="#seccion-interna"`.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Ejercicio realizado por Tu Nombre — 2025</p>
+    </footer>
+</body>
+
+</html>

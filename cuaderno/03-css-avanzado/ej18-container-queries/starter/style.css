@@ -1,0 +1,150 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --bg: #f8fafc;
+  --fg: #0f172a;
+  --muted: #475569;
+  --card: #fff;
+  --border: #e5e7eb;
+  --primary: #0ea5e9;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+.wrap {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 1rem;
+}
+h1,
+h2,
+h3 {
+  margin: 0.5rem 0 1rem;
+}
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* Regiones (CONTENEDORES) */
+.region {
+  /* TODO: habilitar container queries */
+  /* container-type: inline-size; container-name: layout; */
+  display: grid;
+  gap: 1rem;
+  padding: clamp(0.75rem, 2cqw, 1.25rem); /* pista: usa unidades cq */
+  border: 1px dashed var(--border);
+  border-radius: 0.75rem;
+  background: #fff;
+}
+.region--narrow {
+  width: 380px;
+} /* demo: estrecha */
+.region--wide {
+  max-width: 100%;
+}
+
+/* Card base (componente) */
+.card {
+  display: grid;
+  grid-template-columns: 1fr; /* layout vertical por defecto */
+  gap: clamp(0.75rem, 2cqw, 1rem);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  padding: clamp(0.75rem, 2cqw, 1.25rem);
+  align-items: start;
+  /* (opcional) atributo para style query: --variant: "default"; */
+}
+.card__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+  /* En card ancha limitaremos el alto con cqh */
+  /* max-block-size: min(40cqh, 320px); object-fit: cover; */
+}
+.card__body {
+  display: grid;
+  gap: 0.5rem;
+}
+.card__title {
+  margin: 0;
+  font: 700 1.1rem/1.2 system-ui, sans-serif;
+}
+.card__text {
+  margin: 0;
+  color: var(--muted);
+}
+.card__meta {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+.card__aside {
+  display: none;
+} /* se muestra en ancho >= 700px de contenedor */
+
+.price {
+  font: 800 1.25rem/1 system-ui, sans-serif;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  color: var(--fg);
+  background: #fff;
+}
+.btn:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* =========================
+   @container QUERIES (PISTAS)
+   ========================= */
+
+/* A partir de 480px del CONTENEDOR, la card pasa a layout en dos columnas */
+/* @container (min-width: 480px) {
+  .card {
+    grid-template-columns: 40% 1fr;
+    align-items: center;
+  }
+  .card__img {
+    max-block-size: min(40cqh, 320px);
+    object-fit: cover;
+  }
+} */
+
+/* A partir de 700px del CONTENEDOR, aparece una aside fija para precio/CTA */
+/* @container (min-width: 700px) {
+  .card {
+    grid-template-columns: 40% 1fr auto;
+    gap: clamp(1rem, 2.5cqw, 1.5rem);
+  }
+  .card__aside { display:grid; align-content:start; gap:.5rem; padding-left: clamp(.75rem, 1.5cqw, 1rem); }
+} */
+
+/* (Opcional) STYLE QUERY por custom property (si está soportado) */
+/* @container style(--variant: "compact") {
+  .card { gap: .5rem; padding: .6rem; }
+  .card__text { display:none; }
+} */
+
+/* Notas:
+ - container-type: inline-size → consultas por ancho del contenedor lógico.
+ - Usa cqw/cqh/cqi/cqb/cqmin/cqmax dentro del contenedor para tamaños relativos.
+ - Las cards idénticas responden distinto según la región que las contiene. */

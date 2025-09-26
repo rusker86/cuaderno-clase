@@ -1,0 +1,150 @@
+/* Base y tokens */
+* {
+  box-sizing: border-box;
+}
+:root {
+  /* Espaciado */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+
+  /* Línea base */
+  --lh: 1.65; /* base legible para párrafos */
+  --lh-h: 1.2; /* headings más compactos */
+
+  /* Escala modular fluida (ratio aprox 1.22) 
+     MIN a ~360px, MAX a ~1200px aprox; ajusta factores vw según diseño */
+  --step--2: clamp(0.78rem, calc(0.7rem + 0.15vw), 0.9rem);
+  --step--1: clamp(0.9rem, calc(0.82rem + 0.25vw), 1.05rem);
+  --step-0: clamp(1rem, calc(0.95rem + 0.4vw), 1.2rem);
+  --step-1: clamp(1.25rem, calc(1.1rem + 0.65vw), 1.5rem);
+  --step-2: clamp(1.55rem, calc(1.3rem + 0.95vw), 1.95rem);
+  --step-3: clamp(1.9rem, calc(1.55rem + 1.3vw), 2.4rem);
+  --step-4: clamp(2.35rem, calc(1.9rem + 1.7vw), 3rem);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+  line-height: var(--lh);
+}
+.wrap {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: var(--space-2);
+}
+
+.site-header {
+  padding: var(--space-2);
+}
+.lead {
+  font-size: var(--step-0);
+  color: #475569;
+  margin: 0.25rem 0 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0 0 var(--space-2);
+}
+
+/* Roles tipográficos */
+h1 {
+  font-size: var(--step-4);
+  line-height: var(--lh-h);
+  letter-spacing: -0.01em;
+}
+h2 {
+  font-size: var(--step-2);
+  line-height: var(--lh-h);
+  letter-spacing: -0.005em;
+}
+h3 {
+  font-size: var(--step-1);
+  line-height: var(--lh-h);
+}
+body,
+p {
+  font-size: var(--step-0);
+}
+.small {
+  font-size: var(--step--1);
+}
+
+/* Lista de la escala */
+.scale {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.preview {
+  display: inline-block;
+  color: #0f172a;
+}
+.step--2 {
+  font-size: var(--step--2);
+}
+.step--1 {
+  font-size: var(--step--1);
+}
+.step-0 {
+  font-size: var(--step-0);
+}
+.step-1 {
+  font-size: var(--step-1);
+}
+.step-2 {
+  font-size: var(--step-2);
+}
+.step-3 {
+  font-size: var(--step-3);
+}
+.step-4 {
+  font-size: var(--step-4);
+}
+
+/* Card demo */
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: var(--space-3);
+  max-width: 60ch;
+  box-shadow: 0 1px 2px rgba(2, 6, 23, 0.06);
+}
+.card h3 {
+  margin-bottom: 0.25rem;
+}
+.card .meta {
+  color: #64748b;
+  font-size: var(--step--1);
+  margin-top: -0.1rem;
+}
+
+/* (Opcional) leading-trim — experimental: no rompe si no existe */
+.trimmed {
+  leading-trim: both;
+  text-edge: cap alphabetic;
+}
+
+/* A11y / preferencias */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
+  }
+}
+
+/* Notas:
+ - Cada paso usa clamp(min, calc(base + factor*vw), max). Ajusta valores al look&feel.
+ - Mantén el contraste y un tamaño base ≥ 16px.
+ - leading-trim cap/alphabetic elimina “aires” superior/inferior de glifos si el navegador lo soporta. */

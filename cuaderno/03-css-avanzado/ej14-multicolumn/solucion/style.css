@@ -1,0 +1,99 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.65;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+
+/* 1) Artículo multicolumna */
+.article {
+  max-width: 80ch;
+  margin-inline: auto;
+  /* Preferimos column-width: el navegador decide cuántas caben */
+  column-width: 28rem; /* ancho preferido de cada columna */
+  column-gap: 2rem; /* espacio entre columnas */
+  column-rule: 1px solid #e5e7eb; /* línea divisoria */
+}
+.span-all {
+  column-span: all;
+} /* títulos a toda anchura */
+
+/* Evitar cortes feos (no 100% fiable en todos los navegadores) */
+.note-list,
+.note-list li {
+  break-inside: avoid;
+}
+
+/* 2) Masonry simple con multicolumn */
+.masonry {
+  max-width: 1100px;
+  margin-inline: auto;
+  column-width: 18rem; /* el navegador decide cuántas */
+  column-gap: 1rem;
+}
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  margin: 0 0 1rem;
+  break-inside: avoid; /* evita que un card se parta */
+  box-shadow: 0 1px 2px rgba(2, 6, 23, 0.06);
+}
+
+/* 3) column-fill demo (altura fija) */
+.fill-demo {
+  border: 1px dashed #cbd5e1;
+  padding: 1rem;
+  height: 220px;
+  overflow: auto;
+  column-count: 2;
+  column-gap: 1rem;
+  column-fill: balance; /* reparte el contenido para equilibrar alturas */
+}
+/* Si quieres comparar:
+.fill-demo.auto { column-fill: auto; }  // llena la primera columna antes de pasar a la segunda
+*/
+
+/* Responsive */
+@media (max-width: 900px) {
+  .article {
+    column-width: 22rem;
+  }
+  .masonry {
+    column-width: 16rem;
+  }
+}
+@media (max-width: 640px) {
+  /* Fuerza una sola columna en móviles para legibilidad */
+  .article,
+  .masonry {
+    column-count: 1;
+  }
+}
+
+/* Notas:
+ - `column-width` => responsivo: el navegador ajusta el número de columnas.
+ - `column-count` => fijo: útil si necesitas un # exacto (puede estrechar el contenido).
+ - `column-span: all` solo afecta a hijos directos del contenedor multicolumna.
+ - `break-inside: avoid` mejora cortes de párrafos/cards; no es garantía.
+ - Multi-column no sustituye a Grid para layouts complejos; es ideal para texto largo o masonry simple. */

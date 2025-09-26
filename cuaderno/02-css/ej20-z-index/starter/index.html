@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS — Ej20 z-index</title>
+    <!-- TODO: enlazar style.css -->
+</head>
+
+<body>
+    <header>
+        <h1>Ejercicio 20: z-index y contextos de apilamiento</h1>
+    </header>
+
+    <main class="panel">
+        <section class="demo demo-a">
+            <h2>A) Superposición básica</h2>
+            <div class="stage">
+                <!-- TODO: tres cajas solapadas -->
+                <!-- <div class="box a">A</div> -->
+                <!-- <div class="box b">B</div> -->
+                <!-- <div class="box c">C</div> -->
+            </div>
+        </section>
+
+        <section class="demo demo-b">
+            <h2>B) “No sube” por stacking context</h2>
+            <!-- TODO: fuera del contexto -->
+            <!-- <div class="outside">Outside</div> -->
+
+            <!-- TODO: contenedor que crea un stacking context -->
+            <!--
+        <div class="ctx">
+          <div class="inside">Inside (z: muy alto)</div>
+        </div>
+        -->
+        </section>
+
+        <section class="demo demo-c">
+            <h2>C) Overlay modal</h2>
+            <!-- TODO: botón falso + overlay (estructura mínima) -->
+            <!-- <button class="btn-open">Abrir modal (falso)</button> -->
+            <!-- <div class="overlay"> <div class="modal">Modal</div> </div> -->
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 — Curso CSS</p>
+    </footer>
+</body>
+
+</html>

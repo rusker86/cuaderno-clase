@@ -1,0 +1,167 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --bg: #0b1220;
+  --fg: #e5e7eb;
+  --muted: #94a3b8;
+  --card: #0f172a;
+  --border: #1f2937;
+  --ring: #38bdf8;
+  --ok: #22c55e;
+  --err: #ef4444;
+  --primary: #7dd3fc;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+.wrap {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 1rem;
+}
+.lead {
+  color: var(--muted);
+}
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+.btn {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 0.65rem;
+  color: var(--fg);
+  background: #111827;
+}
+.btn.btn--ghost {
+  background: transparent;
+}
+
+/* Layout maestro: formulario + resumen (sidebar ≥900px) */
+.layout {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+.panel,
+.summary {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: clamp(1rem, 2vw, 1.25rem);
+}
+@media (min-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr 300px;
+    align-items: start;
+  }
+}
+
+/* FORM GRID */
+.form {
+  display: grid;
+  gap: clamp(0.75rem, 2vw, 1rem);
+  /* TODO: grid 2 col auto-fit + minmax */
+  /* grid-template-columns: repeat(auto-fit, minmax(clamp(14rem, 30vw, 22rem), 1fr)); */
+  grid-auto-flow: dense; /* ayuda a rellenar huecos */
+}
+.field {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.65rem;
+  background: #0f172a;
+  /* TODO: foco y estados con :has() */
+}
+.field label {
+  font-weight: 600;
+}
+.field input,
+.field select,
+.field textarea {
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #334155;
+  border-radius: 0.45rem;
+  background: #0b1220;
+  color: var(--fg);
+}
+.field .hint {
+  color: var(--muted);
+  margin: 0;
+}
+.hint--error {
+  display: none;
+}
+
+/* Estados con :has() (PISTAS) */
+/* .field:has(:focus){ box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 35%, transparent); border-color:#38bdf8; } */
+/* .field:has(:invalid){ border-color: var(--err); }
+.field:has(:invalid) .hint--error{ display:block; color: var(--err); }
+.field:has(:valid){ border-color: var(--ok); } */
+.field :focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Utilidades de span */
+.full {
+  grid-column: 1 / -1;
+} /* ancho completo */
+.col-span-2 {
+  grid-column: span 2;
+}
+.right {
+  justify-self: end;
+  width: 100%;
+} /* ej. CP alineado al hueco */
+
+/* Grupos */
+.group {
+  border: 1px dashed #334155;
+  border-radius: 0.65rem;
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.75rem;
+}
+.group legend {
+  padding: 0 0.35rem;
+  color: var(--muted);
+}
+.group .field {
+  margin: 0;
+}
+
+/* Resumen (sidebar) */
+.summary h2 {
+  margin: 0 0 0.5rem;
+}
+
+/* Denso en móvil (1 columna) */
+@media (max-width: 640px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* (Opcional) subgrid — pista
+@supports (grid-template-columns: subgrid){
+  .form{ grid-template-columns: subgrid; }
+} */
+
+/* Preferencias */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

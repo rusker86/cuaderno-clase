@@ -1,0 +1,58 @@
+:root {
+  --linea: #e5e7eb;
+  --borde: #d1d5db;
+  --panel: #f9fafb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    "Helvetica Neue", Arial, sans-serif;
+  color: #111827;
+  background: #fff;
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+header,
+main,
+footer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-block: 1rem;
+}
+
+.box {
+  border: 1px dashed var(--borde);
+  background: #fff;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.inline-demo {
+  border: 1px dashed var(--borde);
+  background: #fff;
+  padding: 0.25rem 0.5rem;
+  /* ojo: es inline; width/height no deberían aplicarse por defecto */
+}
+
+.rule {
+  height: 1px;
+  background: var(--linea);
+  margin: 1rem 0;
+}
+
+/* PISTA para el alumno:
+   Añade aquí clases como .as-block { display:block } o .as-inline-block { display:inline-block }
+   y prueba a aplicarlas a <span> o <a>. */

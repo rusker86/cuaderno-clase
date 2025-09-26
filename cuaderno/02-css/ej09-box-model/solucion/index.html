@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS — Ej09 Box Model (solución)</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Ejercicio 09: Box Model</h1>
+    </header>
+
+    <main class="panel grid">
+        <section class="demo demo-a">
+            <h2>A) content-box</h2>
+            <div class="box box-a">200px + padding + border = más de 200px</div>
+        </section>
+
+        <section class="demo demo-b">
+            <h2>B) border-box</h2>
+            <div class="box box-b">width total = 200px (incluye padding y border)</div>
+        </section>
+
+        <section class="demo demo-c">
+            <h2>C) margin no suma al tamaño</h2>
+            <div class="box box-c">
+                La caja mide 200px de ancho total (border-box).
+                El <strong>margin</strong> añade espacio fuera de la caja.
+            </div>
+        </section>
+
+        <section class="demo demo-d">
+            <h2>D) Comparativa</h2>
+            <div class="row-compare">
+                <div class="box compare content-box">content-box</div>
+                <div class="box compare border-box">border-box</div>
+            </div>
+            <p style="margin-top:.5rem">
+                Ambas tienen <code>width: 200px; padding:16px; border:8px;</code>.
+                La de la izquierda es más **ancha** porque su total es <code>200 + 16 + 16 + 8 + 8 = 248px</code>.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 — Curso CSS</p>
+    </footer>
+</body>
+
+</html>

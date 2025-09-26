@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS — Ej06 Márgenes (solución)</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Ejercicio 06: Márgenes (margin)</h1>
+    </header>
+
+    <main>
+        <section class="panel" id="basicos">
+            <h2>A) Básicos de margin</h2>
+            <div class="box box-a">A1 — lados sueltos</div>
+            <div class="box box-b">A2 — shorthand (2 valores)</div>
+            <div class="box box-c">A3 — shorthand (4 valores)</div>
+        </section>
+
+        <section class="panel" id="centrado">
+            <h2>B) Centrado con <code>margin: 0 auto</code></h2>
+            <div class="centrada">Caja centrada</div>
+        </section>
+
+        <section class="panel" id="colapso-hermanos">
+            <h2>C) Colapso de márgenes — hermanos</h2>
+            <p>Los márgenes verticales adyacentes colapsan: se toma el mayor (o se combinan si hay negativos).</p>
+            <div class="stack item-1">Hermano 1 (margin-bottom: 24px)</div>
+            <div class="stack item-2">Hermano 2 (margin-top: 32px)</div>
+        </section>
+
+        <section class="panel" id="colapso-contenedor">
+            <h2>D) Colapso con el contenedor</h2>
+
+            <h3>D1) Contenedor sin padding/border (colapsa)</h3>
+            <div class="wrap sin-proteccion">
+                <div class="hijo-con-margen">El margen-top del hijo “sale” del contenedor (colapsa).</div>
+            </div>
+
+            <h3>D2) Contenedor con padding-top (no colapsa)</h3>
+            <div class="wrap con-padding">
+                <div class="hijo-con-margen">El padding-top del contenedor evita el colapso.</div>
+            </div>
+
+            <h3>D3) Contenedor con border-top (no colapsa)</h3>
+            <div class="wrap con-borde">
+                <div class="hijo-con-margen">El border-top del contenedor evita el colapso.</div>
+            </div>
+        </section>
+
+        <section class="panel" id="negativo">
+            <h2>(Opcional) Márgenes negativos</h2>
+            <div class="negativo">margin-top: -20px</div>
+            <p class="nota">Úsalo con cautela: puede solapar elementos o provocar efectos inesperados.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 — Curso CSS</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+/* Base visual mínima */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.5;
+  color: #0f172a;
+  background: #fff;
+}
+h1,
+h2,
+h3 {
+  margin: 0 0 0.5rem;
+}
+.panel {
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+  background: #fff;
+}
+.box {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+/* A) Lados sueltos + shorthand */
+.box-a {
+  /* Lados por separado */
+  margin-top: 16px;
+  margin-right: 8px;
+  margin-bottom: 24px;
+  margin-left: 8px;
+}
+.box-b {
+  /* Shorthand vertical | horizontal */
+  margin: 12px 24px;
+}
+.box-c {
+  /* Shorthand top | right | bottom | left */
+  margin: 4px 8px 16px 32px;
+}
+
+/* B) Centrado con margin: 0 auto
+   Requiere ancho definido y display:block en flujo normal */
+.centrada {
+  width: 240px;
+  margin: 0 auto; /* auto en left/right consume el espacio libre y centra */
+  padding: 1rem;
+  border: 1px dashed #94a3b8;
+  background: #f1f5f9;
+  text-align: center;
+}
+
+/* C) Colapso entre hermanos:
+   .item-1 tiene margin-bottom:24px
+   .item-2 tiene margin-top:32px
+   Al ser márgenes verticales adyacentes, **colapsan** → el espacio visible entre ellas es 32px (el mayor). */
+.stack {
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  padding: 0.5rem;
+}
+.item-1 {
+  margin-bottom: 24px;
+}
+.item-2 {
+  margin-top: 32px;
+}
+
+/* D) Colapso con el contenedor:
+   Si el primer hijo tiene margin-top y el padre NO tiene padding/border,
+   el margen "sube" y aparece fuera del contenedor (colapso). */
+.wrap {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  margin: 1rem 0;
+}
+.hijo-con-margen {
+  margin-top: 24px;
+  background: #e2e8f0;
+  border: 1px solid #94a3b8;
+  padding: 0.5rem;
+}
+
+/* D1) Sin protección: colapsa (no añadimos nada) */
+.sin-proteccion {
+  /* vacío a propósito */
+}
+
+/* D2) Padding-top: evita el colapso */
+.con-padding {
+  padding-top: 1px;
+}
+
+/* D3) Border-top: evita el colapso */
+.con-borde {
+  border-top: 2px solid #94a3b8;
+}
+
+/* (Opcional) Márgenes negativos:
+   Pueden "tirar" elementos hacia arriba/abajo. Útil en ajustes finos,
+   pero puede romper layouts si no se entiende bien. */
+.negativo {
+  margin-top: -20px;
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  padding: 0.5rem;
+}

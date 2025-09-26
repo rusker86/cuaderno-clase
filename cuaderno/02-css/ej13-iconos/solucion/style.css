@@ -1,0 +1,79 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #0f172a;
+  background: #f8fafc;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+.nota {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+/* (Opcional) fuente de iconos — aquí no cargamos archivos reales */
+.if {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  font-size: 1.25rem;
+  color: #0ea5e9;
+  vertical-align: middle;
+}
+.if-home::before {
+  content: "★";
+}
+
+.btn-if {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  cursor: pointer;
+}
+.btn-if:hover {
+  color: #0369a1;
+  border-color: #94a3b8;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* SVG */
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+  stroke: currentColor;
+  vertical-align: middle;
+}
+.icon + .icon {
+  margin-left: 0.75rem;
+}
+
+.icon-wrap:hover {
+  color: #0ea5e9;
+}

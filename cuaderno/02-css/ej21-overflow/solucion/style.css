@@ -1,0 +1,88 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.5;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* Cajas iguales para comparar */
+.box {
+  border: 1px solid #94a3b8;
+  background: #fff;
+  width: 100%;
+  height: 120px;
+  padding: 0.5rem;
+}
+
+/* A) visible (por defecto): no recorta */
+.demo-a {
+  overflow: visible;
+}
+
+/* B) hidden: recorta sin mostrar barras */
+.demo-b {
+  overflow: hidden;
+}
+
+/* C) scroll: fuerza barras en ambos ejes */
+.demo-c {
+  overflow: scroll;
+}
+
+/* D) auto: muestra barras solo cuando hay overflow real */
+.demo-d {
+  overflow: auto;
+}
+
+/* E) Solo scroll horizontal:
+   - nowrap evita saltos de línea para que salga scroll-x
+   - ocultamos el scroll-y */
+.eje-x {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-color: #0ea5e9;
+}
+
+/* F) Solo scroll vertical */
+.eje-y {
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-color: #22c55e;
+}
+
+/* (Opcional) Truncado con ellipsis:
+   Requiere una sola línea + overflow hidden + ancho limitado. */
+.ellipsis {
+  max-width: 320px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px dashed #f59e0b;
+  background: #fff7ed;
+}
+
+/* Notas:
+   - visible: contenido puede sobresalir (ojo con solapes).
+   - hidden: recorta; útil con border-radius para “clippear” imágenes.
+   - scroll: siempre muestra barras; auto: solo cuando hace falta.
+   - overflow-x/y controlan cada eje independientemente.
+   - text-overflow: ellipsis solo funciona en línea única o con técnicas avanzadas para varias líneas. */

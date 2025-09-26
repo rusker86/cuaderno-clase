@@ -1,0 +1,43 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+.card {
+  border: 1px solid #94a3b8;
+  padding: 0.75rem;
+}
+
+/* === A) Conflicto de reglas === */
+/* p { } */
+/* .card p { } */
+/* #especial { } */
+
+/* Inline style en HTML gana sobre selectores, salvo que otra regla tenga !important */
+
+/* === B) !important === */
+/* .caja { background: blue; } */
+/* div.caja { background: green; } */
+/* .caja { background: red !important; } */
+
+/* === (Opcional) Mal uso === */
+/* * { margin:0 !important; } */

@@ -1,0 +1,112 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.nota {
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.box {
+  width: 160px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  background: #e0f2fe;
+  color: #0f172a;
+  font-weight: 700;
+  outline: 1px dashed #94a3b8;
+}
+
+/* A) Translate */
+.t {
+  transform: translate(20px, 10px);
+}
+
+/* B) Scale + origin */
+.s {
+  transform: scale(1.2);
+  transform-origin: top left;
+}
+
+/* C) Rotate */
+.r {
+  transform: rotate(15deg);
+  box-shadow: 0 6px 12px rgba(2, 6, 23, 0.12);
+}
+
+/* D) Skew */
+.k {
+  transform: skew(10deg, 0deg);
+  border: 2px solid #0ea5e9;
+  background: #fff;
+}
+
+/* E) Composición y orden */
+.row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.combo {
+  background: #bbf7d0;
+}
+.v1 {
+  transform: translate(30px, 0) rotate(20deg);
+} /* mueve y luego gira en el nuevo sistema */
+.v2 {
+  transform: rotate(20deg) translate(30px, 0);
+} /* gira el eje y luego traslada en el eje ya rotado */
+
+/* (Opcional) Hover con transición */
+.card {
+  width: 220px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(2, 6, 23, 0.16);
+}
+.card:focus {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+}
+
+/* Notas:
+   - transform aplica en la capa de composición (no recalcula layout).
+   - transform-origin cambia el pivote (por defecto center center).
+   - El orden importa porque cada función opera sobre el sistema de coordenadas resultante de la anterior. */

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ej25 — Accesibilidad mínima (A11y)</title>
+</head>
+
+<body>
+    <!-- TODO: Enlace de salto al contenido principal (#contenido) -->
+
+    <header>
+        <h1><!-- TODO: Título principal único --></h1>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#articulos">Artículos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="contenido">
+        <section id="inicio">
+            <h2><!-- TODO: Encabezado de sección --></h2>
+
+            <!-- TODO: Imagen informativa con alt descriptivo -->
+            <!-- TODO: Imagen decorativa con alt="" y comentario justificando -->
+
+            <!-- Bloque alcanzable con teclado para lectura secuencial -->
+            <!-- TODO: Añade tabindex="0" y un texto corto -->
+            <div><!-- … --></div>
+        </section>
+
+        <section id="articulos">
+            <h2>Artículos</h2>
+            <article>
+                <h3><!-- TODO: Subtítulo del artículo --></h3>
+                <p><!-- TODO: Párrafo --></p>
+                <p>
+                    <a href="#contacto">Ir a contacto</a>
+                </p>
+            </article>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+
+            <!-- TODO: Formulario accesible -->
+            <!-- Requisitos: label/for, aria-describedby para ayuda, y aria-label solo si no hay label posible -->
+            <form action="#" method="post">
+                <p>
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+                </p>
+
+                <p id="ayuda-email">
+                    Introduce un correo válido. Lo usaremos para responderte.
+                </p>
+                <p>
+                    <label for="email">Correo electrónico</label>
+                    <input id="email" name="email" type="email" aria-describedby="ayuda-email" required />
+                </p>
+
+                <!-- Ejemplo de control sin label visible: usar aria-label con comentario -->
+                <p>
+                    <!-- TODO: Justificar por qué no hay label visible (p.ej., icono dentro de un botón) -->
+                    <button type="submit" aria-label="Enviar formulario">
+                        Enviar
+                    </button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 — Sitio de ejemplo accesible</p>
+    </footer>
+</body>
+
+</html>

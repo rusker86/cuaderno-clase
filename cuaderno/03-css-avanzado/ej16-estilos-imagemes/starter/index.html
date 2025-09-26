@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Avanzado — Ej16 Estilos para imágenes</title>
+    <!-- TODO: enlazar style.css -->
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+
+<body>
+    <header>
+        <h1>Ej16: Estilos para imágenes</h1>
+    </header>
+
+    <main class="panel">
+        <section>
+            <h2>1) Imagen fluida</h2>
+            <div class="content">
+                <!-- TODO: que la imagen no desborde el contenedor -->
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop"
+                    alt="Paisaje de montaña">
+            </div>
+        </section>
+
+        <section>
+            <h2>2) Contenedor con proporción fija</h2>
+            <div class="row">
+                <!-- TODO: 16/9 con object-fit: cover -->
+                <!-- <figure class="ratio ratio-16x9">
+               <img loading="lazy" decoding="async"
+                    src="https://images.unsplash.com/photo-1495567720989-cebdbdd97913?q=80&w=1600&auto=format&fit=crop"
+                    alt="Persona trabajando con portátil">
+             </figure> -->
+                <!-- TODO: 1/1 cuadrado -->
+                <!-- <figure class="ratio ratio-1x1">
+               <img loading="lazy" decoding="async"
+                    src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=1600&auto=format&fit=crop"
+                    alt="Pizarra con bocetos">
+             </figure> -->
+            </div>
+        </section>
+
+        <section>
+            <h2>3) cover vs contain + object-position</h2>
+            <div class="row">
+                <!-- TODO: .cover y .contain con misma imagen -->
+                <!-- <div class="box"><img class="demo cover" src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="Ilustración abstracta"></div>
+               <div class="box"><img class="demo contain" src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="Ilustración abstracta"></div> -->
+            </div>
+            <!-- Pista: juega con object-position: 50% 20%; -->
+        </section>
+
+        <section>
+            <h2>4) Figure + figcaption</h2>
+            <!-- TODO: figure con pie -->
+            <!-- <figure class="photo">
+             <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop"
+                  alt="Ciudad al anochecer">
+             <figcaption>Ciudad al anochecer — © Autor</figcaption>
+           </figure> -->
+        </section>
+
+        <section>
+            <h2>5) Avatares / formas</h2>
+            <div class="row">
+                <!-- TODO: avatares S/M/L -->
+                <!-- <img class="avatar avatar--sm" src="https://i.pravatar.cc/100?img=5" alt="Avatar Ana"> -->
+                <!-- <img class="avatar avatar--md" src="https://i.pravatar.cc/100?img=12" alt="Avatar Luis"> -->
+                <!-- <img class="avatar avatar--lg" src="https://i.pravatar.cc/100?img=22" alt="Avatar Mei"> -->
+            </div>
+        </section>
+
+        <section>
+            <h2>6) Filtros y superposición</h2>
+            <!-- TODO: card con overlay y filtro en hover -->
+            <!-- <figure class="card">
+             <img class="card__img"
+                  src="https://images.unsplash.com/photo-1470115636492-6d2b56f9146e?q=80&w=1600&auto=format&fit=crop"
+                  alt="Bosque con niebla">
+             <figcaption class="card__cap">Explorar</figcaption>
+           </figure> -->
+        </section>
+
+        <section>
+            <h2>(Opcional) 7) image-set() en background</h2>
+            <!-- TODO: bloque con background-image: image-set(1x/2x) + blend -->
+            <!-- <div class="hero">Texto superpuesto</div> -->
+        </section>
+    </main>
+
+    <footer>
+        <p>© Curso CSS Avanzado</p>
+    </footer>
+</body>
+
+</html>

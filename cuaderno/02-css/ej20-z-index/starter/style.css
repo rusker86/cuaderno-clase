@@ -1,0 +1,92 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.5;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+.demo {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+
+.stage {
+  position: relative;
+  height: 200px;
+  border: 1px dashed #cbd5e1;
+}
+
+/* Cajas de ejemplo */
+.box {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #0f172a;
+}
+.a {
+  background: #bae6fd;
+  top: 24px;
+  left: 24px;
+}
+.b {
+  background: #bbf7d0;
+  top: 48px;
+  left: 64px;
+}
+.c {
+  background: #fde68a;
+  top: 72px;
+  left: 104px;
+}
+
+/* === A) TODO: asignar z-index para ordenar A/B/C === */
+/* .a { z-index: 1; } */
+/* .b { z-index: 2; } */
+/* .c { z-index: 3; } */
+
+/* === B) Stacking context === */
+/* La caja .outside estará por encima/por debajo en función de su propio contexto */
+.outside {
+  width: 180px;
+  height: 80px;
+  background: #fecaca;
+  border: 1px solid #ef4444;
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.75rem;
+}
+
+/* Contenedor que CREA contexto de apilamiento (elige UNA forma y explícalo en comentario) */
+/* .ctx { transform: translateZ(0); /\* o opacity:.999; o filter:blur(0); *\/ border:1px solid #94a3b8; padding: .5rem; position: relative; } */
+/* .inside { background:#c7d2fe; padding:.5rem; /\* prueba z-index muy alto *\/ /\* z-index: 9999; *\/ position: absolute; top: 0; right: 0; } */
+
+/* Comentario esperado: .inside NO puede sobrepasar a .outside si su padre (.ctx) está por debajo en el árbol de apilamiento. z-index compite SOLO dentro del mismo contexto. */
+
+/* === C) Overlay modal === */
+/* .overlay { position: fixed; inset: 0; background: rgba(15, 23, 42, .5); /\* backdrop *\/ /\* z-index: 1000; *\/ display:grid; place-items:center; } */
+/* .modal { background:#fff; padding:1rem 1.25rem; border-radius:.5rem; min-width: 260px; text-align:center; } */
+/* .btn-open { padding:.5rem .75rem; border:1px solid #94a3b8; background:#fff; } */
+
+/* (Opcional) z-index negativo: puede quedar tapado por el fondo del stacking context actual */
+/* .a { z-index: -1; } */
+
+/* Guía:
+   - z-index ordena capas dentro del MISMO contexto de apilamiento.
+   - Crean stacking context: elementos posicionados con z-index != auto, opacity<1, transform, filter, will-change, isolation:isolate, etc.
+   - En hijos flex/grid, z-index puede aplicarse aunque position sea static; aun así NO rompe las reglas de contexto. */

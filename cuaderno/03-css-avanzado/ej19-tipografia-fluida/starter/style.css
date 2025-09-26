@@ -1,0 +1,125 @@
+/* Base mínima y tokens */
+* {
+  box-sizing: border-box;
+}
+:root {
+  /* Espaciado */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+
+  /* Línea base */
+  --lh: 1.6; /* texto */
+  --lh-h: 1.2; /* headings */
+
+  /* === Escala modular (PISTAS): usa clamp(min, fluid, max) ===
+     Sugerencia de ratio ≈ 1.22. Ajusta min/max según diseño. */
+  /* Ejemplo:
+  --step--2: clamp(.75rem, calc(.68rem + .2vw), .875rem);
+  --step--1: clamp(.875rem, calc(.8rem + .35vw), 1rem);
+  --step-0:  clamp(1rem,   calc(.95rem + .5vw), 1.125rem);
+  --step-1:  clamp(1.25rem, calc(1.1rem + .8vw), 1.5rem);
+  --step-2:  clamp(1.6rem,  calc(1.3rem + 1.2vw), 2rem);
+  --step-3:  clamp(2rem,    calc(1.6rem + 1.6vw), 2.5rem);
+  --step-4:  clamp(2.5rem,  calc(2rem + 2vw), 3rem);
+  */
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+  line-height: var(--lh);
+}
+.wrap {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: var(--space-2);
+}
+
+.site-header {
+  padding: var(--space-2);
+}
+.lead {
+  /* tamaño intermedio entre body y h2 */ /* font-size: var(--step-0); */
+  color: #475569;
+  margin: 0.25rem 0 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0 0 var(--space-2);
+}
+h1 {
+  /* font-size: var(--step-4); */
+  line-height: var(--lh-h);
+  letter-spacing: -0.01em;
+}
+h2 {
+  /* font-size: var(--step-2); */
+  line-height: var(--lh-h);
+  letter-spacing: -0.005em;
+}
+h3 {
+  /* font-size: var(--step-1); */
+  line-height: var(--lh-h);
+}
+
+.scale {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.preview {
+  display: inline-block; /* font-size se define con clases step--n */
+  color: #0f172a;
+}
+
+/* Clases de vista previa (aplica cada token) */
+/* .step--2 { font-size: var(--step--2); }
+.step--1 { font-size: var(--step--1); }
+.step-0  { font-size: var(--step-0);  }
+.step-1  { font-size: var(--step-1);  }
+.step-2  { font-size: var(--step-2);  }
+.step-3  { font-size: var(--step-3);  }
+.step-4  { font-size: var(--step-4);  } */
+
+/* Card de ejemplo */
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: var(--space-3);
+  max-width: 60ch;
+}
+.card .meta {
+  color: #64748b; /* font-size: var(--step--1); */
+  margin-top: -0.25rem;
+}
+
+/* (Opcional) leading-trim — experimental */
+.trimmed {
+  /* leading-trim: both;        */
+  /* text-edge: cap alphabetic; */
+}
+
+/* A11y */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
+  }
+}
+
+/* Notas:
+ - Usa clamp() para cada paso de escala.
+ - Mantén line-height estable para ritmo vertical.
+ - leading-trim es experimental; no rompas layout si no se soporta. */

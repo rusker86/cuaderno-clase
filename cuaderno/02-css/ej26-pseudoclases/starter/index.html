@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS — Ej26 Pseudoclases</title>
+    <!-- TODO: enlazar style.css -->
+</head>
+
+<body>
+    <header>
+        <h1>Ejercicio 26: Pseudoclases</h1>
+        <!-- (Opcional) navegación interna para :target -->
+        <!-- <nav><a href="#seccion-objetivo">Ir a objetivo</a></nav> -->
+    </header>
+
+    <main class="panel">
+        <section id="estados">
+            <h2>1) Estados interactivos</h2>
+
+            <div class="links-botones">
+                <!-- TODO: enlaces y botones para :hover, :focus, :active -->
+                <!-- <a class="btn-link" href="#">Un enlace</a> -->
+                <!-- <button class="btn">Un botón</button> -->
+            </div>
+
+            <form class="mini-form" action="#">
+                <!-- TODO: input normal -->
+                <!-- <label>Nombre <input type="text" placeholder="Escribe tu nombre"></label> -->
+
+                <!-- TODO: input deshabilitado -->
+                <!-- <label>Deshabilitado <input type="text" disabled value="No editable"></label> -->
+
+                <!-- TODO: checkbox con :checked -->
+                <!-- <label class="check"><input type="checkbox"> Acepto</label> -->
+
+                <!-- (Opcional) required/optional -->
+                <!-- <label>Email (requerido) <input type="email" required></label> -->
+            </form>
+        </section>
+
+        <section id="estructurales">
+            <h2>2) Pseudoclases estructurales</h2>
+
+            <div class="bloque-lista">
+                <h3>Lista</h3>
+                <!-- TODO: ul con 6 li -->
+                <!--
+          <ul class="lista">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+            <li>Item 6</li>
+          </ul>
+          -->
+            </div>
+
+            <div class="bloque-mix">
+                <h3>Mixto</h3>
+                <!-- TODO: mezcla de elementos (p, div, p, p, span...) para nth-of-type / :not -->
+                <!--
+          <div class="mix">
+            <p>Parrafo A</p>
+            <div>Bloque intermedio</div>
+            <p>Parrafo B</p>
+            <p class="excluir">Parrafo C (excluir con :not)</p>
+            <span>Un span</span>
+            <p>Parrafo D</p>
+          </div>
+          -->
+            </div>
+
+            <div class="bloque-empty">
+                <h3>Empty</h3>
+                <!-- TODO: caja vacía para :empty -->
+                <!-- <div class="caja-vacia"></div> -->
+            </div>
+        </section>
+
+        <!-- (Opcional) destino para :target -->
+        <!--
+      <section id="seccion-objetivo">
+        <h2>Objetivo (:target)</h2>
+        <p>Esta sección cambia cuando se enfoca por URL con #seccion-objetivo</p>
+      </section>
+      -->
+    </main>
+
+    <footer>
+        <p>© 2025 — Curso CSS</p>
+    </footer>
+</body>
+
+</html>

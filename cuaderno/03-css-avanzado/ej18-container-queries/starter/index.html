@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Avanzado — Ej18 Container Queries</title>
+    <!-- TODO: enlazar style.css -->
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>Ej18: Media queries de contenedor</h1>
+        <p class="lead">Misma <code>.card</code>, distintos anchos de contenedor → comportamientos diferentes.</p>
+    </header>
+
+    <main class="wrap">
+        <section>
+            <h2>Región estrecha</h2>
+            <!-- TODO: .region con container-type y width fija -->
+            <div class="region region--narrow">
+                <article class="card">
+                    <img class="card__img"
+                        src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop"
+                        alt="Auriculares de diadema de color negro">
+                    <div class="card__body">
+                        <h3 class="card__title">Auriculares ZX</h3>
+                        <p class="card__text">Graves potentes, cancelación de ruido y 30h de batería.</p>
+                        <p class="card__meta">Envío 24–48h</p>
+                        <a class="btn" href="#">Comprar</a>
+                    </div>
+                    <!-- pista: .card__aside aparece en card ancha -->
+                    <aside class="card__aside">
+                        <div class="price">89,00 €</div>
+                    </aside>
+                </article>
+
+                <article class="card">
+                    <img class="card__img"
+                        src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1200&auto=format&fit=crop"
+                        alt="Teclado mecánico retroiluminado">
+                    <div class="card__body">
+                        <h3 class="card__title">Teclado MK</h3>
+                        <p class="card__text">Switches táctiles y keycaps PBT de doble inyección.</p>
+                        <p class="card__meta">Stock limitado</p>
+                        <a class="btn" href="#">Comprar</a>
+                    </div>
+                    <aside class="card__aside">
+                        <div class="price">119,00 €</div>
+                    </aside>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>Región ancha</h2>
+            <div class="region region--wide">
+                <!-- TODO: misma .card debe escalar layout cuando el contenedor alcance 480px y 700px -->
+                <!-- Puedes duplicar una de las anteriores para comparar -->
+                <article class="card">
+                    <img class="card__img"
+                        src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop"
+                        alt="Auriculares de diadema de color negro">
+                    <div class="card__body">
+                        <h3 class="card__title">Auriculares ZX</h3>
+                        <p class="card__text">Graves potentes, cancelación de ruido y 30h de batería.</p>
+                        <p class="card__meta">Envío 24–48h</p>
+                        <a class="btn" href="#">Comprar</a>
+                    </div>
+                    <aside class="card__aside">
+                        <div class="price">89,00 €</div>
+                    </aside>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>(Opcional) Variante compacta con style query</h2>
+            <!-- TODO: marcar --variant: "compact" y alterar estilos dentro de @container style(...) -->
+            <!-- <div class="region region--wide">
+             <article class="card card--compact" style="--variant: 'compact';">
+               ...
+             </article>
+           </div> -->
+            <p class="hint">Si tu navegador no soporta <code>@container style()</code>, esta parte se ignora sin romper
+                nada.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <small>© Curso CSS Avanzado</small>
+    </footer>
+</body>
+
+</html>

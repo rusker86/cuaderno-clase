@@ -1,0 +1,85 @@
+/* Base para ver las secciones */
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+h1,
+h2 {
+  margin: 0 0 0.5rem;
+}
+
+.demo {
+  min-height: 40vh;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #0f172a;
+}
+
+/* A) Color de fondo sólido */
+.demo-a {
+  /* background-color aplica un color plano al área del elemento */
+  background-color: #e0f2fe; /* azul muy claro */
+}
+
+/* B) Imagen con repeat */
+.demo-b {
+  /* background-image establece la imagen de fondo */
+  background-image: url("../images/patron.png");
+  /* repeat por defecto repite en X e Y */
+  background-repeat: repeat;
+  /* shorthand posible:
+     background: url("../images/patron.png") repeat; */
+}
+
+/* C) Imagen sin repetir y posicionada */
+.demo-c {
+  background-image: url("../images/icono.png");
+  background-repeat: no-repeat; /* no repetir */
+  background-position: right bottom; /* esquina inf. derecha */
+  /* También podrías usar: background-position: 95% 95%; */
+  /* color de apoyo para contrastar la imagen suelta */
+  background-color: #fef9c3; /* amarillo pálido */
+}
+
+/* D) cover vs contain (aquí usamos cover) */
+.demo-d {
+  background-image: url("../images/foto-800.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; /* cubre el contenedor, puede recortar */
+  background-position: center; /* centra la imagen */
+  /* Para probar contain, cambia a:
+     background-size: contain; background-color de apoyo; */
+}
+
+/* E) Fondo fijo (efecto simple tipo parallax) */
+.demo-e {
+  background-image: url("../images/foto-800.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* el fondo se fija a la ventana */
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  /* Nota: en algunos móviles, 'fixed' puede degradarse a 'scroll' */
+}
+
+/* F) Múltiples fondos (opcional) */
+.demo-f {
+  /* De arriba (primero) a abajo (último):
+     1) icono colocado en la esquina
+     2) patrón que se repite
+  */
+  background-image: url("../images/icono.png"), url("../images/patron.png");
+  background-repeat: no-repeat, repeat;
+  background-position: 1rem 1rem,
+    /* icono en la esquina superior izquierda */ 0 0; /* patrón desde el origen */
+  background-color: #fafafa; /* color de respaldo bajo los fondos */
+}
+
+/* Ejemplo de shorthand completo (comentado):
+.demo-c {
+  background: #fef9c3 url("../images/icono.png") right bottom / auto no-repeat scroll;
+}
+*/

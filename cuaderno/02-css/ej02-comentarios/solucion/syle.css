@@ -1,0 +1,37 @@
+/* === Estilos globales === */
+/* Decidimos usar una tipografía sans-serif por ser más legible en pantalla */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+/* === Estilos de cabecera === */
+/* Probamos varios colores. Finalmente usamos un gris claro para un look más neutro */
+header {
+  background-color: #e5e7eb; /* gris claro */
+  padding: 1rem;
+}
+
+/* === Estilos de títulos === */
+h1 {
+  color: darkgreen; /* color elegido por contraste y legibilidad */
+  text-align: center;
+}
+
+/* === Estilos de párrafos === */
+/* Por defecto usamos #333 en lugar de negro puro para mayor suavidad en pantalla */
+p {
+  color: #333;
+  font-size: 1rem;
+}
+
+/* TODO: mejorar tipografía con Google Fonts en próximos ejercicios */
+
+/* Nota técnica:
+   Hemos comentado esta propiedad para ver el efecto sin ella.
+   Si queremos subrayado en los párrafos, descomenta la línea: */
+/*
+p {
+  text-decoration: underline;
+}
+*/

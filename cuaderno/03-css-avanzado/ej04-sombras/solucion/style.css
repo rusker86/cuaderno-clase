@@ -1,0 +1,111 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+article,
+.box,
+.inset-demo {
+  background: #fff;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+/* A) Múltiples sombras + elevación */
+.elev {
+  padding: 1rem;
+  width: 260px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 1px 2px rgba(2, 6, 23, 0.06),
+    /* ambient cercana */ 0 6px 16px rgba(2, 6, 23, 0.1); /* direccional */
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.elev:hover,
+.elev:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(2, 6, 23, 0.08), 0 10px 24px rgba(2, 6, 23, 0.16);
+}
+.elev:focus {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+} /* foco visible */
+
+/* B) Sombra interior */
+.inset-demo {
+  padding: 1rem;
+  width: 260px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  box-shadow: inset 0 6px 12px rgba(2, 6, 23, 0.12);
+}
+
+/* C) Spread y dureza: compara */
+.box {
+  width: 220px;
+  height: 100px;
+  margin: 0.5rem 0;
+  display: grid;
+  place-items: center;
+}
+.blur-only {
+  box-shadow: 0 8px 16px 0 rgba(2, 6, 23, 0.18);
+} /* spread 0 → borde suave */
+.with-spread {
+  box-shadow: 0 6px 10px 6px rgba(2, 6, 23, 0.1);
+} /* spread 6px → halo más ancho y “duro” */
+
+/* D) text-shadow sutil (legible) */
+.title-shadow {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  text-shadow: 0 1px 1px rgba(2, 6, 23, 0.12);
+}
+
+/* E) drop-shadow (contorno real) vs box-shadow (caja) */
+.img-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.png {
+  width: 140px;
+  height: auto;
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.boxsh {
+  box-shadow: 0 8px 16px rgba(2, 6, 23, 0.15);
+} /* rectangular */
+.dropsh {
+  filter: drop-shadow(0 8px 16px rgba(2, 6, 23, 0.25));
+} /* sigue el alpha */
+
+/* Notas:
+   - box-shadow: x y blur spread color [inset].
+   - Varias sombras separadas por comas; la primera se dibuja “encima”.
+   - drop-shadow() toma el canal alfa tras renderizar (ideal para PNG/SVG con huecos).
+   - Rendimiento: evita blurs gigantes y animaciones con sombras costosas en listas largas. */

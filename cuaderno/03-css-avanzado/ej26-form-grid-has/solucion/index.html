@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Avanzado — Ej26 Form Grid + :has() (solución)</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>Ej26: Formularios responsivos con Grid + :has()</h1>
+        <p class="lead">Patrones de 1–2–3 columnas, spans y estados.</p>
+    </header>
+
+    <main class="wrap layout">
+        <section class="panel">
+            <h2>Datos de contacto</h2>
+
+            <form class="form" novalidate>
+                <div class="field">
+                    <label for="name">Nombre *</label>
+                    <input id="name" name="name" required minlength="2" placeholder="Tu nombre">
+                    <p class="hint hint--error">Mínimo 2 caracteres.</p>
+                </div>
+
+                <div class="field">
+                    <label for="surname">Apellidos *</label>
+                    <input id="surname" name="surname" required minlength="2" placeholder="Tus apellidos">
+                    <p class="hint hint--error">Mínimo 2 caracteres.</p>
+                </div>
+
+                <div class="field full">
+                    <label for="email">Email *</label>
+                    <input id="email" name="email" type="email" required placeholder="nombre@dominio.com">
+                    <p class="hint hint--error">Formato de email inválido.</p>
+                </div>
+
+                <fieldset class="group">
+                    <legend>Dirección</legend>
+
+                    <div class="field col-span-2">
+                        <label for="street">Calle y número *</label>
+                        <input id="street" name="street" required placeholder="C/ Ejemplo 123, 4ºA">
+                        <p class="hint hint--error">Campo obligatorio.</p>
+                    </div>
+
+                    <div class="field">
+                        <label for="city">Ciudad *</label>
+                        <input id="city" name="city" required placeholder="Ciudad">
+                        <p class="hint hint--error">Campo obligatorio.</p>
+                    </div>
+
+                    <div class="field right">
+                        <label for="zip">CP *</label>
+                        <input id="zip" name="zip" required pattern="\\d{5}" inputmode="numeric" placeholder="28080">
+                        <p class="hint hint--error">Introduce 5 dígitos.</p>
+                    </div>
+                </fieldset>
+
+                <div class="field">
+                    <label for="plan">Plan</label>
+                    <select id="plan" name="plan">
+                        <option>Básico</option>
+                        <option selected>Pro</option>
+                        <option>Empresa</option>
+                    </select>
+                    <p class="hint">Elige un plan.</p>
+                </div>
+
+                <div class="field full">
+                    <label for="notes">Notas</label>
+                    <textarea id="notes" name="notes" rows="4" placeholder="Información adicional..."></textarea>
+                    <p class="hint">Opcional.</p>
+                </div>
+
+                <div class="actions full">
+                    <button class="btn" type="submit">Continuar</button>
+                    <button class="btn btn--ghost" type="reset">Limpiar</button>
+                </div>
+            </form>
+        </section>
+
+        <aside class="summary" aria-live="polite">
+            <h2>Resumen</h2>
+            <ul>
+                <li>Plan: <strong>Pro</strong></li>
+                <li>Total estimado: <strong>29,00 €/mes</strong></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <small>© Curso CSS Avanzado</small>
+    </footer>
+</body>
+
+</html>

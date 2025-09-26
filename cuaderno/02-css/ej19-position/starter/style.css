@@ -1,0 +1,36 @@
+/* Base mínima */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; color:#0f172a; line-height:1.5; background:#f8fafc; }
+h1 { margin: 1rem; }
+.panel { padding: 1rem; display: grid; gap: 1.25rem; }
+.demo { background:#fff; border:1px solid #e5e7eb; padding: 1rem; }
+.box { background:#e0f2fe; border:1px solid #94a3b8; padding:.5rem .75rem; display:inline-block; }
+.contenido-largo, .lorem { height: 40vh; overflow:auto; border:1px dashed #cbd5e1; padding: .5rem; }
+
+/* === A) TODO: static === */
+/* .box-static { position: static; top: 20px; left: 20px; } */
+/* Nota: en static, top/left/etc. NO tienen efecto. */
+
+/* === B) TODO: relative === */
+/* .box-relative { position: relative; top: -10px; left: 10px; } */
+/* Nota: se mueve desde su posición original, pero el hueco queda reservado. */
+
+/* === C) TODO: absolute dentro de contenedor relativo === */
+/*
+.contenedor-rel { position: relative; min-height: 140px; background:#f1f5f9; border:1px solid #cbd5e1; padding:1rem; }
+.abs {
+  position: absolute;
+  top: .5rem; right: .5rem;   /\* prueba también bottom/left *\/
+  background:#fde68a; border:1px solid #f59e0b; padding:.25rem .5rem;
+}
+*/
+/* Nota: el **containing block** de .abs es el primer ancestro **positioned** (no-static),
+   en este caso .contenedor-rel con position:relative. */
+
+/* === D) TODO: fixed === */
+/* .fixed { position: fixed; bottom: 1rem; right: 1rem; background:#bbf7d0; border:1px solid #22c55e; padding:.5rem; } */
+/* Nota: fixed se posiciona relativo a la **ventana** (viewport) y no se mueve al hacer scroll. */
+
+/* === E) TODO: sticky === */
+/* .sticky-head { position: sticky; top: 0; background:#c7d2fe; } */
+/* Nota: sticky se comporta como relative hasta que alcanza top, l*

@@ -1,0 +1,60 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+html {
+  /* prueba cambiar el root: 16px por defecto */
+  /* font-size: 16px; */
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+.box {
+  border: 1px solid #94a3b8;
+  background: #fff;
+  padding: 1rem;
+  margin: 0.25rem 0;
+}
+
+/* === A) TODO: px vs rem === */
+/* .px { font-size:16px; padding:16px; width:320px; } */
+/* .rem { font-size:1rem; padding:1rem; width:20rem; } */
+
+/* === B) TODO: em vs rem === */
+/* .padre { font-size: 20px; border:1px dashed #cbd5e1; padding:.5rem; } */
+/* .hijo-em  { font-size: 1.2em;  }  /\* relativo al padre (20px * 1.2) *\/ */
+/* .hijo-rem { font-size: 1.2rem; }  /\* relativo al root (html) *\/ */
+
+/* === C) TODO: % === */
+/* .contenedor { width: 400px; border:1px solid #94a3b8; } */
+/* .barra { width: 60%; height: 12px; background:#0ea5e9; } */
+
+/* === D) TODO: vw / vh === */
+/* .w-50vw { width: 50vw; height: 80px; background:#bbf7d0; } */
+/* .h-30vh { height: 30vh; background:#fde68a; } */
+
+/* === E) (Opcional) vmin/vmax + svh/lvh/dvh === */
+/* .vmin { width: 30vmin; height: 30vmin; background:#c7d2fe; } */
+/* .lvh { height: 50lvh; background:#e0f2fe; } /\* compara con vh en móviles *\/ */
+
+/* === F) (Opcional) lh === */
+/* .tipo { line-height: 1.5; } */
+/* .tipo .usa-lh { padding: 1lh; border:1px dashed #94a3b8; } */
+
+/* Comentarios:
+   - em depende del font-size del padre; rem del font-size del html (root).
+   - % es relativo al contenedor (para width) y a otras propiedades según el contexto.
+   - vw/vh toman el viewport; en móviles, svh/lvh/dvh gestionan barras del navegador.
+   - lh toma el line-height computado del elemento. */

@@ -1,0 +1,158 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --bg: #0b1220;
+  --fg: #e5e7eb;
+  --muted: #94a3b8;
+  --card: #0f172a;
+  --border: #1e293b;
+  --primary: #7dd3fc;
+  --overlay: rgba(2, 6, 23, 0.55);
+}
+html,
+body {
+  height: 100%;
+}
+body.page {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+.wrap {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 1rem;
+}
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+.btn {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  color: var(--fg);
+  background: transparent;
+}
+.btn--ghost {
+  background: transparent;
+}
+
+/* Header + Drawer */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--card);
+  z-index: 10;
+}
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.drawer {
+  /* TODO: off-canvas lateral (cerrado por defecto) */
+  /* position: fixed; inset: 0 auto 0 0; width: 260px; transform: translateX(-100%); */
+  /* transition: transform .2s ease; background: var(--card); border-right:1px solid var(--border); padding:1rem; */
+  display: flex;
+  gap: 0.5rem;
+}
+.drawer a {
+  padding: 0.35rem 0.55rem;
+  border-radius: 0.5rem;
+}
+
+/* Habilita el empuje/overlay cuando #nav-toggle está checked */
+/* .page:has(#nav-toggle:checked) .drawer{ transform: none; } */
+/* .page:has(#nav-toggle:checked)::after{ content:""; position:fixed; inset:0; background: var(--overlay); } */
+
+/* Modal (target) */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+}
+.modal:target {
+  display: block;
+}
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay);
+}
+.modal__card {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  max-width: 560px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  /* tip: puedes animar opacidad/transform suavemente */
+}
+
+/* Toast (target) */
+.toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  /* TODO: visible solo con #ok:target */
+  /* opacity: 0; pointer-events:none; transform: translateY(10px); */
+}
+.toast__close {
+  margin-left: 0.5rem;
+}
+
+/* Tabs (:checked) */
+.tabs {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  background: var(--card);
+}
+.tabs__labels {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.tabs__labels label {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.tabs__panels {
+  margin-top: 0.75rem;
+}
+.panel {
+  display: none;
+}
+
+/* pistas: usar los hermanos + y :checked para activar estilos y paneles */
+/* #t1:checked ~ .tabs__labels label[for="t1"]{ background:#0ea5e930; border-color:#0ea5e9; }
+#t1:checked ~ .tabs__panels #p1{ display:block; }
+#t2:checked ~ .tabs__labels label[for="t2"]{ background:#0ea5e930; border-color:#0ea5e9; }
+#t2:checked ~ .tabs__panels #p2{ display:block; }
+#t3:checked ~ .tabs__labels label[for="t3"]{ background:#0ea5e930; border-color:#0ea5e9; }
+#t3:checked ~ .tabs__panels #p3{ display:block; } */
+
+/* Preferencias */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,67 @@
+/* =========================================================
+   Opción A: @font-face con archivos locales
+   (si tienes los archivos en /fonts, descomenta y usa "InterCustom")
+========================================================= */
+/*
+@font-face {
+  font-family: "InterCustom";
+  src: url("../fonts/Inter-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+html {
+  /* Ajusta si quieres experimentar con rems (16px por defecto) */
+  /* font-size: 16px; */
+}
+
+body {
+  margin: 0;
+  /* Si activas @font-face de arriba, pon "InterCustom" primero. 
+     Si prefieres Google Fonts (Inter), cambia la pila a: "Inter", system-ui, ... */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6; /* unitless: escala con el tamaño de fuente del elemento */
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+h1 {
+  margin: 1rem;
+  /* Shorthand font: style weight size/line-height family */
+  font: italic 700 2rem/1.2 system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+.panel {
+  padding: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem; /* 24px si root=16px */
+  line-height: 1.25; /* 30px si font-size=24px */
+  margin: 0 0 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+} /* 16px */
+.small {
+  font-size: 0.875rem;
+} /* 14px aprox */
+.italic {
+  font-style: italic;
+}
+.bold {
+  font-weight: 700;
+}
+.smallcaps {
+  font-variant: small-caps;
+}
+
+/* Notas:
+   - Pila de fuentes: define preferida + alternativas + familia genérica (sans-serif).
+   - rem (root em) se basa en html; em en el padre inmediato.
+   - font-display: swap mejora percepción de carga (evita “texto invisible”). */

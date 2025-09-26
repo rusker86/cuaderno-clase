@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Avanzado — Ej07 Transformaciones 3D</title>
+    <!-- TODO: enlazar style.css -->
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+
+<body>
+    <header>
+        <h1>Ej07: Transformaciones 3D</h1>
+    </header>
+
+    <main class="panel">
+        <section class="demoA">
+            <h2>A) Rotación 3D con perspectiva (contenedor)</h2>
+            <div class="escena">
+                <!-- TODO: añadir .box3d.a y .box3d.b -->
+                <!-- <div class="box3d a">rotateX</div>
+               <div class="box3d b">rotateY</div> -->
+            </div>
+        </section>
+
+        <section class="demoB">
+            <h2>B) perspective() en el elemento</h2>
+            <!-- TODO: .box3d.c con transform: perspective(...) rotateY(...) -->
+            <!-- <div class="box3d c">perspective()</div> -->
+        </section>
+
+        <section class="demoC">
+            <h2>C) translateZ (acercar/alejar)</h2>
+            <div class="escena">
+                <!-- TODO: .box3d.d con translateZ(+/-) -->
+                <!-- <div class="box3d d d-mas">+Z</div>
+               <div class="box3d d d-menos">-Z</div> -->
+            </div>
+        </section>
+
+        <section class="demoD">
+            <h2>D) Flip card (preserve-3d + backface)</h2>
+            <div class="escena tarjeta-escena">
+                <!-- TODO: tarjeta con dos caras -->
+                <!-- <div class="tarjeta" tabindex="0" aria-label="Voltear tarjeta">
+               <div class="cara cara--front">FRONT</div>
+               <div class="cara cara--back">BACK</div>
+             </div> -->
+                <p class="nota">Pista: `transform-style: preserve-3d` en .tarjeta y
+                    `backface-visibility: hidden` en cada .cara.</p>
+            </div>
+        </section>
+
+        <section class="demoE">
+            <h2>E) perspective-origin</h2>
+            <div class="escena po po-center">
+                <!-- TODO: una caja y cambiar la clase po-left / po-right / po-top... para comparar -->
+                <!-- <div class="box3d e">origen</div> -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Curso CSS Avanzado</p>
+    </footer>
+</body>
+
+</html>

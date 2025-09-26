@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Avanzado — Ej21 CQ + Grid</title>
+    <!-- TODO: enlazar style.css -->
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>Ej21: Container Queries + Grid</h1>
+        <p class="lead">Patrones componibles: cada widget responde a su **propio** ancho.</p>
+    </header>
+
+    <main class="wrap">
+        <!-- Shell ESTRECHA -->
+        <section>
+            <h2>Shell estrecha</h2>
+            <div class="shell shell--narrow">
+                <!-- TODO: widget 1 -->
+                <article class="widget">
+                    <img class="w__img"
+                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
+                        alt="Portátil con editor de código">
+                    <h3 class="w__title">Media Card</h3>
+                    <p class="w__meta">Actualizado · 5 min</p>
+                    <p class="w__body">Este componente reordena su layout con Grid cuando su contenedor alcanza anchos
+                        clave.</p>
+                    <a class="btn w__cta" href="#">Leer más</a>
+
+                    <!-- Stats internas -->
+                    <div class="w__stats">
+                        <div class="stat"><strong>123</strong><span>⭐ Stars</span></div>
+                        <div class="stat"><strong>47</strong><span>Forks</span></div>
+                        <div class="stat"><strong>12</strong><span>Issues</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Shell ANCHA -->
+        <section>
+            <h2>Shell fluida</h2>
+            <div class="shell shell--wide">
+                <!-- TODO: widget 2 (idéntico) -->
+                <article class="widget">
+                    <img class="w__img"
+                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
+                        alt="Portátil con editor de código">
+                    <h3 class="w__title">Media Card</h3>
+                    <p class="w__meta">Actualizado · 5 min</p>
+                    <p class="w__body">Fíjate en la aparición de la columna lateral para el CTA cuando el widget crece.
+                    </p>
+                    <a class="btn w__cta" href="#">Leer más</a>
+
+                    <div class="w__stats">
+                        <div class="stat"><strong>123</strong><span>⭐ Stars</span></div>
+                        <div class="stat"><strong>47</strong><span>Forks</span></div>
+                        <div class="stat"><strong>12</strong><span>Issues</span></div>
+                        <div class="stat"><strong>9.8</strong><span>Score</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <small>© Curso CSS Avanzado</small>
+    </footer>
+</body>
+
+</html>

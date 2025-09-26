@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+}
+
+/* Estilo tabla */
+table {
+  width: 100%;
+  border-collapse: collapse; /* combina bordes de celdas contiguas */
+  margin-top: 1rem;
+}
+
+th,
+td {
+  border: 1px solid #cbd5e1;
+  padding: 0.5rem 0.75rem; /* espacio interno mejora legibilidad */
+}
+
+th {
+  background: #e2e8f0;
+  font-weight: 700;
+  text-align: center;
+}
+
+td:first-child {
+  text-align: left;
+}
+td:not(:first-child) {
+  text-align: center;
+}
+
+/* Filas alternadas */
+tbody tr:nth-child(even) {
+  background: #f1f5f9;
+}
+
+/* Hover opcional */
+tbody tr:hover {
+  background: #e0f2fe;
+}

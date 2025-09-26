@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Avanzado — Ej20 Grid Fluido</title>
+    <!-- TODO: enlazar style.css -->
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>Ej20: Grid fluido (minmax, auto-fit/auto-fill, subgrid)</h1>
+    </header>
+
+    <main class="wrap">
+        <!-- 1) Galería auto-fit -->
+        <section>
+            <h2>Galería (auto-fit)</h2>
+            <div class="gallery gallery--fit">
+                <!-- TODO: 6–8 cards de demo -->
+                <article class="card">
+                    <h3>Título 1</h3>
+                    <p>Texto corto.</p>
+                </article>
+                <article class="card">
+                    <h3>Título 2</h3>
+                    <p>Texto algo más largo para ver altura.</p>
+                </article>
+                <article class="card">
+                    <h3>Título 3</h3>
+                    <p>…</p>
+                </article>
+                <article class="card">
+                    <h3>Título 4</h3>
+                    <p>…</p>
+                </article>
+                <article class="card">
+                    <h3>Título 5</h3>
+                    <p>…</p>
+                </article>
+                <article class="card">
+                    <h3>Título 6</h3>
+                    <p>…</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 1) Galería auto-fill -->
+        <section>
+            <h2>Galería (auto-fill)</h2>
+            <div class="gallery gallery--fill">
+                <!-- TODO: mismo contenido para comparar -->
+                <article class="card">
+                    <h3>Título 1</h3>
+                    <p>Texto corto.</p>
+                </article>
+                <article class="card">
+                    <h3>Título 2</h3>
+                    <p>Texto algo más largo para ver altura.</p>
+                </article>
+                <article class="card">
+                    <h3>Título 3</h3>
+                    <p>…</p>
+                </article>
+                <article class="card">
+                    <h3>Título 4</h3>
+                    <p>…</p>
+                </article>
+                <article class="card">
+                    <h3>Título 5</h3>
+                    <p>…</p>
+                </article>
+                <article class="card">
+                    <h3>Título 6</h3>
+                    <p>…</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 2) Layout maestro con sidebar -->
+        <section>
+            <h2>Layout con sidebar</h2>
+            <div class="layout">
+                <aside class="sidebar">
+                    <nav>
+                        <a href="#" class="btn">Inicio</a>
+                        <a href="#" class="btn">Artículos</a>
+                        <a href="#" class="btn">Contacto</a>
+                    </nav>
+                </aside>
+                <article class="content">
+                    <h3>Contenido principal</h3>
+                    <p>Demostración de columna flexible con <code>minmax(0, 1fr)</code>.</p>
+                    <p>Cuando el viewport es estrecho, el layout colapsa a 1 columna.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 3) Lista con subgrid (opcional) -->
+        <section>
+            <h2>Lista con subgrid (opcional)</h2>
+            <div class="list">
+                <!-- TODO: cada .item hereda la malla de columnas/filas de .list mediante subgrid -->
+                <article class="item">
+                    <h4 class="item__title"><a href="#">Artículo 1</a></h4>
+                    <p class="item__meta">12 Sep · 5 min</p>
+                    <p class="item__excerpt">Resumen breve para ver alineación por subgrid.</p>
+                </article>
+                <article class="item">
+                    <h4 class="item__title"><a href="#">Artículo 2</a></h4>
+                    <p class="item__meta">10 Sep · 3 min</p>
+                    <p class="item__excerpt">Otro texto algo más largo para forzar salto.</p>
+                </article>
+                <article class="item">
+                    <h4 class="item__title"><a href="#">Artículo 3</a></h4>
+                    <p class="item__meta">07 Sep · 7 min</p>
+                    <p class="item__excerpt">Más contenido…</p>
+                </article>
+            </div>
+            <p class="hint">Si tu navegador no soporta <code>subgrid</code>, prepara un fall-back simple.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <small>© Curso CSS Avanzado</small>
+    </footer>
+</body>
+
+</html>

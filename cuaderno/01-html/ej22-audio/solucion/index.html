@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ej22 — Audio en HTML5 (solución)</title>
+</head>
+
+<body>
+    <header>
+        <h1>Audio en HTML5</h1>
+        <p>Ejemplo con múltiples fuentes, pista de subtítulos/descriciones (VTT), y buenas prácticas de preload.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Audio principal</h2>
+
+            <!-- Elegimos preload="metadata" para conocer duración sin descargar todo el audio -->
+            <audio controls preload="metadata">
+                <!-- Fuentes alternativas: el navegador elegirá la primera compatible -->
+                <source src="audio/podcast-episodio.mp3" type="audio/mpeg" />
+                <source src="audio/podcast-episodio.ogg" type="audio/ogg" />
+
+                <!-- Pista VTT para subtítulos o descripciones (accesibilidad). 
+               Requiere un archivo .vtt válido en la ruta indicada -->
+                <track kind="captions" src="audio/podcast-episodio.es.vtt" srclang="es" label="Subtítulos (ES)"
+                    default />
+
+                <!-- Fallback para navegadores muy antiguos o con bloqueo -->
+                Tu navegador no soporta audio HTML5.
+                Puedes <a href="audio/podcast-episodio.mp3">descargar el archivo MP3</a>.
+            </audio>
+
+            <!-- Nota de buenas prácticas sobre autoplay -->
+            <!-- No usamos autoplay: la mayoría de navegadores lo bloquean sin interacción del usuario.
+             Podríamos probar autoplay muted, pero en audio informativo no tiene sentido reproducirlo silenciado. -->
+        </section>
+
+        <section>
+            <h2>Efecto/loop</h2>
+            <!-- Sonido corto que puede repetirse. Usamos preload="none" para no descargarlo hasta que el usuario lo pida. -->
+            <audio controls preload="none" loop>
+                <source src="audio/click-loop.mp3" type="audio/mpeg" />
+                <source src="audio/click-loop.ogg" type="audio/ogg" />
+                Este navegador no puede reproducir audio embebido.
+                <a href="audio/click-loop.mp3">Descarga el efecto</a>.
+            </audio>
+        </section>
+
+        <section>
+            <h2>Transcripción</h2>
+            <p>
+                En este episodio se presenta el curso, se explican los objetivos y la dinámica
+                de trabajo. Se comentan los recursos disponibles y las pautas de evaluación.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Ejercicio realizado por Tu Nombre — 2025</p>
+    </footer>
+</body>
+
+</html>

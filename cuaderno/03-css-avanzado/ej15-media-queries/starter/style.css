@@ -1,0 +1,71 @@
+/* Base mínima */
+* { box-sizing: border-box; }
+:root{
+  --bg:#f8fafc; --fg:#0f172a; --muted:#475569;
+  --card:#fff; --border:#e5e7eb; --primary:#0ea5e9;
+}
+html, body { height:100%; }
+body { margin:0; font-family: system-ui, sans-serif; background:var(--bg); color:var(--fg); line-height:1.6; }
+.wrap { max-width: 1100px; margin-inline:auto; padding: 1rem; }
+h1, h2, h3 { margin: .5rem 0 1rem; }
+a { color: var(--primary); }
+
+.site-header, .site-footer { padding: .75rem 1rem; border-bottom:1px solid var(--border); }
+.site-footer { border-top:1px solid var(--border); border-bottom:0; }
+
+.nav { display:flex; gap:.5rem; flex-wrap:wrap; }
+.btn {
+  display:inline-block; border:1px solid var(--border); border-radius:.5rem;
+  padding:.45rem .75rem; text-decoration:none; color:var(--fg); background:var(--card);
+  transition: background-color .2s ease, box-shadow .2s ease;
+}
+
+/* Grid base (se ajustará con media queries) */
+.grid {
+  display:grid; grid-template-columns: 1fr; gap: 1rem; /* móvil por defecto */
+}
+.card {
+  background:var(--card); border:1px solid var(--border); border-radius:.75rem;
+  padding:1rem; transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* === 1) Rangos modernos: móvil/tablet/desktop === */
+/* TODO: tablet 2 columnas: @media (640px <= width < 1024px) { ... } */
+/* TODO: desktop 3 columnas: @media (width >= 1024px) { ... } */
+
+/* === 2) Dark mode === */
+/* @media (prefers-color-scheme: dark) {
+  :root{ --bg:#0b1220; --fg:#e5e7eb; --muted:#94a3b8; --card:#0f172a; --border:#1e293b; --primary:#7dd3fc; }
+  .btn { border-color: var(--border); }
+} */
+
+/* === 3) Reduced motion === */
+/* @media (prefers-reduced-motion: reduce) {
+  .btn, .card { transition: none; }
+} */
+
+/* === 4) Hover/Pointer === */
+/* Solo equipos con hover verdadero y puntero fino */
+@media (hover: hover) and (pointer: fine) {
+  /* .card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(2,6,23,.16); } */
+}
+/* Puntero tosco (táctil): aumentar área de toque */
+@media (pointer: coarse) {
+  /* .btn { padding:.6rem 1rem; } */
+}
+
+/* === 5) Print === */
+/* @media print {
+  :root{ --bg:#fff; --fg:#000; --card:#fff; --border:#888; }
+  body { background:#fff; color:#000; }
+  .site-header, .site-footer, .btn { box-shadow:none; background:#fff; }
+  .btn { border-color:#aaa; }
+  /* Ocultar elementos puramente decorativos si hubiera */
+  /* .card { break-inside: avoid; } */
+  a::after { content: " (" attr(href) ")"; font-size:.9em; color:#444; }
+} */
+
+/* === 6) Altura reducida (opcional) === */
+/* @media (max-height: 700px) {
+  .site-header { padding: .5rem 1rem; }
+} */

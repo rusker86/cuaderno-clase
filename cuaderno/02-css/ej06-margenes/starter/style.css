@@ -1,0 +1,59 @@
+/* Base visual mínima */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.5;
+  color: #0f172a;
+}
+h1,
+h2,
+h3 {
+  margin: 0 0 0.5rem;
+}
+.panel {
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+  background: #fff;
+}
+.box {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+/* A) TODO: lados sueltos, shorthand 2 y 4 valores */
+/* .box-a { margin-top: 16px; margin-right: 8px; margin-bottom: 24px; margin-left: 8px; } */
+/* .box-b { margin: 12px 24px; }            /\* vertical | horizontal *\/ */
+/* .box-c { margin: 4px 8px 16px 32px; }    /\* top | right | bottom | left *\/ */
+
+/* B) TODO: centrado con margin: 0 auto y ancho fijo */
+/* .centrada { width: 240px; margin: 0 auto; padding: 1rem; border: 1px dashed #94a3b8; } */
+
+/* C) TODO: colapso entre hermanos: da márgenes verticales a .stack */
+/* .stack { background:#eef2ff; border:1px solid #c7d2fe; } */
+/* .item-1 { margin-bottom: 24px; } */
+/* .item-2 { margin-top: 32px; } */
+/* Nota esperada: los 24px y 32px **no** se suman; colapsan y se aplica el mayor de ambos. */
+
+/* D) TODO: colapso con contenedor padre */
+/* .wrap { background:#f1f5f9; border:1px solid #cbd5e1; } */
+/* .hijo-con-margen { margin-top: 24px; background:#e2e8f0; border:1px solid #94a3b8; padding: .5rem; } */
+
+/* D1) sin-proteccion: sin padding/border extra en el interior (verás que el margen del hijo "sale" del contenedor) */
+/* .sin-proteccion { } */
+
+/* D2) con-padding: añade padding-top para **evitar** el colapso */
+/* .con-padding { padding-top: 1px; } */
+
+/* D3) con-borde: añade border-top para **evitar** el colapso */
+/* .con-borde { border-top: 2px solid #94a3b8; } */
+
+/* (Opcional) Márgenes negativos */
+/* .negativo { margin-top: -20px; background:#fee2e2; border:1px solid #fca5a5; padding: .5rem; } */
+
+/* Comentarios a incluir:
+   - margin: 0 auto centra horizontalmente cuando el elemento tiene un ancho definido y es un bloque en flujo normal.
+   - El colapso de márgenes ocurre entre márgenes verticales contiguos; se “combina” tomando el mayor (o la suma si hay negativos).
+   - Para evitar colapso con el contenedor: añade padding-top, border-top, o crea un nuevo contexto (p. ej., overflow:auto). */

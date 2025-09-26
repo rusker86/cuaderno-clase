@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ej23 — Video en HTML5 (solución)</title>
+</head>
+
+<body>
+    <header>
+        <h1>Vídeo en HTML5</h1>
+        <p>Ejemplo de fuentes alternativas, poster, subtítulos y buenas prácticas de carga.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Vídeo principal</h2>
+
+            <!-- Elegimos preload="metadata" para conocer duración y dimensiones sin descargar todo el vídeo -->
+            <!-- playsinline evita el auto-fullscreen en iOS/Android y mejora la UX en páginas con scroll -->
+            <video controls preload="metadata" poster="images/poster.jpg" playsinline width="640" height="360">
+                <!-- Fuentes alternativas: el navegador elige la primera compatible -->
+                <source src="video/introduccion.mp4" type="video/mp4" />
+                <source src="video/introduccion.webm" type="video/webm" />
+                <source src="video/introduccion.ogv" type="video/ogg" />
+
+                <!-- Subtítulos (WebVTT). Cambia la ruta a tu .vtt real -->
+                <track kind="subtitles" src="video/introduccion.es.vtt" srclang="es" label="Español" default />
+
+                <!-- Fallback -->
+                Tu navegador no soporta vídeo HTML5.
+                Puedes <a href="video/introduccion.mp4">descargar el MP4</a> y reproducirlo localmente.
+            </video>
+        </section>
+
+        <section>
+            <h2>Vídeo corto en bucle</h2>
+            <!-- Buenas prácticas:
+             - Para que autoplay funcione sin interacción, la mayoría de navegadores exigen muted.
+             - Aun así, aquí NO usamos autoplay por respeto al usuario; si se quisiera, sería autoplay muted loop. -->
+            <video muted loop controls preload="none" playsinline width="480" height="270">
+                <source src="video/loop-decorativo.webm" type="video/webm" />
+                <source src="video/loop-decorativo.mp4" type="video/mp4" />
+                Este navegador no puede reproducir vídeo embebido.
+                <a href="video/loop-decorativo.mp4">Descarga el clip</a>.
+            </video>
+        </section>
+
+        <!-- Notas:
+           - Evita usar autoplay en vídeos informativos; sorprende y gasta datos/batería.
+           - Usa poster para una mejor primera impresión mientras no se reproduce.
+           - Define width/height para reservar espacio y evitar CLS. -->
+    </main>
+
+    <footer>
+        <p>Ejercicio realizado por Tu Nombre — 2025</p>
+    </footer>
+</body>
+
+</html>

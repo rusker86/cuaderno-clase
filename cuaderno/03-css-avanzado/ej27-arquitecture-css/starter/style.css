@@ -1,0 +1,78 @@
+/* === DECLARA EL ORDEN DE CAPAS (NO ES ESTILO) === */
+@layer reset, base, components, utilities;
+
+/* ========== TOKENS ==========
+   TIP: declara en :root y usa en todo el sitio */
+:root{
+  /* TODO: colores principales, spacing, radios, sombra, tipografías */
+  /* --bg: ; --fg: ; --muted: ; --primary: ; --surface: ; --border: ;
+     --radius: .75rem; --space-1: .5rem; --space-2: 1rem; --shadow-sm: 0 1px 2px rgba(2,6,23,.05); */
+}
+
+/* (Opcional) Tema
+@layer theme{
+  .theme-dark{
+    /* sobrescribe tokens de :root aquí */
+  }
+}
+*/
+
+/* ========== RESET ========== */
+@layer reset{
+  /* PISTA: normaliza margen/padding y box-sizing, respeta focus-visible */
+  /* *{ box-sizing: border-box; }
+     html, body { height:100%; }
+     body{ margin:0; } */
+}
+
+/* ========== BASE ========== */
+@layer base{
+  /* PISTAS: fuente, colores de fondo/texto desde tokens, enlaces, contenedores */
+  /* body{ font-family: system-ui, sans-serif; background: var(--bg); color: var(--fg); line-height:1.6; }
+     a{ color: var(--primary); text-decoration: none; }
+     .wrap{ max-width: 1100px; margin-inline:auto; padding: var(--space-2); } */
+
+  /* foco accesible */
+  /* :where(a, button).btn:focus-visible, a:focus-visible { outline: 3px solid color-mix(in srgb, var(--primary) 70%, white); outline-offset: 2px; } */
+}
+
+/* ========== COMPONENTES (BEM) ========== */
+@layer components{
+  /* HEADER (bloque + elementos) */
+  /* .header{ ... }
+     .header__brand{ ... }
+     .header__nav{ ... }
+     .header--sticky{ ... } */
+
+  /* BOTÓN (bloque + mods) */
+  /* .btn{ ... }
+     .btn--primary{ ... }
+     .btn--ghost{ ... } */
+
+  /* CARD (bloque + elementos + mod) */
+  /* .card{ ... } 
+     .card__img{ ... } 
+     .card__title{ ... } 
+     .card__meta{ ... } 
+     .card--featured{ ... } */
+}
+
+/* ========== UTILIDADES (BAJA ESPECIFICIDAD) ========== */
+@layer utilities{
+  /* PISTAS: utilidades atómicas. Usa :where(.u-*) para no sumar especificidad. */
+  /* .u-flex{ display:flex; align-items:center; gap: var(--space-1); }
+     .u-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); }
+     .u-gap-1{ gap: var(--space-1); }
+     .u-gap-2{ gap: var(--space-2); }
+     .u-gap-4{ gap: calc(var(--space-2) * 2); }
+     .u-p-0 { padding: 0 !important; }
+     .u-mb-0{ margin-bottom: 0 !important; }
+     .u-text-sm{ font-size: .9rem; }
+     .u-w-full{ width: 100%; }
+     .u-hide{ display:none !important; } */
+}
+
+/* NOTAS:
+ - Mantén selectores simples y semánticos en components (BEM).
+ - Utilidades pueden usar !important para garantizar override local sin subir especificidad en components.
+ - Usa :where() para agrupar sin subir especificidad en selectores complejos. */

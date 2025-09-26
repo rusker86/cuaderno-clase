@@ -1,0 +1,64 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.5;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* Cajas de demo: mismo tamaño para comparar overflow */
+.box {
+  border: 1px solid #94a3b8;
+  background: #fff;
+  width: 100%;
+  height: 120px;
+  padding: 0.5rem;
+}
+
+/* === TODO: A) visible (por defecto) === */
+/* .demo-a { overflow: visible; } */
+
+/* === TODO: B) hidden (recorta) === */
+/* .demo-b { overflow: hidden; } */
+
+/* === TODO: C) scroll (siempre barras) === */
+/* .demo-c { overflow: scroll; } */
+
+/* === TODO: D) auto (barras si hace falta) === */
+/* .demo-d { overflow: auto; } */
+
+/* === TODO: E) solo scroll horizontal === */
+/* .eje-x { white-space: nowrap; overflow-x: auto; overflow-y: hidden; } */
+
+/* === TODO: F) solo scroll vertical === */
+/* .eje-y { overflow-y: auto; overflow-x: hidden; } */
+
+/* === (Opcional) truncado con ellipsis en una línea === */
+/* .ellipsis {
+  max-width: 320px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /\* requiere nowrap + ancho limitado *\/
+} */
+
+/* Notas a comentar:
+   - visible no recorta; hidden recorta sin barras; scroll fuerza barras; auto decide.
+   - overflow-x/y controlan cada eje por separado.
+   - Para text-overflow: ellipsis, necesitas una sola línea y limitar el ancho. */

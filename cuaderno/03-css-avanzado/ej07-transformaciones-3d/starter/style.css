@@ -1,0 +1,37 @@
+/* Base mínima */
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, sans-serif; background:#f8fafc; color:#0f172a; line-height:1.6; }
+h1 { margin:1rem; }
+.panel { padding:1rem; display:grid; gap:1rem; }
+section { background:#fff; border:1px solid #e5e7eb; padding:1rem; border-radius:.5rem; }
+.nota { color:#475569; font-size:.9rem; }
+
+/* Utilidades base */
+.escena {
+  /* Pista: activa perspectiva aquí para hijos 3D */
+  /* perspective: 800px; */
+  display:flex; gap:1rem; flex-wrap:wrap;
+  padding: .5rem;
+  border:1px dashed #cbd5e1;
+}
+.box3d {
+  width:160px; height:100px; display:grid; place-items:center;
+  background:#e0f2fe; color:#0f172a; font-weight:700;
+  border:1px solid #94a3b8; border-radius:.5rem;
+  /* transform: ... */
+}
+
+/* === A) rotateX / rotateY con perspectiva en el contenedor === */
+/* .demoA .escena { perspective: 800px; }
+.a { transform: rotateX(25deg); }
+.b { transform: rotateY(25deg); } */
+
+/* === B) perspective() en el elemento === */
+/* .c { transform: perspective(600px) rotateY(25deg); } */
+
+/* === C) translateZ +/− con perspectiva del contenedor === */
+/* .demoC .escena { perspective: 700px; }
+.d-mas   { transform: translateZ(40px); }
+.d-menos { transform: translateZ(-40px); } */
+
+/

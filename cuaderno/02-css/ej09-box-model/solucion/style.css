@@ -1,0 +1,87 @@
+/* (Opcional recomendado en proyectos)
+   Aplicar border-box global evita “sumas sorpresa” del padding/border.
+   Aquí NO lo usamos globalmente para poder comparar. */
+/* * { box-sizing: border-box; } */
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #0f172a;
+  background: #f8fafc;
+}
+h1 {
+  margin: 1rem;
+}
+h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+}
+.panel {
+  padding: 1rem;
+}
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.demo {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
+}
+.box {
+  background: #e0f2fe;
+}
+
+/* A) content-box (por defecto)
+   Total horizontal = width + padding izq + padding der + border izq + border der
+                    = 200 + 16 + 16 + 8 + 8 = 248px */
+.box-a {
+  box-sizing: content-box; /* default */
+  width: 200px;
+  padding: 16px;
+  border: 8px solid #38bdf8;
+}
+
+/* B) border-box
+   La width YA incluye padding y border → total = 200px */
+.box-b {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 16px;
+  border: 8px solid #38bdf8;
+  background: #cffafe;
+}
+
+/* C) margin es externo → no altera el tamaño de la caja,
+   solo crea espacio alrededor */
+.box-c {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 16px;
+  border: 8px solid #38bdf8;
+  margin: 24px;
+  background: #fde68a;
+}
+
+/* D) Comparativa directa */
+.row-compare {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.compare {
+  width: 200px;
+  padding: 16px;
+  border: 8px solid #38bdf8;
+  background: #bae6fd;
+  /* outline no cambia el tamaño total (a diferencia del border) */
+  outline: 2px dashed #0ea5e9;
+}
+.content-box {
+  box-sizing: content-box;
+}
+.border-box {
+  box-sizing: border-box;
+}

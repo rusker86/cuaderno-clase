@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Avanzado — Ej07 Transformaciones 3D (solución)</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Ej07: Transformaciones 3D</h1>
+    </header>
+
+    <main class="panel">
+        <section class="demoA">
+            <h2>A) Rotación 3D con perspectiva (contenedor)</h2>
+            <div class="escena">
+                <div class="box3d a">rotateX</div>
+                <div class="box3d b">rotateY</div>
+            </div>
+        </section>
+
+        <section class="demoB">
+            <h2>B) perspective() en el elemento</h2>
+            <div class="box3d c">perspective()</div>
+        </section>
+
+        <section class="demoC">
+            <h2>C) translateZ (acercar/alejar)</h2>
+            <div class="escena">
+                <div class="box3d d d-mas">+Z</div>
+                <div class="box3d d d-menos">-Z</div>
+            </div>
+        </section>
+
+        <section class="demoD">
+            <h2>D) Flip card (preserve-3d + backface)</h2>
+            <div class="escena tarjeta-escena">
+                <div class="tarjeta" tabindex="0" aria-label="Voltear tarjeta">
+                    <div class="cara cara--front">FRONT</div>
+                    <div class="cara cara--back">BACK</div>
+                </div>
+                <p class="nota">Tab para foco, Enter/Espacio (dependiendo del lector) o hover para girar.</p>
+            </div>
+        </section>
+
+        <section class="demoE">
+            <h2>E) perspective-origin</h2>
+            <div class="escena po po-left">
+                <div class="box3d e">left</div>
+            </div>
+            <div class="escena po po-center" style="margin-top:.5rem">
+                <div class="box3d e">center</div>
+            </div>
+            <div class="escena po po-right" style="margin-top:.5rem">
+                <div class="box3d e">right</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Curso CSS Avanzado</p>
+    </footer>
+</body>
+
+</html>

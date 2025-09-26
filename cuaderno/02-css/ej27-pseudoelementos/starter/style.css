@@ -1,0 +1,57 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+
+/* === A) TODO: ::before / ::after ===
+   - Recuerda que necesitan content:"".
+   - Úsalos para un adorno (línea, emoji, icono simple) o badge NEW. */
+/* .title { position: relative; } */
+/* .title::before { content: ""; } */
+/* .title::after  { content: ""; } */
+
+/* .card { position: relative; border:1px solid #cbd5e1; padding:1rem; } */
+/* .card::after { content: "NEW"; } */
+
+/* === B) TODO: ::first-line ===
+   - Propiedades típicas: font-variant, font-weight, letter/word-spacing, color.
+   - No todas las propiedades aplican (p.ej. transform/computed layout). */
+/* .firstline::first-line { } */
+
+/* === C) TODO: ::first-letter ===
+   - Propiedades típicas: font-size, line-height, margin, float, color. */
+/* .firstletter::first-letter { } */
+
+/* === D) TODO: ::selection ===
+   - Suele soportar color y background-color. */
+/* .selectable::selection { } */
+
+/* === E) (Opcional) ::marker === */
+/* .marcada li::marker { } */
+
+/* === F) (Opcional) ::placeholder === */
+/* .ph::placeholder { } */
+
+/* Notas de accesibilidad:
+   - El contenido con content en before/after es decorativo; no lo uses para información esencial.
+   - Si el "badge" es importante, duplícalo en el DOM real con texto visible o aria-label. */

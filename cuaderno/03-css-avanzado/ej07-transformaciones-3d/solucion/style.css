@@ -1,0 +1,159 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.nota {
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+/* Utilidades */
+.escena {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  border: 1px dashed #cbd5e1;
+}
+.box3d {
+  width: 160px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  background: #e0f2fe;
+  color: #0f172a;
+  font-weight: 700;
+  border: 1px solid #94a3b8;
+  border-radius: 0.5rem;
+}
+
+/* A) rotateX / rotateY con perspectiva del contenedor */
+.demoA .escena {
+  perspective: 800px;
+}
+.a {
+  transform: rotateX(25deg);
+}
+.b {
+  transform: rotateY(25deg);
+}
+
+/* B) perspective() en el propio elemento */
+.c {
+  transform: perspective(600px) rotateY(25deg);
+}
+
+/* C) translateZ +/− (escala aparente) */
+.demoC .escena {
+  perspective: 700px;
+}
+.d-mas {
+  transform: translateZ(40px);
+}
+.d-menos {
+  transform: translateZ(-40px);
+}
+
+/* D) Flip card: preserve-3d + backface-visibility */
+.tarjeta-escena {
+  perspective: 900px;
+}
+.tarjeta {
+  width: 220px;
+  height: 140px;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  outline: none;
+}
+.cara {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid #94a3b8;
+  border-radius: 0.5rem;
+  background: #fff;
+  backface-visibility: hidden;
+  font-weight: 800;
+  color: #0f172a;
+}
+.cara--front {
+  background: #e0f2fe;
+}
+.cara--back {
+  background: #bbf7d0;
+  transform: rotateY(180deg);
+}
+
+/* Activación por hover y foco (teclado) */
+.tarjeta:hover,
+.tarjeta:focus {
+  transform: rotateY(180deg);
+}
+.tarjeta:focus-visible {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tarjeta {
+    transition: none;
+  }
+  .tarjeta:hover,
+  .tarjeta:focus {
+    transform: none;
+  } /* respeta usuarios sensibles al movimiento */
+}
+
+/* E) perspective-origin (punto de fuga) */
+.po {
+  perspective: 700px;
+}
+.po-center {
+  perspective-origin: 50% 50%;
+}
+.po-left {
+  perspective-origin: 0% 50%;
+}
+.po-right {
+  perspective-origin: 100% 50%;
+}
+.po-top {
+  perspective-origin: 50% 0%;
+}
+.po-bottom {
+  perspective-origin: 50% 100%;
+}
+.e {
+  transform: rotateX(20deg) rotateY(20deg);
+}
+
+/* Notas:
+ - `perspective` en contenedor = cámara externa común para los hijos.
+ - `transform: perspective(...)` liga cámara al elemento (resultados distintos).
+ - `preserve-3d` mantiene Z de los hijos; sin él, se “aplastan” en el plano.
+ - `backface-visibility: hidden` evita ver el reverso espejado de las caras.
+ - Rendimiento: anima `transform`, no `top/left`. Evita blur de sombras gigantes. */

@@ -1,0 +1,23 @@
+/* Base mínima */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+}
+
+/* TODO: aplica distintos list-style-type en cada lista */
+
+/* TODO: usa list-style-position: inside/outside */
+
+/* TODO: prueba list-style-image (puede ser un icono pequeño o emoji con content) */
+
+/* TODO: usa shorthand list-style */
+
+/* TODO opcional: reset de lista para menú horizontal (list-style: none, display:flex o inline-block) */

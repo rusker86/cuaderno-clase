@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ej07 — Listas en HTML5</title>
+</head>
+
+<body>
+    <header>
+        <h1>Ejemplos de listas en HTML5</h1>
+    </header>
+
+    <main>
+        <!-- Lista no ordenada -->
+        <section>
+            <h2>Lenguajes de programación</h2>
+            <ul>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>C#</li>
+                <li>
+                    PHP
+                    <!-- Lista anidada -->
+                    <ul>
+                        <li><a href="#">CodeIgniter</a></li>
+                        <li>Laravel</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Lista ordenada -->
+        <section>
+            <h2>Pasos para instalar un editor</h2>
+            <ol>
+                <li>Descargar el instalador</li>
+                <li>Ejecutar el archivo</li>
+                <li>Aceptar los términos</li>
+                <li>Elegir la carpeta de instalación</li>
+                <li>Finalizar y abrir</li>
+            </ol>
+
+            <h3>Ranking de lenguajes (descendente)</h3>
+            <ol reversed>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>Java</li>
+                <li>C++</li>
+                <li>Go</li>
+            </ol>
+        </section>
+
+        <!-- Lista de definición -->
+        <section>
+            <h2>Glosario básico</h2>
+            <dl>
+                <dt>HTML</dt>
+                <dd>
+                    Lenguaje de marcado para la estructura de páginas web.
+                    Ejemplo: <abbr title="HyperText Markup Language">HTML</abbr>.
+                </dd>
+                <dt>CSS</dt>
+                <dd>Lenguaje para dar estilo a documentos HTML.</dd>
+                <dt>JavaScript</dt>
+                <dd>Lenguaje de programación para añadir interactividad en la web.</dd>
+            </dl>
+        </section>
+    </main>
+
+    <footer>
+        <p>Ejercicio realizado por Tu Nombre — 2025</p>
+    </footer>
+</body>
+
+</html>

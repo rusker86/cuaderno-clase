@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS — Ej13 Iconos (solución)</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Ejercicio 13: Iconos (fuente vs SVG)</h1>
+    </header>
+
+    <main class="panel">
+        <section>
+            <h2>1) Fuente de iconos (demo)</h2>
+            <button class="btn-if">
+                <span class="if if-home" aria-hidden="true"></span>
+                <span class="sr-only">Inicio</span>
+            </button>
+            <p class="nota">
+                Este ejemplo usa un glifo Unicode como sustituto. En proyectos reales, prefiere **SVG** por nitidez,
+                control de color y accesibilidad.
+            </p>
+        </section>
+
+        <section>
+            <h2>2) SVG inline (recomendado)</h2>
+            <span class="icon-wrap" aria-label="Buscar">
+                <svg class="icon" viewBox="0 0 24 24" role="img">
+                    <title>Buscar</title>
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <line x1="16" y1="16" x2="22" y2="22" stroke-width="2" stroke="currentColor"></line>
+                </svg>
+            </span>
+
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9Z"></path>
+            </svg>
+        </section>
+
+        <section>
+            <h2>3) Sprite SVG con &lt;use&gt;</h2>
+            <svg class="icon" role="img" aria-labelledby="t-home">
+                <title id="t-home">Inicio</title>
+                <use href="icons.svg#home"></use>
+            </svg>
+
+            <svg class="icon" role="img" aria-labelledby="t-search">
+                <title id="t-search">Buscar</title>
+                <use href="icons.svg#search"></use>
+            </svg>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 — Curso CSS</p>
+    </footer>
+</body>
+
+</html>

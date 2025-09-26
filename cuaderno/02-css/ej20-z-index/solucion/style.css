@@ -1,0 +1,131 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.5;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+.demo {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+
+/* A) Superposición básica */
+.stage {
+  position: relative;
+  height: 200px;
+  border: 1px dashed #cbd5e1;
+}
+.box {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #0f172a;
+}
+.a {
+  background: #bae6fd;
+  top: 24px;
+  left: 24px;
+  z-index: 1;
+}
+.b {
+  background: #bbf7d0;
+  top: 48px;
+  left: 64px;
+  z-index: 2;
+}
+.c {
+  background: #fde68a;
+  top: 72px;
+  left: 104px;
+  z-index: 3;
+}
+/* Resultado: C sobre B sobre A (todos en el MISMO contexto: .stage/raíz). */
+
+/* B) “No sube” por stacking context */
+.outside {
+  width: 180px;
+  height: 80px;
+  background: #fecaca;
+  border: 1px solid #ef4444;
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 10; /* En el contexto raíz: capa 10 */
+}
+
+/* El padre crea NUEVO contexto de apilamiento.
+   Opciones que lo crean: transform, opacity<1, filter, etc. */
+.ctx {
+  transform: translateZ(0); /* crea stacking context */
+  position: relative;
+  border: 1px solid #94a3b8;
+  padding: 0.5rem;
+  background: #f1f5f9;
+  /* Aunque sus hijos tengan z-index gigantes, NO competirán con .outside
+     porque .outside está en el contexto RAÍZ y .inside está dentro
+     del contexto de .ctx. Para “superarlo”, el propio .ctx tendría
+     que estar por encima (z-index en el contexto raíz). */
+}
+
+.inside {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #c7d2fe;
+  padding: 0.5rem;
+  border: 1px solid #7c3aed;
+  z-index: 9999; /* Máximo dentro del contexto de .ctx, NO del raíz */
+}
+
+/* C) Overlay modal por encima de todo */
+.btn-open {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #94a3b8;
+  background: #fff;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  z-index: 1000; /* contexto raíz, por encima del resto */
+  display: grid;
+  place-items: center;
+}
+
+.modal {
+  background: #fff;
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  min-width: 260px;
+  text-align: center;
+}
+
+/* (Opcional) z-index negativo
+   - Si se aplicara a .a { z-index: -1; }, .a quedaría por detrás del fondo
+     de su contexto de apilamiento actual (y podría quedar “tapado”). */
+
+/* Notas didácticas:
+   - z-index solo ordena dentro del MISMO contexto de apilamiento.
+   - Crean contexto: position + z-index != auto, transform, opacity<1, filter, isolation:isolate,
+     will-change, mix-blend-mode, entre otros.
+   - En hijos de flex/grid, z-index funciona incluso con position: static;
+     pero NO rompe las reglas de contexto. */

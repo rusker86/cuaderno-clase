@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Avanzado — Ej14 Multicolumn</title>
+    <!-- TODO: enlazar style.css -->
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+
+<body>
+    <header>
+        <h1>Ej14: Múltiples columnas variables</h1>
+    </header>
+
+    <main class="panel">
+        <section>
+            <h2>1) Artículo multicolumna</h2>
+            <!-- TODO: aplica columnas a .article -->
+            <article class="article">
+                <h2 class="span-all">Historia del CSS</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, minus, ipsum…</p>
+                <p>Contenido de ejemplo para ver cómo se parte el texto entre columnas…</p>
+                <p>Otro párrafo con algo más de longitud para forzar el flujo multicolumna…</p>
+
+                <h3>Subtítulo</h3>
+                <ul class="note-list">
+                    <li>Primer punto importante</li>
+                    <li>Segundo punto relevante</li>
+                    <li>Tercero con texto largo para ver el corte en columnas</li>
+                </ul>
+                <p>Más texto de ejemplo para rellenar las columnas y observar el rule y el gap…</p>
+            </article>
+        </section>
+
+        <section>
+            <h2>2) Masonry simple con columnas</h2>
+            <!-- TODO: .masonry con items de alturas variables -->
+            <div class="masonry">
+                <article class="card">
+                    <h4>Card 1</h4>
+                    <p>Texto breve.</p>
+                </article>
+                <article class="card">
+                    <h4>Card 2</h4>
+                    <p>Texto bastante más largo para cambiar la altura del bloque y observar el flujo en columna.</p>
+                </article>
+                <article class="card">
+                    <h4>Card 3</h4>
+                    <p>Contenido medio.</p>
+                </article>
+                <article class="card">
+                    <h4>Card 4</h4>
+                    <p>Otro texto con varias líneas para forzar altura.</p>
+                </article>
+                <article class="card">
+                    <h4>Card 5</h4>
+                    <p>Breve.</p>
+                </article>
+                <article class="card">
+                    <h4>Card 6</h4>
+                    <p>Muy largo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, harum, cupiditate…
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>(Opcional) 3) column-fill demo</h2>
+            <!-- TODO: bloque alto fijo para ver balance vs auto -->
+            <div class="fill-demo">
+                <p>Bloque con altura fija para probar column-fill.</p>
+                <p>Agrega más texto para ver la distribución en columnas…</p>
+                <p>Otro párrafo…</p>
+                <p>Y otro más…</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Curso CSS Avanzado</p>
+    </footer>
+</body>
+
+</html>

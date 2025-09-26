@@ -1,0 +1,142 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.demo {
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background: #e0f2fe;
+  min-height: 120px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+/* ===== Parte A — Máscaras ===== */
+
+/* A1) Gradiente: blanco visible, transparente oculta */
+/* .masked-grad {
+  mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+} */
+
+/* A2) SVG data URI (simple: círculo blanco en negro) */
+/* .masked-svg {
+  --svg: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>\
+<rect width='100' height='100' fill='black'/>\
+<circle cx='50' cy='50' r='35' fill='white'/>\
+</svg>");
+  mask-image: var(--svg);
+  mask-size: contain; mask-repeat: no-repeat; mask-position: center;
+  -webkit-mask-image: var(--svg);
+  -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center;
+} */
+
+/* A3) Spotlight radial */
+/* .masked-spot {
+  mask-image: radial-gradient(circle at 50% 50%, #000 40%, transparent 42%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 40%, transparent 42%);
+} */
+
+/* (Opcional) A4) Composición (rayas ∩ círculo) */
+/* .masked-composite {
+  /* Dos máscaras apiladas como capas *\/
+  -webkit-mask-image:
+    repeating-linear-gradient(90deg, #000 0 8px, transparent 8px 16px),
+    radial-gradient(circle at 50% 50%, #000 40%, transparent 41%);
+  -webkit-mask-composite: source-in; /* comportamiento en WebKit (una intersección común) *\/
+  mask-image:
+    repeating-linear-gradient(90deg, #000 0 8px, transparent 8px 16px),
+    radial-gradient(circle at 50% 50%, #000 40%, transparent 41%);
+  mask-composite: intersect; /* valores varían por implementación; es opcional *\/
+  background:#a7f3d0;
+} */
+
+/* ===== Parte B — Reflejos ===== */
+
+figure {
+  margin: 0;
+}
+figcaption {
+  font-size: 0.9rem;
+  color: #475569;
+  margin-top: 0.25rem;
+}
+
+/* B1) Reflejo vertical con ::after y máscara de gradiente */
+.reflect {
+  position: relative;
+  width: min(560px, 100%);
+  margin: 0 auto;
+}
+.reflect img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+}
+.reflect::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* TODO: clonar imagen, invertir Y y degradar con mask */
+  /* bottom: -40%; height: 40%; background: url(...misma imagen...); */
+  /* transform: scaleY(-1); transform-origin: top; */
+  /* mask-image: linear-gradient(to bottom, rgba(0,0,0,.4), transparent 80%); */
+  /* -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.4), transparent 80%); */
+  /* filter: blur(1px); */
+}
+
+/* B2) Reflejo lateral (opcional) */
+.reflect-x {
+  position: relative;
+  width: min(420px, 100%);
+  margin: 1rem auto 0;
+}
+.reflect-x img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+}
+.reflect-x::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  /* TODO: clonar imagen, invertir X y degradar horizontalmente */
+  /* left: -35%; width: 35%; background: url(...); background-size: cover; background-position: left center; */
+  /* transform: scaleX(-1); transform-origin: left; */
+  /* mask-image: linear-gradient(to left, rgba(0,0,0,.35), transparent 80%); */
+  /* -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,.35), transparent 80%); */
+}
+
+/* Nota:
+   - Las máscaras interpretan blanco (o #000 según navegador) como “visible”.
+   - Usa prefijos -webkit- en móviles y Safari.
+   - Para reflejo con ::after necesitas la misma imagen como background:
+     cámbiala a tu URL real. Provee un fallback sin reflejo si no hay mask. */

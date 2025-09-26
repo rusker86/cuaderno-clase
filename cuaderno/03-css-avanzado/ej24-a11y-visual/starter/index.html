@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Avanzado — Ej24 A11y visual</title>
+    <!-- TODO: enlaza style.css -->
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+
+<body>
+    <a class="skip" href="#main">Saltar al contenido</a>
+
+    <header class="site-header">
+        <h1>Ej24: Accesibilidad visual avanzada</h1>
+        <p class="lead">Contraste, foco visible, estados y preferencias del usuario.</p>
+        <nav class="nav" aria-label="Principal">
+            <a href="#">Inicio</a>
+            <a href="#" aria-current="page">Docs</a>
+            <a href="#">Blog</a>
+        </nav>
+    </header>
+
+    <main id="main" class="wrap">
+        <section>
+            <h2>1) Enlaces y foco visible</h2>
+            <p>Prueba este <a class="link" href="#alerts">enlace de ejemplo</a> con hover y foco.</p>
+        </section>
+
+        <section>
+            <h2>2) Botones y estados</h2>
+            <div class="row">
+                <button class="btn">Primario</button>
+                <button class="btn" disabled>Deshabilitado</button>
+                <button class="btn btn--danger">Peligro</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>3) Campos y validación</h2>
+            <form class="form" novalidate>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" required aria-invalid="false" placeholder="nombre@dominio.com">
+                    <p class="hint">Tu email no será compartido.</p>
+                </div>
+                <div class="field">
+                    <label for="name">Nombre</label>
+                    <input id="name" required minlength="2" aria-invalid="true" placeholder="Tu nombre">
+                    <p class="hint hint--error">Mínimo 2 caracteres.</p>
+                </div>
+                <div class="field">
+                    <label><input type="checkbox"> Acepto términos</label>
+                </div>
+                <button class="btn" type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section id="alerts">
+            <h2>4) Alertas</h2>
+            <div class="alert" role="status" aria-live="polite">ℹ️ Información: cambios guardados.</div>
+            <div class="alert" role="alert" aria-live="assertive">⚠️ Alerta: faltan datos por completar.</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <small>© Curso CSS Avanzado</small>
+    </footer>
+</body>
+
+</html>

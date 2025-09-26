@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS — Ej19 Position (solución)</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Ejercicio 19: position</h1>
+    </header>
+
+    <main class="panel">
+        <section class="demo demo-a">
+            <h2>A) static (por defecto)</h2>
+            <div class="box box-static">Caja estática</div>
+        </section>
+
+        <section class="demo demo-b">
+            <h2>B) relative</h2>
+            <div class="box box-relative">Caja relativa (se mueve desde su posición)</div>
+        </section>
+
+        <section class="demo demo-c">
+            <h2>C) absolute dentro de contenedor relativo</h2>
+            <div class="contenedor-rel">
+                <div class="abs">Absoluta (anclada a este contenedor)</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, doloribus.</p>
+                <p>Otro texto para ver el flujo alrededor de la absoluta.</p>
+            </div>
+        </section>
+
+        <section class="demo demo-d">
+            <h2>D) fixed (pegada a la ventana)</h2>
+            <div class="fixed">Fixed (esquina)</div>
+            <p class="lorem">
+                Mucho contenido para hacer scroll. Mucho contenido para hacer scroll. Mucho contenido para hacer scroll.
+                Mucho contenido para hacer scroll. Mucho contenido para hacer scroll. Mucho contenido para hacer scroll.
+            </p>
+        </section>
+
+        <section class="demo demo-e">
+            <h2 class="sticky-head">E) sticky (se pega al hacer scroll)</h2>
+            <div class="contenido-largo">
+                <p>Contenido largo… desplázate para ver el efecto sticky en el encabezado.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum…</p>
+                <p>…</p>
+                <p>Más texto…</p>
+                <p>Más texto…</p>
+                <p>Más texto…</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 — Curso CSS</p>
+    </footer>
+</body>
+
+</html>

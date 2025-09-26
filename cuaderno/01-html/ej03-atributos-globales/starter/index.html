@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ej03 — Atributos globales</title>
+  </head>
+
+  <body>
+    <!-- TODO: header con título del sitio -->
+    <header title="Cabecera del sition" id="Cabecera" class="contenedor">
+      <h1 id="titulo-cabecera" class="titulo">Noticias tecnológicas</h1>
+      <nav>
+        <ul>
+          <li><a href="#" tabindex="1" title="Ir al inicio">Inicio</a></li>
+          <li><a href="#" tabindex="2" title="Ir a los artículos">Artículos</a></li>
+          <li><a href="#" tabindex="3" title="Ir a la seccion sobre mi">Sobre mi</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <!-- TODO: main con dos section, cada una con un article -->
+    <main>
+
+      <!-- Sección número 1 -->
+      <section id="seccion-1" class="seccion">
+        <article id="articulo-01" class="articulo" data-autor="Moises" data-category="lorem">
+          <h2 lang="es" title="articulo1">Artículo 1</h2>
+
+          <p lang="es">
+            <strong>Lorem</strong>, ipsum dolor sit amet consectetur adipisicing elit. Sunt veniam animi labore architecto! <em>Consectetur odit fugit fugiat</em>, voluptatum similique, non architecto nihil tenetur est iste dolores debitis autem id eum? <time datetime="25-09-24"> 25 de septiembre del 2025</time>
+          </p>
+
+          <p contenteditable="true" title="Contenido editable">
+            Este contenido se puede editar
+          </p>
+
+          <p>
+            <small>
+              <abbr title="HyperText Markup Languaje">HTML</abbr> Es el lenguaje de etiquetado usado para
+              crear páginas web
+            </small>
+          </p>
+
+        </article>
+
+      </section>
+      
+      <!-- Sección número 2 -->
+      <section id="seccion-2" class="seccion">
+        <article id="articulo-02" class="articulo" data-autor="Moises" data-category="lorem">
+          <h2 lang="es" title="articulo2"> Artículo 2</h2>
+
+          <p>
+            <mark>Lorem</mark> ipsum dolor sit amet, consectetur adipisicing elit. Veritatis qui laborum iure veniam autem error at nobis similique omnis porro fugit totam dolorem unde tempore harum architecto consequuntur, reiciendis maiores.
+          </p>
+
+          <p hidden id="promocion">Promoción disponible, ¡¡¡aprovecha la oferta!!!</p>
+        </article>
+      </section>
+    </main>
+
+    <!-- TODO: footer con derechos y año -->
+     <footer>
+      <p>&copy;Moisés Morente Salazar 2025</p>
+     </footer>
+
+    <!-- Requisitos de atributos globales (añádelos donde proceda):
+      - id, class
+      - title (en al menos 2 elementos)
+      - lang (en un bloque con distinto idioma)
+      - dir="rtl" en un bloque corto
+      - hidden en un elemento (comenta para qué lo usarías)
+      - tabindex en 3 elementos interactivos
+      - contenteditable en un pequeño párrafo
+      - data-* (al menos 2) en un article
+    -->
+
+    <!-- Requisitos de texto:
+      - Usa al menos 3 etiquetas: strong, em, small, abbr(title), mark, time(datetime)...
+    -->
+
+  </body>
+
+</html>

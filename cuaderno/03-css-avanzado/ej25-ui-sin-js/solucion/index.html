@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Avanzado — Ej25 UI sin JS (solución)</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="page">
+    <header class="site-header">
+        <a class="brand" href="#">Brand</a>
+
+        <!-- Drawer toggle -->
+        <input id="nav-toggle" type="checkbox" hidden>
+        <label class="btn btn--ghost" for="nav-toggle" aria-controls="drawer">☰ Menú</label>
+
+        <nav id="drawer" class="drawer" aria-label="Principal">
+            <a href="#">Inicio</a>
+            <a href="#tabs">Tabs</a>
+            <a href="#ok">Toast</a>
+            <a href="#modal">Modal</a>
+        </nav>
+    </header>
+
+    <main class="wrap">
+        <section>
+            <h2>Modal con :target</h2>
+            <a class="btn" href="#modal">Abrir modal</a>
+
+            <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+                <a class="modal__overlay" href="#"></a>
+                <article class="modal__card">
+                    <h3 id="modal-title">Título del modal</h3>
+                    <p>Contenido del modal. Expón controles y texto de ejemplo.</p>
+                    <a class="btn" href="#">Cerrar</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="toast">
+            <h2>Toast con :target</h2>
+            <p><a class="btn btn--ghost" href="#ok">Generar toast</a></p>
+            <div id="ok" class="toast" role="status" aria-live="polite">
+                <p>✔ Guardado correctamente. <a class="toast__close" href="#">Cerrar</a></p>
+            </div>
+        </section>
+
+        <section id="tabs">
+            <h2>Tabs con :checked</h2>
+
+            <div class="tabs">
+                <input type="radio" name="t" id="t1" hidden checked>
+                <input type="radio" name="t" id="t2" hidden>
+                <input type="radio" name="t" id="t3" hidden>
+
+                <div class="tabs__labels" role="tablist">
+                    <label role="tab" aria-controls="p1" for="t1" tabindex="0">Tab 1</label>
+                    <label role="tab" aria-controls="p2" for="t2" tabindex="0">Tab 2</label>
+                    <label role="tab" aria-controls="p3" for="t3" tabindex="0">Tab 3</label>
+                </div>
+
+                <div class="tabs__panels">
+                    <div id="p1" role="tabpanel" class="panel">
+                        <p>Panel 1 contenido.</p>
+                    </div>
+                    <div id="p2" role="tabpanel" class="panel">
+                        <p>Panel 2 contenido.</p>
+                    </div>
+                    <div id="p3" role="tabpanel" class="panel">
+                        <p>Panel 3 contenido.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>(Opcional) Estado agregado con :has()</h2>
+            <p>El header se resalta cuando hay modal/ toast o drawer activos.</p>
+        </section>
+    </main>
+</body>
+
+</html>

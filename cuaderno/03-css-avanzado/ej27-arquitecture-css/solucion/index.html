@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Avanzado — Ej27 Arquitectura CSS (solución)</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="theme-dark">
+    <header class="header header--sticky">
+        <div class="header__brand">MiMarca</div>
+        <nav class="header__nav" aria-label="Principal">
+            <a href="#">Inicio</a>
+            <a href="#" aria-current="page">Docs</a>
+            <a href="#">Blog</a>
+        </nav>
+        <a class="btn btn--primary" href="#">Acción</a>
+    </header>
+
+    <main class="wrap u-grid u-gap-4">
+        <article class="card">
+            <img class="card__img" src="https://picsum.photos/seed/a/640/360" alt="Imagen de muestra">
+            <h2 class="card__title">Título de la card</h2>
+            <p class="card__meta">12 Sep · 5 min</p>
+            <p>Contenido breve de la card. Demuestra cómo actúa una utilidad sobre el padding.</p>
+            <a class="btn" href="#">Leer más</a>
+        </article>
+
+        <article class="card card--featured u-p-0">
+            <img class="card__img" src="https://picsum.photos/seed/b/640/360" alt="Imagen de muestra">
+            <h2 class="card__title">Destacada</h2>
+            <p class="card__meta">11 Sep · 7 min</p>
+            <p>Card con modificador y utilidad que sobrescribe parte del estilo.</p>
+            <a class="btn btn--ghost" href="#">Ver</a>
+        </article>
+    </main>
+
+    <footer class="site-footer u-mb-0">
+        <small>© Curso CSS Avanzado</small>
+    </footer>
+</body>
+
+</html>

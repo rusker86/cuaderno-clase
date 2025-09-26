@@ -1,0 +1,78 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #0f172a;
+  background: #f8fafc;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+}
+section {
+  margin-bottom: 1rem;
+}
+
+/* === TODO: Estados de enlaces ===
+   Orden recomendado en la hoja (cascada):
+   1) a:link
+   2) a:visited
+   3) a:focus (o :focus-visible)
+   4) a:hover
+   5) a:active
+   Esto evita que :hover pise el foco, priorizando teclado.
+*/
+
+/* TODO: link (no visitado) */
+/* a:link { } */
+
+/* TODO: visited (visitado) — color diferente y cambios limitados por seguridad */
+/* a:visited { } */
+
+/* TODO: focus (o focus-visible) — debe ser MUY visible; usa outline u otra señal clara */
+/* a:focus { outline: 3px solid #0ea5e9; outline-offset: 2px; } */
+/* a:focus-visible { } */
+
+/* TODO: hover — puede cambiar color/subrayado */
+/* a:hover { } */
+
+/* TODO: active — durante el clic */
+/* a:active { } */
+
+/* === TODO: estilo botón para enlaces con clase .btn-link === */
+/*
+.btn-link {
+  display: inline-block;
+  text-decoration: none;
+  padding: .5rem .75rem;
+  border: 1px solid #94a3b8;
+  border-radius: .5rem;
+}
+.btn-link:hover { }
+.btn-link:focus { outline: 3px solid #0ea5e9; outline-offset: 2px; }
+.btn-link:active { }
+*/
+
+/* === TODO: estado "deshabilitado" visual para enlaces ===
+   Nota: HTML no tiene <a disabled>. Para la demo, añadimos .is-disabled y
+   podemos usar pointer-events: none; y un color apagado + cursor no-permitido.
+*/
+/*
+.is-disabled {
+  color: #94a3b8;
+  text-decoration: none;
+  cursor: not-allowed;
+  pointer-events: none;  /\* demo: impide interacción *\/
+}
+*/
+
+/* Comentarios a incluir:
+   - Mantén un estilo de foco visible para accesibilidad.
+   - :visited tiene restricciones: no puedes cambiar propiedades que revelen historial (p. ej., dimensiones).
+   - Evita depender solo del color: añade subrayado en hover o un estilo de foco claro. */

@@ -1,0 +1,48 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.5;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+}
+section {
+  margin-bottom: 1rem;
+}
+
+/* Utilidades visuales */
+.demo-box {
+  border: 1px solid #94a3b8;
+  background: #e0f2fe;
+  padding: 0.5rem;
+}
+.fila {
+  /* contenedor de las tarjetas */
+}
+
+/* === A) TODO: block vs inline === */
+/* .bloque { }             /\* fuerza display:block y ancho, alto *\/ */
+/* .en-linea { }           /\* display:inline; observa que width/height no aplican *\/ */
+
+/* === B) TODO: inline-block === */
+/* .card { }               /\* display:inline-block; width/height/padding/border visibles en línea *\/ */
+
+/* === C) TODO: display none === */
+/* .oculto { }             /\* display:none; no ocupa espacio *\/ */
+
+/* === D) TODO: visibility hidden (opcional) === */
+/* .invisible { }          /\* visibility:hidden; ocupa espacio pero no se ve *\/ */
+
+/* Comentarios guía:
+   - inline ignora width/height; respeta padding horizontal y borde, el vertical afecta al line-box.
+   - inline-block permite tamaño y mantiene el flujo en línea (como texto).
+   - display:none elimina el elemento del flujo; visibility:hidden conserva el hueco. */

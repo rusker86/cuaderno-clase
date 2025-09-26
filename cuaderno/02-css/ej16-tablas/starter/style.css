@@ -1,0 +1,27 @@
+/* Base mínima */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+}
+
+/* TODO: aplica estilos básicos a la tabla */
+
+/* TODO: border y border-collapse */
+
+/* TODO: padding en celdas */
+
+/* TODO: encabezado con fondo diferente y negrita */
+
+/* TODO: filas alternadas con nth-child */
+
+/* TODO: alineación de columnas */
+
+/* TODO opcional: hover sobre tr */

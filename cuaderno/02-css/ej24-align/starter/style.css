@@ -1,0 +1,43 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+
+/* === A) TODO: text-align left/right/center/justify en párrafos === */
+/* .p-left   { text-align:left; } */
+/* .p-right  { text-align:right; } */
+/* .p-center { text-align:center; } */
+/* .p-just   { text-align:justify; } */
+
+/* === B) TODO: inline vs inline-block === */
+/* .caja { text-align:center; border:1px dashed #94a3b8; padding:.5rem; } */
+/* .inl { background:#fde68a; } */
+/* .cuadro { display:inline-block; background:#bbf7d0; width:120px; height:60px; } */
+
+/* === C) TODO: imagen centrada con text-align === */
+/* .caja-img { text-align:center; } */
+
+/* === D) TODO: botón inline-block === */
+/* .btn { display:inline-block; padding:.5rem 1rem; background:#3b82f6; color:#fff; border-radius:.25rem; text-decoration:none; } */
+
+/* (Opcional) RTL: observa que text-align:start y end dependen de la dirección del texto */

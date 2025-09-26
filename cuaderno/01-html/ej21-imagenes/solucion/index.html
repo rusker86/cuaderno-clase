@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ej21 — Imágenes en HTML5 (solución)</title>
+</head>
+
+<body>
+    <header>
+        <h1>Trabajando con imágenes en HTML5</h1>
+        <p>Ejemplos de alt, tamaños intrínsecos, figure/figcaption, responsive y picture.</p>
+    </header>
+
+    <main>
+        <!-- 1) Imagen informativa: alt descriptivo + width/height para reservar espacio -->
+        <section>
+            <h2>Imagen informativa</h2>
+            <img src="images/paisaje-640.jpg"
+                alt="Valle con montañas al atardecer y un río serpenteando en primer plano" width="640" height="360"
+                decoding="async" fetchpriority="high">
+            <p>
+                Esta imagen acompaña el contenido explicativo; por eso lleva un <code>alt</code>
+                que describe el contenido visual relevante.
+            </p>
+        </section>
+
+        <!-- 2) Figure con leyenda -->
+        <section>
+            <h2>Figura con leyenda</h2>
+            <figure>
+                <img src="images/diagrama-800.jpg" alt="Diagrama con tres etapas: entrada, procesamiento y salida"
+                    width="800" height="450" decoding="async">
+                <figcaption>Figura 1. Flujo básico de datos: entrada → procesamiento → salida.</figcaption>
+            </figure>
+        </section>
+
+        <!-- 3) Imagen decorativa: alt vacío para que el lector de pantalla la ignore -->
+        <section>
+            <h2>Imagen decorativa</h2>
+            <!-- Es puramente decorativa (no aporta información). Por accesibilidad, alt="" -->
+            <img src="images/patron-200.png" alt="" width="200" height="200" decoding="async">
+            <p>Como es decorativa, el <code>alt</code> va vacío para no distraer a usuarios de lector de pantalla.</p>
+        </section>
+
+        <!-- 4) Imagen responsive con srcset + sizes; lazy porque está más abajo de la página -->
+        <section>
+            <h2>Imagen responsive (srcset + sizes)</h2>
+            <img src="images/foto-640.jpg" srcset="
+            images/foto-320.jpg 320w,
+            images/foto-640.jpg 640w,
+            images/foto-1024.jpg 1024w
+          " sizes="(max-width: 480px) 320px,
+                 (max-width: 900px) 640px,
+                 1024px" alt="Retrato de una persona trabajando con un portátil en un café" width="1024" height="683"
+                loading="lazy" decoding="async" fetchpriority="low">
+            <p>
+                El navegador elige la mejor variante según el ancho de la ventana y el
+                valor de <code>sizes</code>. Usamos <code>loading="lazy"</code> al estar fuera del primer pantallazo.
+            </p>
+        </section>
+
+        <!-- 5) <picture> con source WebP y fallback JPG -->
+        <section>
+            <h2>Picture con formato moderno (WebP) y fallback</h2>
+            <picture>
+                <source type="image/webp" srcset="
+              images/portada-640.webp 640w,
+              images/portada-1024.webp 1024w
+            " sizes="(max-width: 800px) 640px, 1024px">
+                <!-- El <img> final es el fallback y debe tener alt, width y height -->
+                <img src="images/portada-1024.jpg" srcset="
+              images/portada-640.jpg 640w,
+              images/portada-1024.jpg 1024w
+            " sizes="(max-width: 800px) 640px, 1024px"
+                    alt="Portada del artículo con tipografía grande y un fondo abstracto" width="1024" height="576"
+                    loading="lazy" decoding="async">
+            </picture>
+            <p>
+                Con <code>&lt;picture&gt;</code> servimos WebP cuando es posible y mantenemos compatibilidad con JPG.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Ejercicio realizado por Tu Nombre — 2025</p>
+    </footer>
+</body>
+
+</html>

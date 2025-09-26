@@ -1,0 +1,78 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.5;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+}
+section {
+  margin-bottom: 1rem;
+}
+
+.demo-box {
+  border: 1px solid #94a3b8;
+  background: #e0f2fe;
+  padding: 0.5rem;
+}
+
+/* A) block vs inline */
+.bloque {
+  display: block;
+  width: 280px; /* en block, width/height aplican */
+  height: 60px;
+  margin-bottom: 0.5rem;
+}
+.en-linea {
+  display: inline; /* en inline, width/height se ignoran */
+  width: 280px; /* NO tendrá efecto */
+  height: 60px; /* NO tendrá efecto */
+  padding: 0.25rem 0.5rem; /* padding vertical afecta al alto de la línea */
+  margin: 0.25rem; /* el margin vertical no empuja como en block */
+  border: 1px solid #94a3b8;
+  background: #e0f2fe;
+}
+
+/* B) inline-block: tamaño + flujo en línea */
+.fila {
+  /* contenedor simple para ver la hilera */
+  border: 1px dashed #cbd5e1;
+  padding: 0.5rem;
+}
+.card {
+  display: inline-block;
+  width: 140px;
+  height: 80px;
+  margin: 0.25rem;
+  padding: 0.5rem;
+  border: 1px solid #94a3b8;
+  background: #fff;
+  vertical-align: top; /* alinear la línea base */
+}
+
+/* C) display none: no ocupa espacio */
+.oculto {
+  display: none;
+}
+
+/* D) visibility hidden: ocupa espacio pero no se ve */
+.invisible {
+  visibility: hidden;
+  border: 1px solid #94a3b8;
+  background: #fde68a;
+  padding: 0.5rem;
+}
+
+/* Notas:
+   - inline ignora width/height; usa inline-block si necesitas tamaño en línea.
+   - display:none retira el elemento del flujo y de la accesibilidad visual (ojo con accesibilidad).
+   - visibility:hidden mantiene el layout pero oculta el renderizado. */

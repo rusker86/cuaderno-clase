@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ej24 — Formularios en HTML5 (solución)</title>
+</head>
+
+<body>
+    <header>
+        <h1>Formulario de ejemplo (HTML5)</h1>
+        <p>Demostración de entradas modernas y validación nativa. (Acción simulada)</p>
+    </header>
+
+    <main>
+        <!-- action="#" simula el envío; en un sitio real, apunta a una URL del servidor -->
+        <form action="#" method="post">
+            <!-- DATOS PERSONALES -->
+            <fieldset>
+                <legend>Datos personales</legend>
+
+                <p>
+                    <label for="nombre">Nombre completo</label><br>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellidos" autocomplete="name"
+                        required>
+                </p>
+
+                <p>
+                    <label for="email">Correo electrónico</label><br>
+                    <input type="email" id="email" name="email" placeholder="tucorreo@example.com" autocomplete="email"
+                        required>
+                </p>
+
+                <p>
+                    <label for="web">Sitio web</label><br>
+                    <input type="url" id="web" name="web" placeholder="https://tusitio.com" autocomplete="url" required>
+                </p>
+
+                <p>
+                    <label for="pais">País</label><br>
+                    <input type="text" id="pais" name="pais" list="paises" placeholder="Selecciona o escribe…"
+                        autocomplete="country-name">
+                    <!-- Datalist de sugerencias -->
+                    <datalist id="paises">
+                        <option value="España"></option>
+                        <option value="México"></option>
+                        <option value="Argentina"></option>
+                        <option value="Colombia"></option>
+                    </datalist>
+                </p>
+            </fieldset>
+
+            <!-- PREFERENCIAS -->
+            <fieldset>
+                <legend>Preferencias</legend>
+
+                <!-- Radios: mismo name para exclusividad -->
+                <fieldset>
+                    <legend>Suscripción</legend>
+                    <p>
+                        <input type="radio" id="suscripcion-basica" name="suscripcion" value="basica" checked>
+                        <label for="suscripcion-basica">Básica</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="suscripcion-pro" name="suscripcion" value="pro">
+                        <label for="suscripcion-pro">Pro</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="suscripcion-empresa" name="suscripcion" value="empresa">
+                        <label for="suscripcion-empresa">Empresa</label>
+                    </p>
+                </fieldset>
+
+                <!-- Checkboxes: mismo name permite múltiples valores -->
+                <fieldset>
+                    <legend>Intereses</legend>
+                    <p>
+                        <input type="checkbox" id="int-html" name="intereses" value="html">
+                        <label for="int-html">HTML</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="int-css" name="intereses" value="css">
+                        <label for="int-css">CSS</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="int-js" name="intereses" value="js">
+                        <label for="int-js">JavaScript</label>
+                    </p>
+                </fieldset>
+            </fieldset>
+
+            <!-- CAMPOS NUMÉRICOS Y FECHAS -->
+            <fieldset>
+                <legend>Valores y fechas</legend>
+
+                <p>
+                    <label for="edad">Edad (18–120)</label><br>
+                    <input type="number" id="edad" name="edad" min="18" max="120" step="1" placeholder="Ej.: 28"
+                        inputmode="numeric" required>
+                </p>
+
+                <p>
+                    <label for="fecha">Fecha</label><br>
+                    <input type="date" id="fecha" name="fecha">
+                </p>
+
+                <p>
+                    <label for="hora">Hora</label><br>
+                    <input type="time" id="hora" name="hora">
+                </p>
+
+                <p>
+                    <label for="nivel">Nivel (0–100)</label><br>
+                    <input type="range" id="nivel" name="nivel" min="0" max="100" step="5" value="50"
+                        oninput="salida.value = nivel.value">
+                    <!-- output enlazado por id/for; sin JS externo -->
+                    <output id="salida" for="nivel">50</output>
+                </p>
+            </fieldset>
+
+            <!-- SELECT CON OPTGROUP -->
+            <fieldset>
+                <legend>Selección</legend>
+                <p>
+                    <label for="rol">Rol preferido</label><br>
+                    <select id="rol" name="rol" autocomplete="organization-title" required>
+                        <optgroup label="Frontend">
+                            <option value="html">Maquetador HTML</option>
+                            <option value="react">React Developer</option>
+                        </optgroup>
+                        <optgroup label="Backend">
+                            <option value="node">Node.js Developer</option>
+                            <option value="php">PHP Developer</option>
+                        </optgroup>
+                    </select>
+                </p>
+            </fieldset>
+
+            <!-- TEXTO LIBRE Y ARCHIVOS -->
+            <fieldset>
+                <legend>Comentarios y archivo</legend>
+
+                <p>
+                    <label for="comentarios">Comentarios</label><br>
+                    <textarea id="comentarios" name="comentarios" rows="4"
+                        placeholder="Cuéntanos algo relevante…"></textarea>
+                </p>
+
+                <p>
+                    <label for="avatar">Subir imagen (opcional)</label><br>
+                    <input type="file" id="avatar" name="avatar" accept="image/*">
+                </p>
+            </fieldset>
+
+            <!-- VALIDACIÓN CON PATTERN (ejemplo) -->
+            <fieldset>
+                <legend>Validación con patrón</legend>
+                <p>
+                    <label for="usuario">Usuario (5–12 letras/números)</label><br>
+                    <input type="text" id="usuario" name="usuario" pattern="[A-Za-z0-9]{5,12}"
+                        title="Entre 5 y 12 caracteres alfanuméricos (sin espacios)." placeholder="p.ej. oscar88"
+                        required>
+                </p>
+            </fieldset>
+
+            <!-- CONTROLES -->
+            <p><small>Este formulario es una **demo**. El envío no se procesa (action="#").</small></p>
+            <p>
+                <button type="submit">Enviar</button>
+                <button type="reset">Restablecer</button>
+            </p>
+        </form>
+    </main>
+
+    <footer>
+        <p>Ejercicio realizado por Tu Nombre — 2025</p>
+    </footer>
+</body>
+
+</html>

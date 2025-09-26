@@ -1,0 +1,207 @@
+/* Orden de capas (no genera reglas) */
+@layer reset, base, theme, components, utilities;
+
+/* ===== TOKENS ===== */
+:root {
+  --bg: #0b1220;
+  --fg: #e5e7eb;
+  --muted: #94a3b8;
+  --surface: #0f172a;
+  --border: #1e293b;
+  --primary: #7dd3fc;
+  --primary-ink: #041925;
+  --radius: 0.9rem;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --shadow-sm: 0 1px 2px rgba(2, 6, 23, 0.06);
+  --shadow-md: 0 6px 20px rgba(2, 6, 23, 0.18);
+}
+
+/* ===== TEMA (opcional) ===== */
+@layer theme {
+  .theme-dark {
+    /* ya estamos en dark por defecto; de querer claro, volcar aquí variables */
+  }
+}
+
+/* ===== RESET ===== */
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+/* ===== BASE ===== */
+@layer base {
+  body {
+    font-family: system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding: var(--space-2);
+  }
+  a {
+    color: var(--primary);
+  }
+
+  :where(a, .btn):focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--primary) 85%, white);
+    outline-offset: 2px;
+  }
+
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: var(--space-2);
+  }
+}
+
+/* ===== COMPONENTES (BEM) ===== */
+@layer components {
+  /* Header */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0.8rem var(--space-2);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .header--sticky {
+    box-shadow: var(--shadow-sm);
+  }
+  .header__brand {
+    font-weight: 900;
+    letter-spacing: 0.02em;
+  }
+  .header__nav {
+    margin-left: auto;
+    display: flex;
+    gap: 0.6rem;
+  }
+  .header__nav a {
+    padding: 0.35rem 0.6rem;
+    border-radius: 0.6rem;
+  }
+  .header__nav a[aria-current="page"] {
+    background: color-mix(in srgb, var(--primary) 18%, transparent);
+  }
+
+  /* Botón */
+  .btn {
+    display: inline-block;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.55rem 0.9rem;
+    color: var(--fg);
+    background: #0f1a2b;
+    transition: box-shadow 0.2s ease, transform 0.06s ease;
+  }
+  .btn:hover {
+    box-shadow: var(--shadow-sm);
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  .btn--primary {
+    background: var(--primary);
+    color: var(--primary-ink);
+    border-color: transparent;
+  }
+  .btn--ghost {
+    background: transparent;
+  }
+
+  /* Card */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--space-3);
+    box-shadow: var(--shadow-sm);
+    display: grid;
+    gap: 0.5rem;
+  }
+  .card__img {
+    border-radius: calc(var(--radius) - 0.25rem);
+  }
+  .card__title {
+    margin: 0;
+    font: 800 1.25rem/1.2 system-ui, sans-serif;
+  }
+  .card__meta {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .card--featured {
+    border-color: color-mix(in srgb, var(--primary) 60%, var(--border));
+    box-shadow: var(--shadow-md);
+  }
+}
+
+/* ===== UTILIDADES ===== */
+@layer utilities {
+  /* Nota: muchas utilidades usan !important para ganar a components sin subir especificidad */
+  .u-flex {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-1) !important;
+  }
+  .u-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  }
+  .u-gap-1 {
+    gap: var(--space-1) !important;
+  }
+  .u-gap-2 {
+    gap: var(--space-2) !important;
+  }
+  .u-gap-4 {
+    gap: calc(var(--space-2) * 2) !important;
+  }
+  .u-p-0 {
+    padding: 0 !important;
+  }
+  .u-mb-0 {
+    margin-bottom: 0 !important;
+  }
+  .u-text-sm {
+    font-size: 0.92rem !important;
+  }
+  .u-w-full {
+    width: 100% !important;
+  }
+  .u-hide {
+    display: none !important;
+  }
+}
+
+/* Comentarios:
+ - El orden de @layer garantiza que utilities pueda anular por cascada a components.
+ - BEM mantiene responsabilidades claras; modificadores no cambian la estructura del bloque.
+ - Usa utilidades para ajustes puntuales sin “subir” especificidad de los componentes. */

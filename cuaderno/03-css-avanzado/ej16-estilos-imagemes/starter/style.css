@@ -1,0 +1,172 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.content {
+  max-width: 52ch;
+}
+
+/* 1) Imagen fluida (pista) */
+.content img {
+  /* max-width:100%; height:auto; display:block; */
+}
+
+/* 2) Contenedor con proporción fija */
+.ratio {
+  position: relative;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #e2e8f0;
+}
+.ratio > img {
+  /* object-fit: cover; width:100%; height:100%; position:absolute; inset:0; */
+}
+.ratio-16x9 {
+  aspect-ratio: 16 / 9;
+}
+.ratio-1x1 {
+  aspect-ratio: 1 / 1;
+}
+
+/* 3) cover vs contain + object-position */
+.box {
+  width: 280px;
+  height: 180px;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #f1f5f9;
+  display: grid;
+  place-items: center;
+}
+.demo {
+  width: 100%;
+  height: 100%; /* object-fit: cover|contain; object-position: 50% 50%; */
+}
+.cover {
+  /* object-fit: cover; object-position: 50% 20%; */
+}
+.contain {
+  /* object-fit: contain; background:#fff; */
+}
+
+/* 4) Figure + caption */
+.photo {
+  max-width: 680px;
+  margin-inline: auto;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.photo figcaption {
+  /* padding:.5rem .75rem; background:#0f172a; color:#fff; font-size:.95rem; */
+}
+
+/* 5) Avatares / formas */
+.avatar {
+  display: block; /* width/height según tamaño; */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+}
+.avatar--sm {
+  /* width:32px; height:32px; */
+}
+.avatar--md {
+  /* width:56px; height:56px; */
+}
+.avatar--lg {
+  /* width:88px; height:88px; */
+}
+
+/* 6) Filtros + overlay */
+.card {
+  position: relative;
+  inline-size: min(560px, 100%);
+  margin-inline: auto;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+.card__img {
+  display: block;
+  width: 100%;
+  height: auto; /* transition: filter .2s ease; */
+}
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* background: linear-gradient(to top, rgba(15,23,42,.45), rgba(15,23,42,0)); */
+  /* mix-blend-mode: multiply; */ /* opcional */
+}
+.card__cap {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+.card:hover .card__img {
+  /* filter: grayscale(.2) brightness(.95); */
+}
+
+/* 7) image-set() en background (opcional) */
+.hero {
+  display: grid;
+  place-items: center;
+  height: 220px;
+  border-radius: 0.75rem;
+  color: #fff;
+  font-weight: 800;
+  text-align: center;
+  /* background-image:
+      image-set(
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=900&auto=format&fit=crop") 1x,
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1800&auto=format&fit=crop") 2x
+      );
+     background-size: cover; background-position: center;
+     background-color:#0f172a;
+     background-blend-mode: multiply; */
+}
+
+/* Notas:
+ - Usa max-width:100% + height:auto para imágenes fluidas.
+ - `aspect-ratio` en el contenedor evita “saltos” (no necesitas padding hacks).
+ - `object-fit: cover` recorta; `contain` encaja toda la imagen.
+ - Evita animar filtros pesados; transiciones cortas. */

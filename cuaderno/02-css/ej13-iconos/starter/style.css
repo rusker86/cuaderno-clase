@@ -1,0 +1,94 @@
+/* ====== (Opcional) @font-face para fuente de iconos (ficticia) ====== */
+/*
+@font-face {
+  font-family: "IconFont";
+  src: url("../fonts/IconFont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+*/
+
+/* Base visual */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #0f172a;
+  background: #f8fafc;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+.nota {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+/* ====== 1) Fuente de iconos (demo) ====== */
+.if {
+  /* font-family: "IconFont";  /\* si tuvieras una *\/ */
+  /* Simulación: usamos un glifo Unicode (estrella) en ::before */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  font-size: 1.25rem; /* tamaño del icono */
+  color: #0ea5e9; /* color del icono */
+  vertical-align: middle;
+}
+.if-home::before {
+  content: "★";
+} /* Unicode como demo */
+
+.btn-if {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  cursor: pointer;
+}
+.btn-if:hover {
+  color: #0369a1;
+  border-color: #94a3b8;
+}
+
+/* Solo-lectura para lectores de pantalla (oculto visualmente) */
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ====== 2) SVG (inline y decorativo) ====== */
+.icon {
+  width: 1.5rem; /* tamaño configurable */
+  height: 1.5rem;
+  fill: currentColor; /* hereda el color del texto */
+  stroke: currentColor; /* por si hay líneas */
+  vertical-align: middle;
+}
+.icon-wrap:hover {
+  color: #0ea5e9;
+}
+
+/* ====== 3) Sprite con <use> ====== */
+.icon + .icon {
+  margin-left: 0.75rem;
+} /* separación de ejemplo */

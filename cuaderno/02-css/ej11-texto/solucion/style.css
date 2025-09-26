@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #0f172a;
+  background: #f8fafc;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+/* A) text-align: left (por defecto) */
+.texto-a {
+  text-align: left;
+}
+
+/* B) centrado */
+.texto-b {
+  text-align: center;
+}
+
+/* C) alineado a la derecha */
+.texto-c {
+  text-align: right;
+}
+
+/* D) justificado */
+.texto-d {
+  text-align: justify;
+}
+
+/* E) decoraciones */
+.texto-e {
+  text-decoration: underline line-through overline;
+}
+
+/* F) transformación de texto */
+.texto-f {
+  text-transform: uppercase;
+}
+
+/* G) interlineado (line-height) */
+.texto-g {
+  line-height: 2; /* 2 veces el tamaño de la fuente */
+}
+
+/* H) espaciado entre letras */
+.texto-h {
+  letter-spacing: 4px;
+}
+
+/* I) espaciado entre palabras */
+.texto-i {
+  word-spacing: 12px;
+}
+
+/* J) combinado */
+.texto-j {
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+}

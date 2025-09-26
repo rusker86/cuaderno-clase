@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Avanzado — Ej23 Filtros + Blends</title>
+    <!-- TODO: enlazar style.css -->
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>Ej23: Filtros, blends y overlays</h1>
+        <p class="lead">Galería con efectos de hover, duotono sin SVG, “glass card” y blends de texto.</p>
+    </header>
+
+    <main class="wrap">
+        <!-- 1) Mini-galería -->
+        <section>
+            <h2>1) Galería</h2>
+            <div class="grid">
+                <!-- Repite y varía clases: .fx-gray, .fx-blur, .fx-bright -->
+                <figure class="thumb fx-gray">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=900&auto=format&fit=crop"
+                        alt="Montañas">
+                    <figcaption>Montañas</figcaption>
+                </figure>
+                <figure class="thumb fx-blur">
+                    <img src="https://images.unsplash.com/photo-1495567720989-cebdbdd97913?q=80&w=900&auto=format&fit=crop"
+                        alt="Trabajo remoto">
+                    <figcaption>Trabajo</figcaption>
+                </figure>
+                <figure class="thumb fx-bright">
+                    <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=900&auto=format&fit=crop"
+                        alt="Abstracto">
+                    <figcaption>Abstracto</figcaption>
+                </figure>
+                <figure class="thumb fx-gray">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=900&auto=format&fit=crop"
+                        alt="Ciudad">
+                    <figcaption>Ciudad</figcaption>
+                </figure>
+                <figure class="thumb fx-blur">
+                    <img src="https://images.unsplash.com/photo-1470115636492-6d2b56f9146e?q=80&w=900&auto=format&fit=crop"
+                        alt="Bosque">
+                    <figcaption>Bosque</figcaption>
+                </figure>
+                <figure class="thumb fx-bright">
+                    <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=900&auto=format&fit=crop"
+                        alt="Notas">
+                    <figcaption>Notas</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- 3) Duotono -->
+        <section>
+            <h2>2) Duotono</h2>
+            <!-- TODO: aplicar filtro y background-blend-mode -->
+            <div class="duotone">
+                <p>Duotono con blend</p>
+            </div>
+        </section>
+
+        <!-- 4) Glass card sobre imagen -->
+        <section class="hero">
+            <h2>3) Glass card</h2>
+            <!-- TODO: tarjeta con fondo translúcido + backdrop-filter -->
+            <article class="glass">
+                <h3>Suscríbete</h3>
+                <p>Recibe novedades cada mes. Sin spam.</p>
+                <a class="btn" href="#">Quiero saber más</a>
+            </article>
+        </section>
+
+        <!-- 5) Blend de texto -->
+        <section>
+            <h2>4) Blend de texto</h2>
+            <div class="blend-wrap">
+                <img class="blend-img"
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop"
+                    alt="">
+                <!-- Nota: el alt vacío marca imagen decorativa -->
+                <h3 class="blend-title">Texto en blend</h3>
+            </div>
+        </section>
+
+        <!-- (Opcional) 6) Tinta multiplicada -->
+        <section>
+            <h2>(Opcional) 5) Tinta multiplicada</h2>
+            <div class="ink-wrap">
+                <img src="https://images.unsplash.com/photo-1470115636492-6d2b56f9146e?q=80&w=1600&auto=format&fit=crop"
+                    alt="">
+                <div class="ink"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <small>© Curso CSS Avanzado</small>
+    </footer>
+</body>
+
+</html>

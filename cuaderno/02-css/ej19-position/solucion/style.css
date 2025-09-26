@@ -1,0 +1,62 @@
+/* Base */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; color:#0f172a; line-height:1.5; background:#f8fafc; }
+h1 { margin: 1rem; }
+.panel { padding: 1rem; display: grid; gap: 1.25rem; }
+.demo { background:#fff; border:1px solid #e5e7eb; padding: 1rem; }
+
+.box { background:#e0f2fe; border:1px solid #94a3b8; padding:.5rem .75rem; display:inline-block; }
+.contenido-largo, .lorem { height: 40vh; overflow:auto; border:1px dashed #cbd5e1; padding: .5rem; }
+
+/* A) static: offsets no aplican */
+.box-static {
+  position: static;
+  top: 20px;  /* sin efecto */
+  left: 20px; /* sin efecto */
+}
+
+/* B) relative: se desplaza desde su posición original */
+.box-relative {
+  position: relative;
+  top: -10px;
+  left: 10px;
+  background:#cffafe;
+}
+
+/* C) absolute dentro de contenedor relativo */
+.contenedor-rel {
+  position: relative; /* define el containing block para .abs */
+  min-height: 140px;
+  background:#f1f5f9;
+  border:1px solid #cbd5e1;
+  padding:1rem;
+}
+.abs {
+  position: absolute;      /* sale del flujo normal */
+  top: .5rem;
+  right: .5rem;
+  background:#fde68a;
+  border:1px solid #f59e0b;
+  padding:.25rem .5rem;
+}
+
+/* D) fixed: relativo al viewport */
+.fixed {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background:#bbf7d0;
+  border:1px solid #22c55e;
+  padding:.5rem;
+}
+
+/* E) sticky: actúa como relative hasta tocar top */
+.sticky-head {
+  position: sticky;
+  top: 0;
+  background:#c7d2fe;
+  border-bottom:1px solid #94a3b8;
+}
+
+/* Notas:
+   - absolute usa como referencia el primer ances

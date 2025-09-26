@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Avanzado — Ej22 :has() + relacionales (solución)</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>Ej22: :has() + selectores relacionales</h1>
+        <p class="lead">UI reactiva sin JS usando el “selector de padre”.</p>
+    </header>
+
+    <main class="wrap">
+        <section>
+            <h2>1) Tarjeta reactiva por contenido</h2>
+            <article class="card">
+                <img class="wide"
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop"
+                    alt="Montañas">
+                <h3>Título</h3>
+                <p>Si hay imagen, la tarjeta se destaca. Con <code>.wide</code>, aparece el banner.</p>
+                <div class="banner">Panorámica</div>
+            </article>
+        </section>
+
+        <section>
+            <h2>2) Formulario con validación reactiva</h2>
+            <form class="form" novalidate>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required placeholder="tu@email.com">
+                    <p class="hint hint--error">Formato de email inválido.</p>
+                </div>
+                <div class="field">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" name="nombre" required minlength="2" placeholder="Tu nombre">
+                    <p class="hint hint--error">Introduce al menos 2 caracteres.</p>
+                </div>
+                <button class="btn" type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>3) Acordeón (solo CSS)</h2>
+            <div class="accordion">
+                <article class="accordion__item">
+                    <input id="acc-1" type="checkbox" hidden>
+                    <label class="accordion__heading" for="acc-1">Sección 1</label>
+                    <div class="accordion__panel">
+                        <p>Contenido de la sección 1.</p>
+                    </div>
+                </article>
+                <article class="accordion__item">
+                    <input id="acc-2" type="checkbox" hidden>
+                    <label class="accordion__heading" for="acc-2">Sección 2</label>
+                    <div class="accordion__panel">
+                        <p>Contenido de la sección 2.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>4) Menú activo (aria-current)</h2>
+            <nav class="nav" aria-label="Principal">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#" aria-current="page">Docs</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section>
+            <h2>5) Tarjeta selectable (checkbox)</h2>
+            <label class="product">
+                <input class="select" type="checkbox" hidden>
+                <span class="product__body">
+                    <strong>Producto X</strong>
+                    <span class="price">29,00 €</span>
+                </span>
+            </label>
+        </section>
+
+        <section>
+            <h2>(Opcional) 6) Lista sin imagen</h2>
+            <ul class="items">
+                <li class="item"><img alt="" src="https://picsum.photos/seed/a/60/40"> Con imagen</li>
+                <li class="item"> Sin imagen</li>
+                <li class="item"><img alt="" src="https://picsum.photos/seed/b/60/40"> Con imagen</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <small>© Curso CSS Avanzado</small>
+    </footer>
+</body>
+
+</html>

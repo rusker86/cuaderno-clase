@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mini-proyecto CSS — Café Aurora</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body id="top">
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="brand" aria-label="Café Aurora">Café<span>Aurora</span></div>
+            <nav class="site-nav" aria-label="Principal">
+                <a href="#home">Inicio</a>
+                <a href="#servicios">Café</a>
+                <a href="#precios">Precios</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido">
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Tu café, como debe ser</h1>
+                <p class="sub">Tostado propio, origen ético y recetas que vuelves a pedir.</p>
+                <a class="cta" href="#contacto">Pide el tuyo</a>
+            </div>
+        </section>
+
+        <section id="servicios" class="features">
+            <div class="container">
+                <h2>Nuestras ventajas</h2>
+                <div class="cards">
+                    <article class="card">
+                        <h3>Grano seleccionado</h3>
+                        <p>Lotes pequeños, perfiles consistentes.</p>
+                    </article><!--
+            -->
+                    <article class="card">
+                        <h3>Leche perfecta</h3>
+                        <p>Textura sedosa para arte latte impecable.</p>
+                    </article><!--
+            -->
+                    <article class="card">
+                        <h3>Sin prisa</h3>
+                        <p>Baristas que escuchan y recomiendan.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="media-float">
+            <div class="container">
+                <h2>Nuestra historia</h2>
+                <img class="float-left" src="https://via.placeholder.com/200x140" alt="Tostadora de café artesanal">
+                <p>
+                    Empezamos con una tostadora y un sueño. El barrio respondió y nosotros
+                    devolvimos el cariño con calidad constante. Este párrafo rodea la imagen
+                    gracias a <code>float:left</code> y un margen adecuado para respirar. Si
+                    amplías la ventana, verás cómo el texto se adapta sin invadir la foto.
+                </p>
+                <p>
+                    Mantener la legibilidad importa: por eso usamos <code>max-width</code> y
+                    unidades relativas (<code>rem</code>) para tipografía y espaciados.
+                </p>
+            </div>
+        </section>
+
+        <section id="precios" class="pricing">
+            <div class="container">
+                <h2>Precios</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bebida</th>
+                            <th>Tamaño</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Espresso</td>
+                            <td>S</td>
+                            <td>1,80 €</td>
+                        </tr>
+                        <tr>
+                            <td>Cappuccino</td>
+                            <td>M</td>
+                            <td>2,50 €</td>
+                        </tr>
+                        <tr>
+                            <td>Latte</td>
+                            <td>L</td>
+                            <td>2,80 €</td>
+                        </tr>
+                        <tr>
+                            <td>Cold brew</td>
+                            <td>Único</td>
+                            <td>3,20 €</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total aprox.</td>
+                            <td>-</td>
+                            <td>—</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section class="testimonios">
+            <div class="container">
+                <h2>Testimonios</h2>
+                <ul>
+                    <li>“El mejor cappuccino del barrio.”</li>
+                    <li>“Atención impecable y ambiente tranquilo.”</li>
+                    <li>“Grano siempre fresco.”</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto">
+            <div class="container">
+                <h2>Contacto</h2>
+                <form action="#" method="post" novalidate>
+                    <div class="fila">
+                        <label class="campo">
+                            Nombre
+                            <input type="text" name="nombre" placeholder="Tu nombre" required>
+                        </label>
+                        <label class="campo">
+                            Email
+                            <input type="email" name="email" placeholder="correo@dominio.com" required>
+                        </label>
+                    </div>
+
+                    <label>
+                        Mensaje
+                        <textarea name="mensaje" rows="5" placeholder="¿Cómo podemos ayudarte?" required></textarea>
+                    </label>
+
+                    <label class="legal">
+                        <input type="checkbox" required> Acepto la política de privacidad
+                    </label>
+
+                    <button class="btn" type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <small>© 2025 Café Aurora</small>
+            <nav class="legal" aria-label="Secundario">
+                <a href="mailto:hola@cafeaurora.example">hola@cafeaurora.example</a>
+                <a href="/docs/politica-privacidad.pdf">Política de privacidad (PDF)</a>
+            </nav>
+        </div>
+    </footer>
+
+    <a class="backtop" href="#top" aria-label="Volver arriba">↑</a>
+</body>
+
+</html>

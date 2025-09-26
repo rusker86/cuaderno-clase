@@ -1,0 +1,178 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --bg: #f8fafc;
+  --fg: #0f172a;
+  --muted: #475569;
+  --card: #fff;
+  --border: #e5e7eb;
+  --primary: #0ea5e9;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+.wrap {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 1rem;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0.5rem 0 1rem;
+}
+p {
+  margin: 0.5rem 0 1rem;
+}
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+.btn {
+  display: inline-block;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  color: var(--fg);
+  background: #fff;
+}
+
+/* Card */
+.card {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--card);
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(2, 6, 23, 0.05);
+}
+
+/* 1) Galerías */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(14rem, 40vw, 20rem), 1fr)
+  );
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  /* Forzar alturas parecidas; alternativa: aspect-ratio en .card */
+  grid-auto-rows: 1fr;
+}
+.gallery--fill {
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(clamp(14rem, 40vw, 20rem), 1fr)
+  );
+}
+
+/* 2) Layout maestro con sidebar */
+.layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+}
+.sidebar {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: #fff;
+  padding: 1rem;
+}
+.content {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: #fff;
+  padding: 1rem;
+}
+
+@media (max-width: 720px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 3) Lista con subgrid (opcional) */
+.list {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-auto-rows: auto;
+  gap: 0.75rem;
+}
+
+/* Soporte con subgrid */
+@supports (grid-template-columns: subgrid) {
+  .list {
+    grid-template-columns: 2fr 1fr;
+  }
+  .item {
+    display: grid;
+    grid-template-columns: subgrid; /* hereda 2fr 1fr de .list */
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background: #fff;
+    padding: 1rem;
+  }
+  .item__title {
+    grid-column: 1 / -1;
+    margin: 0 0 0.25rem;
+  }
+  .item__meta {
+    grid-column: 1;
+    margin: 0.25rem 0 0.5rem;
+    color: #64748b;
+  }
+  .item__excerpt {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Fall-back cuando no hay subgrid */
+@supports not (grid-template-columns: subgrid) {
+  .item {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* copiar definición del contenedor */
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background: #fff;
+    padding: 1rem;
+  }
+  .item__title {
+    grid-column: 1 / -1;
+    margin: 0 0 0.25rem;
+  }
+  .item__meta {
+    grid-column: 2;
+    margin: 0.25rem 0 0.5rem;
+    color: #64748b;
+    text-align: right;
+  }
+  .item__excerpt {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
+  }
+}
+
+/* Notas:
+ - auto-fit colapsa pistas vacías → columnas “se pegan” al ancho disponible.
+ - auto-fill reserva pistas potenciales → pueden verse huecos si hay pocas cards.
+ - minmax(0,1fr) permite que la columna flexible encoja sin provocar overflow.
+ - subgrid alinea internamente los ítems con la malla padre; con fall-back equivalente. */

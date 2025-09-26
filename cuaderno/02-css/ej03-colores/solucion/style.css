@@ -1,0 +1,33 @@
+/* Nombre de color */
+.color-nombre {
+  color: red; /* rojo definido por nombre */
+}
+
+/* HEX (#3498db = azul claro) */
+.color-hex {
+  color: #3498db;
+}
+
+/* RGB: valores entre 0 y 255 */
+.color-rgb {
+  color: rgb(255, 99, 71); /* tomate */
+}
+
+/* RGBA: último valor es la opacidad (0.5 = 50% transparente) */
+.color-rgba {
+  background-color: rgba(255, 99, 71, 0.5);
+  color: #000;
+  padding: 0.5rem;
+}
+
+/* HSL: tono (0–360), saturación (%) y luminosidad (%) */
+.color-hsl {
+  color: hsl(120, 100%, 25%); /* verde oscuro */
+}
+
+/* HSLA: HSL + alpha (transparencia) */
+.color-hsla {
+  background-color: hsla(200, 80%, 40%, 0.3);
+  color: #000;
+  padding: 0.5rem;
+}

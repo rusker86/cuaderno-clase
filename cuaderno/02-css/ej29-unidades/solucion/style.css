@@ -1,0 +1,110 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+html {
+  /* cambia esto para ver cómo afectan los rem globales */
+  /* font-size: 16px; */
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+.box {
+  border: 1px solid #94a3b8;
+  background: #fff;
+  padding: 1rem;
+  margin: 0.25rem 0;
+}
+
+/* A) px vs rem */
+.px {
+  font-size: 16px;
+  padding: 16px;
+  width: 320px;
+  background: #e0f2fe;
+}
+.rem {
+  font-size: 1rem;
+  padding: 1rem;
+  width: 20rem;
+  background: #bbf7d0;
+}
+/* Nota: si cambias html{font-size}, .rem escalará automáticamente. */
+
+/* B) em vs rem */
+.padre {
+  font-size: 20px;
+  border: 1px dashed #cbd5e1;
+  padding: 0.5rem;
+  background: #fff;
+}
+.hijo-em {
+  font-size: 1.2em;
+} /* 24px (depende del padre) */
+.hijo-rem {
+  font-size: 1.2rem;
+} /* 1.2 * root (independiente del padre) */
+
+/* C) % relativo al contenedor */
+.contenedor {
+  width: 400px;
+  border: 1px solid #94a3b8;
+  background: #fff;
+  padding: 0.5rem;
+}
+.barra {
+  width: 60%;
+  height: 12px;
+  background: #0ea5e9;
+}
+
+/* D) Viewport */
+.w-50vw {
+  width: 50vw;
+  height: 80px;
+  background: #bbf7d0;
+}
+.h-30vh {
+  height: 30vh;
+  background: #fde68a;
+}
+
+/* E) vmin/vmax + nuevas vh (móviles) */
+.vmin {
+  width: 30vmin;
+  height: 30vmin;
+  background: #c7d2fe;
+}
+/* lvh/svh/dvh: navegadores móviles modernos diferencian distintas alturas de viewport dinámico */
+.lvh {
+  height: 50lvh;
+  background: #e0f2fe;
+}
+
+/* F) lh como unidad tipográfica */
+.tipo {
+  line-height: 1.5;
+}
+.tipo .usa-lh {
+  padding: 1lh;
+  border: 1px dashed #94a3b8;
+}
+
+/* Notas:
+   - em = relativo al font-size del CONTENEDOR inmediato; rem = relativo a html.
+   - % en width se basa en el width del contenedor; en height depende del contexto y alturas resueltas.
+   - vw/vh toman el viewport; en móviles, lvh/svh/dvh ajustan la UI del navegador (barras).
+   - vmin/vmax usan el eje menor/mayor (útil para cuadrados responsivos).
+   - lh usa la altura de línea computada del elemento (bueno para ritmos verticales). */

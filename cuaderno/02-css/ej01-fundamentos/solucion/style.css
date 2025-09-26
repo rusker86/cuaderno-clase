@@ -1,0 +1,43 @@
+/* Herencia: lo que definimos en body lo reciben (en general) los descendientes */
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Selector de elemento: afecta a todos los párrafos */
+p {
+  color: #333; /* será sobreescrito por selectores más específicos cuando corresponda */
+}
+
+/* Selector agrupado: reglas compartidas para h1 y h2 */
+h1,
+h2 {
+  margin: 0; /* ejemplo simple para ver efecto */
+  padding: 0.25rem 0;
+}
+
+/* Selector de ID: estilo del header principal */
+#hero {
+  background-color: #f3f4f6;
+}
+
+/* Selector de clase: podemos reutilizarlo en múltiples elementos */
+.destacado {
+  color: #1d4ed8; /* azul */
+  font-weight: 600;
+}
+
+/* Selector descendiente: solo los <p> dentro de <main> */
+main p {
+  font-size: 1rem;
+}
+
+/* Cascada + especificidad (explicación):
+   - Regla de tipo:        p { color: #333; }   (especificidad 0-0-0-1)
+   - Regla de clase: .destacado { color: ... }  (especificidad 0-0-1-0)
+   Para <p class="destacado"> gana la clase por tener mayor especificidad.
+   Si ambas tuvieran la MISMA especificidad, ganaría la regla declarada MÁS ABAJO en la hoja (cascada).
+*/
+
+/* Nota: NO usamos !important aquí, lo veremos más adelante. */

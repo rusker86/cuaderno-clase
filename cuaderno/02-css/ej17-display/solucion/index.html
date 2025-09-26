@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS — Ej17 Display (solución)</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Ejercicio 17: Propiedad display</h1>
+    </header>
+
+    <main class="panel">
+        <section id="a">
+            <h2>A) Bloques vs en línea</h2>
+            <div class="demo-box bloque">Bloque (ocupa todo el ancho disponible)</div>
+            <span class="demo-box en-linea">En línea (fluye con el texto)</span>
+            <a href="#" class="demo-box en-linea">Enlace en línea</a>
+        </section>
+
+        <section id="b">
+            <h2>B) inline-block (tarjetas en línea con tamaño)</h2>
+            <div class="fila">
+                <div class="card">Tarjeta 1</div>
+                <div class="card">Tarjeta 2</div>
+                <div class="card">Tarjeta 3</div>
+                <div class="card">Tarjeta 4</div>
+            </div>
+        </section>
+
+        <section id="c">
+            <h2>C) display: none</h2>
+            <p class="oculto">Este párrafo no debería ser visible ni ocupar espacio.</p>
+            <p>Este texto debería “pegarse” al anterior como si el oculto no existiera.</p>
+        </section>
+
+        <section id="d">
+            <h2>(Opcional) visibility: hidden</h2>
+            <p class="invisible">Este párrafo ocupa espacio pero no se ve.</p>
+            <p>Este texto aparece debajo, con el hueco conservado arriba.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 — Curso CSS</p>
+    </footer>
+</body>
+
+</html>

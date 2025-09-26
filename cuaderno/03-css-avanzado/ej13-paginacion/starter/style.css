@@ -1,0 +1,79 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Accesibilidad: sr-only */
+.sr {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* === Paginación === */
+.pagination ul {
+  /* TODO: reset de lista + layout horizontal */
+  /* list-style:none; padding:0; margin:0; display:flex; gap:.25rem; flex-wrap:wrap; */
+}
+.page,
+.ellipsis {
+  /* TODO: base visual de cada pill */
+  /* display:inline-flex; align-items:center; justify-content:center; min-width:2.25rem; height:2.25rem; padding:0 .5rem;
+     border:1px solid #cbd5e1; border-radius:.5rem; text-decoration:none; color:#0f172a; background:#fff; */
+}
+.page:hover {
+  /* TODO: hover */
+}
+.page:focus-visible {
+  /* TODO: foco visible (outline/offset) */
+}
+.page:active {
+  /* TODO: pequeña presión */
+}
+[aria-current="page"] {
+  /* TODO: estado activo diferenciado (contraste alto) */
+}
+.page[aria-disabled="true"] {
+  /* TODO: deshabilitado (no interacción) */
+}
+
+/* Compacta: reduce tipografía y espaciamiento (aplica en móviles también) */
+/* .pagination--compact .page, .pagination--compact .ellipsis {
+  min-width:2rem; height:2rem; padding:0 .4rem; font-size:.875rem;
+} */
+
+/* Adaptación responsive básica */
+@media (max-width: 480px) {
+  /* .pagination ul { gap:.2rem; } */
+  /* .page, .ellipsis { min-width:2rem; height:2rem; } */
+}
+
+/* Opcional: RTL soporte ligero */
+/* :root:dir(rtl) .pagination ul { flex-direction: row-reverse; } */

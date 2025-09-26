@@ -1,0 +1,69 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+.demo {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background: #fff;
+}
+
+/* A) Marco con gradiente */
+/* .frame-grad {
+  border: 12px solid transparent;                  /\* fallback visual si falla border-image *\/
+  border-image-source: linear-gradient(45deg, #0ea5e9, #a78bfa);
+  border-image-slice: 30;                           /\* recorta la imagen en 9 zonas *\/
+  border-image-width: 12;                           /\* grosor del borde resultante *\/
+  border-image-repeat: round;                       /\* prueba también stretch o repeat *\/
+} */
+
+/* B) Botón con patrón SVG en data URI */
+/* .btn-svg {
+  display:inline-block;
+  padding:.6rem 1rem;
+  color:#0f172a; text-decoration:none; background:#fff;
+  border: 2px solid #94a3b8;                        /\* fallback base *\/
+  border-image-source: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>\
+<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop stop-color='%230ea5e9' offset='0'/><stop stop-color='%237c3aed' offset='1'/></linearGradient></defs>\
+<rect x='0' y='0' width='24' height='24' fill='url(%23g)'/><path d='M0 12 H24 M12 0 V24' stroke='%23fff' stroke-width='2' opacity='.35'/></svg>");
+  border-image-slice: 8;
+  border-image-width: 2;
+  border-image-repeat: round;
+} */
+
+/* C) Tarjeta con fill + outset */
+/* .card-fill {
+  border: 16px solid transparent;
+  border-image-source: conic-gradient(from 0deg, #f97316, #fde68a, #22c55e, #0ea5e9, #a78bfa, #f97316);
+  border-image-slice: 30 fill;                      /\* fill = la parte central también rellena el fondo *\/
+  border-image-width: 16;
+  border-image-outset: .25rem;                      /\* el borde sobresale hacia fuera *\/
+} */
+
+/* Notas didácticas:
+   - slice trocea la imagen en 9: 4 esquinas, 4 bordes y centro. Unidades: números (px implícitos) o %.
+   - width define el grosor de la “pintura” del borde; si no se da, se deriva del border.
+   - repeat: stretch (estira), repeat (repite recortando), round (ajusta para encajar sin cortar).
+   - fill pinta el área central con la imagen (ojo con contraste del texto).
+   - Mantén siempre un border sólido como fallback. */

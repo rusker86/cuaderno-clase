@@ -1,0 +1,24 @@
+/* Base para ver las secciones */
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.demo {
+  min-height: 40vh; /* que se aprecie el fondo */
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* A) TODO: background-color */
+
+/* B) TODO: background-image con repeat (p. ej. images/patron.png) */
+
+/* C) TODO: no-repeat + background-position (p. ej. right bottom) */
+
+/* D) TODO: background-size: cover y/o contain (usa una foto grande) */
+
+/* E) TODO: background-attachment: fixed */
+
+/* F) TODO (opcional): múltiples fondos con background-image: url(...), url(...); */

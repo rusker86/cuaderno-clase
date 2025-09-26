@@ -1,0 +1,232 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --bg: #f8fafc;
+  --fg: #0f172a;
+  --muted: #475569;
+  --card: #fff;
+  --border: #e5e7eb;
+  --primary: #0ea5e9;
+  --error: #ef4444;
+  --ok: #16a34a;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+.wrap {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 1rem;
+}
+h1,
+h2,
+h3 {
+  margin: 0.5rem 0 1rem;
+}
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+.btn {
+  display: inline-block;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  color: var(--fg);
+  background: #fff;
+}
+.btn:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* 1) Card reactiva */
+.card {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--card);
+  padding: 1rem;
+  position: relative;
+}
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+.banner {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #0f172a;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  display: none;
+}
+
+/* TODO: si la card tiene img, destaca */
+/* .card:has(img){ border-color:#94a3b8; background:#f1f5f9; } */
+/* TODO: si la img es .wide, muestra .banner */
+/* .card:has(img.wide) .banner{ display:inline-block; } */
+
+/* 2) Formulario reactivo */
+.form {
+  display: grid;
+  gap: 1rem;
+}
+.field {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: #fff;
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.35rem;
+}
+.field label {
+  font-weight: 600;
+}
+.field input {
+  border: 1px solid #cbd5e1;
+  border-radius: 0.4rem;
+  padding: 0.45rem 0.6rem;
+}
+.hint {
+  color: #64748b;
+  margin: 0;
+}
+.hint--error {
+  display: none;
+}
+
+/* TODO: estado foco (en cualquier control dentro) */
+/* .field:has(:focus){ box-shadow: 0 0 0 3px rgba(14,165,233,.25); } */
+/* TODO: inválido/valido */
+/* .field:has(input:invalid){ border-color: var(--error); }
+.field:has(input:invalid) .hint--error{ display:block; color:var(--error); }
+.field:has(input:valid){ border-color: var(--ok); } */
+
+/* 3) Acordeón */
+.accordion {
+  display: grid;
+  gap: 0.5rem;
+}
+.accordion__item {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: #fff;
+  overflow: hidden;
+}
+.accordion__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+}
+.accordion__heading::after {
+  content: "▸";
+  margin-left: 0.5rem;
+  transition: transform 0.2s ease;
+}
+.accordion__panel {
+  display: none;
+  padding: 0 1rem 1rem;
+}
+
+/* TODO: abrir item con :has(input:checked) */
+/* .accordion__item:has(input:checked) .accordion__panel{ display:block; }
+.accordion__item:has(input:checked) .accordion__heading::after{ transform: rotate(90deg); } */
+
+/* 4) Nav activo/hover de li en base al link */
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+.nav li {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+}
+.nav a {
+  display: block;
+  padding: 0.45rem 0.7rem;
+}
+.nav li:has(a[aria-current="page"]) {
+  background: #e0f2fe;
+  border-color: #7dd3fc;
+}
+.nav li:has(a:hover),
+.nav li:has(a:focus-visible) {
+  outline: 3px solid #bae6fd;
+  outline-offset: 2px;
+}
+
+/* 5) Producto selectable */
+.product {
+  display: inline-grid;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  position: relative;
+  cursor: pointer;
+}
+.product__body {
+  display: grid;
+  gap: 0.25rem;
+}
+.product::after {
+  content: "✓";
+  position: absolute;
+  top: 0.4rem;
+  right: 0.6rem;
+  background: #16a34a;
+  color: #fff;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+  transform: scale(0);
+  transition: transform 0.15s ease;
+}
+
+/* TODO: al chequear, resaltar y mostrar tick con :has(.select:checked) */
+/* .product:has(.select:checked){ border-color:#16a34a; box-shadow: 0 0 0 3px rgba(22,163,74,.2); }
+.product:has(.select:checked)::after{ transform: scale(1); } */
+
+/* 6) Lista opcional: items sin imagen */
+/* .item:not(:has(img)){ padding:.25rem .5rem; background:#fff7ed; border-left:4px solid #f59e0b; } */
+.items {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0;
+  list-style: none;
+}
+.item {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.item img {
+  display: block;
+  border-radius: 0.25rem;
+}
+
+/* Notas:
+ - :has() es costoso si abusas; úsalo en patrones concretos.
+ - :where() no suma especificidad: .foo:where(.a, .b) {…} */

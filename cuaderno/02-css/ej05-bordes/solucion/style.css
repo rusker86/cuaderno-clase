@@ -1,0 +1,89 @@
+:root {
+  --bg: #f8fafc;
+  --ink: #0f172a;
+  --muted: #e5e7eb;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+h1 {
+  margin: 1rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+.box {
+  background: white;
+  min-height: 100px;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+/* A) border shorthand: <width> <style> <color> */
+.box-a {
+  border: 3px solid #0ea5e9; /* azul cielo */
+}
+
+/* B) Bordes por lado — cada lado con estilo distinto */
+.box-b {
+  border-top: 4px solid #22c55e; /* verde */
+  border-right: 4px dashed #f97316; /* naranja */
+  border-bottom: 4px dotted #a78bfa; /* violeta */
+  border-left: 4px double #ef4444; /* rojo */
+  /* Comentario: border-* permite granularidad por lado */
+}
+
+/* C) Esquinas redondeadas suaves */
+.box-c {
+  border: 2px solid #94a3b8; /* slate-300 */
+  border-radius: 8px; /* radios uniformes */
+  /* También puedes usar 4 valores: top-left top-right bottom-right bottom-left */
+}
+
+/* D) Píldora (radio muy alto) */
+.box-d {
+  border: 2px solid #64748b; /* slate-500 */
+  border-radius: 9999px; /* “pill” */
+  padding: 0.5rem 1rem;
+}
+
+/* E) Círculo perfecto: ancho = alto y radius 50% */
+.box-e {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  border: 6px solid #0ea5e9;
+  border-radius: 50%; /* círculo */
+  display: grid;
+  place-items: center;
+}
+
+/* F) Estilos de borde visibles (double requiere grosor mayor) */
+.box-f {
+  border: 6px double #0ea5e9; /* “doble línea” */
+}
+
+/* (Opcional) G) border-image con gradiente */
+.box-g {
+  /* border-image necesita un ancho de borde y normalmente color transparente
+     porque el color vendrá de la imagen/gradiente */
+  border: 10px solid transparent;
+  border-image-source: linear-gradient(45deg, #f43f5e, #22d3ee);
+  border-image-slice: 1; /* toma todo el gradiente */
+  /* border-image-repeat: stretch;  /\* valor por defecto *\/ */
+}
+
+/* Notas:
+   - Evita abusar de border en elementos con alto rendimiento crítico (muchos nodos) si hay sombras complejas.
+   - Para “círculos de avatar”, usa imágenes con object-fit y también border-radius:50%. */

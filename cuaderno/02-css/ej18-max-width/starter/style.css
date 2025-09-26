@@ -1,0 +1,25 @@
+/* Base mínima */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.5;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+}
+section {
+  margin-bottom: 1rem;
+}
+
+/* TODO: .caja-a sin límite de ancho */
+
+/* TODO: .caja-b con max-width en px */
+
+/* TODO: .caja-c con max-width relativo y margin:auto */
+
+/* TODO opcional: comparar width vs max-width */

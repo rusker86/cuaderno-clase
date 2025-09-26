@@ -1,0 +1,204 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --bg: #f8fafc;
+  --fg: #0f172a;
+  --muted: #475569;
+  --border: #cbd5e1;
+  --card: #ffffff;
+  --primary: #0f766e;
+  --primary-ink: #ffffff;
+  --danger: #b91c1c;
+  --danger-ink: #ffffff;
+  --ok: #16a34a;
+  --warn: #d97706;
+  --error: #dc2626;
+  --ring: 3px solid #22d3ee; /* foco base */
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1220;
+    --fg: #e5e7eb;
+    --muted: #94a3b8;
+    --border: #1f2937;
+    --card: #0f172a;
+    --primary: #14b8a6;
+    --primary-ink: #082f2a;
+    --danger: #ef4444;
+    --danger-ink: #1b0909;
+    --ring: 3px solid #7dd3fc;
+  }
+}
+@media (prefers-contrast: more) {
+  :root {
+    --border: #111827;
+    --ring: 4px solid #22d3ee; /* anillo más visible */
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+.wrap {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 1rem;
+}
+.lead {
+  color: var(--muted);
+}
+
+.site-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.site-footer {
+  padding: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.nav a[aria-current="page"] {
+  font-weight: 700;
+}
+
+/* 1) Skip link */
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -100vh;
+  background: #111;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+}
+/* TODO: haz visible .skip con :focus-visible */
+/* .skip:focus-visible{ top:1rem; outline: var(--ring); } */
+
+/* 2) Enlaces accesibles */
+.link {
+  /* TODO: subrayado accesible con grosor y offset */
+  /* text-decoration: underline; text-decoration-thickness: .12em; text-underline-offset: .18em; */
+}
+.link:hover,
+.link:focus-visible {
+  /* TODO: mejorar contraste; anillo de foco */
+  /* outline: var(--ring); outline-offset: 2px; */
+}
+
+/* 3) Botones */
+.btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  background: var(--primary);
+  color: var(--primary-ink);
+  font-weight: 700;
+  /* TODO: estados hover/active/focus-visible/disabled */
+}
+.btn--danger {
+  background: var(--danger);
+  color: var(--danger-ink);
+}
+.btn:disabled {
+  /* TODO: cursor: not-allowed; opacidad más baja */
+}
+
+/* 4) Campos */
+.form {
+  display: grid;
+  gap: 1rem;
+  max-width: 42rem;
+}
+.field {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.35rem;
+}
+.field:focus-within {
+  /* TODO: resaltar contenedor al foco interno */
+}
+.field input {
+  border: 1px solid var(--border);
+  border-radius: 0.45rem;
+  padding: 0.5rem 0.65rem;
+  color: var(--fg);
+  background: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  .field input {
+    background: #0b1220;
+  }
+}
+.field input:focus-visible {
+  /* TODO: anillo */
+}
+
+.hint {
+  color: var(--muted);
+  margin: 0;
+}
+.hint--error {
+  /* TODO: color de error + icono textual opcional */
+}
+
+/* Estados por ARIA (sin depender solo del color) */
+input[aria-invalid="true"] {
+  /* TODO: borde rojo + icono con background-image data-URI o pseudo-elemento */
+}
+input[aria-invalid="false"] {
+  /* TODO: borde verde OK */
+}
+
+/* 5) Alertas */
+.alert {
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  padding: 0.6rem 0.8rem;
+  background: var(--card);
+}
+/* TODO: roles status/alert con contrastes distintos */
+/* .alert[role="status"]{ border-color: var(--ok); }
+.alert[role="alert"]{ border-color: var(--error); } */
+
+/* 6) Preferencias del usuario */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* 7) Alto contraste de SO */
+@media (forced-colors: active) {
+  /* TODO: asegura outline visibles y bordes sólidos */
+  /* .btn, .link, input { forced-color-adjust: auto; } */
+  /* .btn:focus-visible, .link:focus-visible, input:focus-visible { outline: 1px solid CanvasText; } */
+}
+
+/* 8) (Opcional) accent/caret/selection */
+/* :root { accent-color: var(--primary); } */
+/* input, textarea { caret-color: var(--primary); } */
+/* ::selection { background: #fde68a; color:#111827; } */
+
+/* Notas:
+ - Usa :focus-visible (no :focus) para keyboard focus. 
+ - Evita transmitir estado solo con color → añade icono/texto/borde. */

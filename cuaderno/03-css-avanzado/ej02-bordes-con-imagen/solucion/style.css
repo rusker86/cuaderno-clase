@@ -1,0 +1,122 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+.demo {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background: #fff;
+}
+
+/* A) Marco con gradiente - round y stretch para comparar */
+.frame-grad {
+  border: 12px solid #ccc; /* fallback mejorado */
+  border-image: linear-gradient(45deg, #0ea5e9, #a78bfa) 30;
+  /* Alternativa expandida si necesitas más control:
+  border-image-source: linear-gradient(45deg, #0ea5e9, #a78bfa);
+  border-image-slice: 30;
+  border-image-repeat: round; */
+}
+
+.frame-grad-stretch {
+  border: 12px solid #ccc; /* fallback mejorado */
+  border-image: linear-gradient(135deg, #22c55e, #f59e0b) 30;
+  border-image-repeat: stretch; /* estira el borde en vez de repetir */
+}
+
+/* B) Botón con patrón SVG (data URI) */
+.btn-svg {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  color: #0f172a;
+  text-decoration: none;
+  background: #fff;
+  border: 2px solid #94a3b8; /* fallback */
+  border-image-source: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%230ea5e9' offset='0'/%3E%3Cstop stop-color='%237c3aed' offset='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' width='24' height='24' fill='url(%23g)'/%3E%3Cpath d='M0 12 H24 M12 0 V24' stroke='%23ffffff' stroke-width='2' opacity='.35'/%3E%3C/svg%3E");
+  border-image-slice: 8;
+  border-image-width: 2;
+  border-image-repeat: round;
+  /* Nota: border-radius no funciona con border-image */
+}
+.btn-svg:hover {
+  background: #f8fafc;
+}
+
+/* C) Tarjeta con fill + outset */
+.card-fill {
+  border: 16px solid #ccc; /* fallback mejorado */
+  /* fuente: conic gradient (admite también radial/linear) */
+  border-image-source: conic-gradient(
+    from 0deg,
+    #f97316,
+    #fde68a,
+    #22c55e,
+    #0ea5e9,
+    #a78bfa,
+    #f97316
+  );
+  border-image-slice: 30 fill; /* fill rellena el centro */
+  border-image-width: 16;
+  border-image-repeat: round;
+  border-image-outset: 0.25rem; /* sobresale hacia fuera */
+  color: #0f172a;
+  /* El fill pinta el interior con la misma imagen.
+     Si compromete la legibilidad, añade un fondo semitransparente encima. */
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(1px);
+}
+
+/* Alternativa sin border-radius para el botón SVG si necesitas esquinas redondeadas */
+.btn-svg-rounded {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  color: #0f172a;
+  text-decoration: none;
+  background: linear-gradient(45deg, #0ea5e9, #7c3aed);
+  border: none;
+  border-radius: 0.4rem;
+  position: relative;
+  overflow: hidden;
+}
+.btn-svg-rounded::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #fff;
+  border-radius: inherit;
+  z-index: -1;
+}
+.btn-svg-rounded:hover::before {
+  background: #f8fafc;
+}
+
+/* Notas corregidas:
+   - slice recorta la imagen en 9 partes; si usas % se aplica sobre el tamaño de la fuente.
+   - width controla el grosor final del borde "pintado"; por defecto hereda del border.
+   - repeat:
+       * stretch: estira segmentos del borde.
+       * repeat: repite y corta si no cabe exacto.
+       * round: ajusta el tamaño para encajar repeticiones enteras.
+   - fill: la parte central (9ª región) → relleno del box (ojo con contraste).
+   - Fallback: deja siempre un border sólido para navegadores que ignoren border-image.
+   - border-radius NO funciona con border-image (incompatibles). */

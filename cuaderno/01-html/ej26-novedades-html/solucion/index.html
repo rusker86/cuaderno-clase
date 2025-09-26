@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ej26 — Novedades HTML (LS) — Solución</title>
+</head>
+
+<body>
+    <header>
+        <h1>Novedades del estándar vivo de HTML</h1>
+        <!-- fetchpriority="high": sugiere priorizar esta imagen clave (logo/hero) -->
+        <img src="images/logo.svg" alt="Logo del sitio" fetchpriority="high" width="160" height="40">
+    </header>
+
+    <main>
+        <section>
+            <h2>Diálogo nativo (<code>&lt;dialog&gt;</code>)</h2>
+
+            <!-- Modo demostración: abierto con atributo "open".
+             En producción se controlaría con JS, pero aquí solo mostramos estructura y capacidades nativas -->
+            <dialog id="info" open>
+                <h2>Acerca de este curso</h2>
+                <p>Este diálogo es nativo y accesible. Puede cerrarse con un botón interno.</p>
+
+                <!-- method="dialog" permite cerrar el diálogo al enviar el formulario sin JS -->
+                <form method="dialog">
+                    <!-- autofocus: foco inicial en el botón para accesibilidad -->
+                    <button autofocus>Cerrar</button>
+                </form>
+            </dialog>
+
+            <!-- Botón de ejemplo (no abre/cierra sin JS; solo informativo) -->
+            <p>
+                <button type="button" title="En una app real, este botón abriría/cerraría el diálogo con JS">
+                    (Demo) Abrir diálogo
+                </button>
+            </p>
+        </section>
+
+        <section>
+            <h2>Popover nativo (atributo <code>popover</code>)</h2>
+
+            <!-- Botones que apuntan al popover por id. Sin JS: el navegador entiende los atributos. -->
+            <p>
+                <button popovertarget="menu">Mostrar/ocultar menú</button>
+                <button popovertarget="menu" popovertargetaction="hide">Ocultar</button>
+            </p>
+
+            <!-- El contenedor con atributo "popover" se trata como popover. -->
+            <div id="menu" popover>
+                <h3>Menú rápido</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Artículos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <!-- Fallback: si no se soporta popover, el contenido queda como un bloque normal -->
+            </div>
+        </section>
+
+        <section>
+            <h2>Sección inerte (<code>inert</code>)</h2>
+            <!-- inert: deshabilita foco y eventos de usuario en este subtree.
+             Suele aplicarse cuando hay un modal activo para evitar interacción con el fondo. -->
+            <div inert>
+                <h3>Contenido temporalmente inactivo</h3>
+                <p>Este texto no debería ser focalizable/interactive cuando <code>inert</code> está presente.</p>
+                <p><a href="#">Este enlace queda inactivo por inert</a></p>
+                <button type="button">Botón inactivo</button>
+            </div>
+            <!-- Nota: sin JS no activamos/quitamos inert dinámicamente; esto es solo demostración. -->
+        </section>
+
+        <section>
+            <h2>Rendimiento en medios</h2>
+            <!-- Imagen no crítica: lazy + decoding async para liberar el main thread -->
+            <img src="images/foto-640.jpg" alt="Fotografía ilustrativa de un aula con ordenadores" width="640"
+                height="360" loading="lazy" decoding="async">
+
+            <!-- iframe diferido: evita coste de carga hasta que haga falta -->
+            <p>Mapa incrustado (carga diferida):</p>
+            <iframe title="Mapa de ejemplo"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-1.2,37.9,-1.0,38.1" width="560" height="315"
+                loading="lazy" referrerpolicy="no-referrer">
+                El navegador no puede mostrar el mapa incrustado. Visítalo en su sitio.
+            </iframe>
+        </section>
+
+        <section>
+            <h2>Plus opcional</h2>
+
+            <!-- Opción A: details/summary (acordeón nativo sin JS) -->
+            <details>
+                <summary>Preguntas frecuentes (FAQ)</summary>
+                <p>Esta sección se puede desplegar sin scripts gracias a <code>&lt;details&gt;</code>.</p>
+            </details>
+
+            <!-- Opción B: input con inputmode/enterkeyhint para mejorar teclado virtual -->
+            <p>
+                <label for="busqueda">Buscar</label><br>
+                <input id="busqueda" name="busqueda" type="search" placeholder="Escribe tu consulta" inputmode="search"
+                    enterkeyhint="search">
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Ejercicio realizado por Tu Nombre — 2025</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ej25 — Accesibilidad mínima (A11y)</title>
+</head>
+
+<body>
+    <!-- Enlace de salto: permite a usuarios de teclado/lectores ir directo al contenido -->
+    <a href="#contenido">Saltar al contenido principal</a>
+
+    <header>
+        <h1>Guía rápida de accesibilidad web</h1>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#articulos">Artículos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="contenido">
+        <section id="inicio">
+            <h2>Bienvenida</h2>
+
+            <!-- Imagen informativa: alt describe la información relevante -->
+            <figure>
+                <img src="images/accesibilidad.jpg"
+                    alt="Persona usando teclado y lector de pantalla en un ordenador portátil" width="640"
+                    height="360" />
+                <figcaption>Uso de tecnologías de apoyo durante la navegación.</figcaption>
+            </figure>
+
+            <!-- Imagen decorativa: alt vacío para que el lector de pantalla la ignore -->
+            <!-- Decorativa (patrón visual de fondo), no aporta información -->
+            <img src="images/patron-decorativo.png" alt="" width="200" height="200" />
+
+            <!-- Bloque alcanzable con teclado: tabindex="0" añade el elemento al orden de tabulación sin romper la lógica -->
+            <div tabindex="0" role="note" aria-label="Nota importante">
+                Este bloque es alcanzable con el teclado para leer una nota relevante sin necesidad de CSS o scripts.
+            </div>
+        </section>
+
+        <section id="articulos">
+            <h2>Artículos</h2>
+            <article>
+                <h3>Buenas prácticas básicas</h3>
+                <p>
+                    Usa encabezados en orden, textos alternativos adecuados y formularios etiquetados con
+                    <code>label/for</code>. Evita depender solo del color para transmitir información.
+                </p>
+                <p>
+                    <a href="#contacto">Ir a contacto</a>
+                </p>
+            </article>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+
+            <form action="#" method="post">
+                <p>
+                    <!-- label/for: lectura correcta del campo -->
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" autocomplete="name" required />
+                </p>
+
+                <!-- Texto de ayuda asociado con aria-describedby -->
+                <p id="ayuda-email">
+                    Introduce un correo válido. Lo usaremos para enviarte una respuesta.
+                </p>
+                <p>
+                    <label for="email">Correo electrónico</label>
+                    <input id="email" name="email" type="email" aria-describedby="ayuda-email" autocomplete="email"
+                        required />
+                </p>
+
+                <!-- Botón sin label visible: aria-label describe la acción (idealmente el botón tendría texto visible) -->
+                <!-- Aquí mantenemos texto visible "Enviar" y aria-label redundante a modo de ejemplo didáctico. -->
+                <p>
+                    <button type="submit" aria-label="Enviar formulario">Enviar</button>
+                    <button type="reset">Restablecer</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 — Sitio de ejemplo accesible</p>
+    </footer>
+
+    <!-- Notas:
+         - No usamos tabindex positivo (evitar 1,2,...). Mantén el orden del DOM lógico.
+         - Preferir <label> visible; aria-label es un complemento cuando no hay texto visible posible.
+         - alt="" solo para imágenes puramente decorativas.
+         - Landmarks semánticos (header/nav/main/footer) ayudan a la navegación asistiva. -->
+</body>
+
+</html>

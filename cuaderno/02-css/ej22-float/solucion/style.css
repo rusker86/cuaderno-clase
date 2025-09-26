@@ -1,0 +1,88 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+
+/* A) Imagen izquierda */
+.img-left {
+  float: left;
+  margin: 0 0.75rem 0.5rem 0; /* separa texto de la imagen */
+  border: 1px solid #94a3b8;
+}
+
+/* B) Imagen derecha */
+.img-right {
+  float: right;
+  margin: 0 0 0.5rem 0.75rem;
+  border: 1px solid #94a3b8;
+}
+
+/* C) Cards flotadas */
+.wrap {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 0.5rem;
+}
+/* Clearfix: restituye la altura del contenedor con hijos flotados */
+.wrap::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.card {
+  width: 48%;
+  background: #e0f2fe;
+  border: 1px solid #94a3b8;
+  padding: 0.5rem;
+  min-height: 80px;
+}
+.c1 {
+  float: left;
+}
+.c2 {
+  float: right;
+}
+
+/* D) Clear para romper el flujo de floats */
+.fin {
+  clear: both; /* “baja” por debajo de floats a izquierda/derecha */
+  background: #bbf7d0;
+  border: 1px solid #22c55e;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* (Opcional) Drop cap flotado */
+.dropcap {
+  float: left;
+  font-size: 3.2rem;
+  line-height: 1;
+  margin: 0.1rem 0.5rem 0 0;
+  font-weight: 700;
+}
+
+/* Notas:
+   - float hace que el texto rodee el elemento flotado.
+   - Los padres “pierden” altura si todos sus hijos flotan → clearfix reintroduce el flujo.
+   - clear: both evita que un elemento se sitúe junto a floats previos. */

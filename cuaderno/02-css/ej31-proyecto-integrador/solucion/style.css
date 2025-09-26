@@ -1,0 +1,364 @@
+/* ===== Base / tokens simples ===== */
+* {
+  box-sizing: border-box;
+}
+html {
+  /* cambia para ver rem */ /* font-size: 16px; */
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #0f172a;
+  background: #f8fafc;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+a {
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 0.5rem 0;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-inline: 1rem;
+}
+
+/* ===== Accesibilidad ===== */
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  background: #fff;
+  border: 1px solid #94a3b8;
+  padding: 0.25rem 0.5rem;
+  z-index: 9999;
+}
+
+/* ===== Header + Nav ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10; /* sticky para quedarse arriba */
+  background: #ffffffcc;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #e5e7eb;
+}
+.brand {
+  font-weight: 800;
+  font-size: 1.25rem;
+  padding: 0.75rem 0;
+}
+.brand span {
+  color: #0ea5e9;
+}
+.site-header .container {
+  display: block;
+}
+.site-nav {
+  float: right;
+} /* sin flex/grid */
+.site-nav a {
+  display: inline-block;
+  padding: 0.75rem 0.5rem;
+  margin-left: 0.25rem;
+  text-decoration: none;
+  color: #0f172a;
+}
+.site-nav a:link {
+  color: #0f172a;
+}
+.site-nav a:visited {
+  color: #0f172a;
+}
+.site-nav a:hover {
+  background: #f1f5f9;
+}
+.site-nav a:focus {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+}
+.site-nav a:active {
+  transform: translateY(1px);
+}
+
+/* clearfix para el float del nav */
+.site-header .container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ===== Hero ===== */
+.hero {
+  padding: 3rem 0 2rem;
+  background: #e0f2fe;
+  border-bottom: 1px solid #bae6fd;
+}
+.hero h1 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+.hero .sub {
+  max-width: 60ch;
+  color: #334155;
+}
+.cta {
+  display: inline-block;
+  margin-top: 0.75rem;
+  background: #0ea5e9;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #0284c7;
+}
+.cta:hover {
+  background: #0284c7;
+}
+.cta:focus {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* ===== Cards con inline-block ===== */
+.features {
+  padding: 2rem 0;
+}
+.cards {
+  font-size: 0; /* elimina el gap entre inline-block */
+}
+.card {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1rem;
+  width: 32%;
+  min-width: 220px;
+  margin: 0.5rem 1% 0.5rem 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.card:nth-child(3n) {
+  margin-right: 0;
+} /* última de la fila sin margen */
+
+/* ===== Imagen flotada ===== */
+.media-float {
+  padding: 2rem 0;
+}
+.float-left {
+  float: left;
+  width: 200px;
+  margin: 0.25rem 0.75rem 0.5rem 0;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+}
+/* restablecer flujo después del bloque */
+.media-float .container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ===== Tabla precios ===== */
+.pricing {
+  padding: 2rem 0;
+}
+.pricing table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  background: #fff;
+}
+.pricing th,
+.pricing td {
+  border: 1px solid #cbd5e1;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+}
+.pricing thead th {
+  background: #f1f5f9;
+}
+.pricing tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+.pricing tbody tr:hover {
+  background: #e0f2fe;
+}
+
+/* ===== Testimonios ===== */
+.testimonios {
+  padding: 2rem 0;
+}
+.testimonios ul {
+  padding-left: 1.25rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+}
+.testimonios li::marker {
+  content: "➜ ";
+  color: #0ea5e9;
+  font-weight: 700;
+}
+
+/* ===== Formulario ===== */
+.contacto {
+  padding: 2rem 0;
+}
+.contacto form {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.fila {
+  font-size: 0;
+}
+.campo {
+  display: inline-block;
+  width: 49.5%;
+  font-size: 1rem;
+}
+.campo + .campo {
+  margin-left: 1%;
+}
+label {
+  display: block;
+  margin-top: 0.5rem;
+}
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.375rem;
+  background: #fff;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #64748b;
+  opacity: 1;
+  font-style: italic;
+}
+input:focus,
+textarea:focus {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+}
+.legal {
+  display: block;
+  margin: 0.75rem 0;
+}
+.legal input:checked {
+  outline: 2px solid #16a34a;
+}
+.btn {
+  display: inline-block;
+  background: #0ea5e9;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #0284c7;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #0284c7;
+}
+.btn:focus-visible {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* ===== Atributos (mailto/pdf) ===== */
+a[href^="mailto:"]::after {
+  content: " ✉";
+}
+a[href$=".pdf"]::after {
+  content: " ⤓";
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  border-top: 1px solid #e5e7eb;
+  background: #fff;
+  padding: 1rem 0;
+}
+.site-footer .legal a {
+  text-decoration: none;
+  color: #0f172a;
+}
+.site-footer .legal a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Back to top (fixed) ===== */
+.backtop {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #0ea5e9;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #0284c7;
+}
+.backtop:hover {
+  background: #0284c7;
+}
+.backtop:focus {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 720px) {
+  .site-nav {
+    float: none;
+    margin-bottom: 0.5rem;
+  }
+  .site-nav a {
+    padding: 0.5rem 0.5rem;
+  }
+  .card {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  .campo {
+    width: 100%;
+  }
+  .campo + .campo {
+    margin-left: 0;
+  }
+  .hero {
+    padding: 2rem 0 1.25rem;
+  }
+}
+
+/* ===== Specificity / !important (caso didáctico controlado) ===== */
+/* Evítalo en proyectos reales, solo demostración */
+.cta {
+  background: #0ea5e9 !important;
+} /* nota: forzamos el color de la CTA para el ejemplo */

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS — Ej28 Selectores de atributos (solución)</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Ejercicio 28: Selectores de atributos</h1>
+    </header>
+
+    <main class="panel">
+        <section>
+            <h2>Enlaces</h2>
+            <ul class="links">
+                <li><a href="https://example.com">Externo (https)</a></li>
+                <li><a href="http://insecure.test">Externo (http)</a></li>
+                <li><a href="#seccion">Interno (#)</a></li>
+                <li><a href="mailto:alguien@dominio.com">Correo</a></li>
+                <li><a href="/docs/guia.pdf">PDF</a></li>
+            </ul>
+        </section>
+
+        <section id="form">
+            <h2>Inputs</h2>
+            <form>
+                <input type="text" placeholder="tu nombre">
+                <input type="email" placeholder="correo electrónico" required>
+                <input type="text" placeholder="nombre de usuario" data-rol="admin">
+                <input type="text" class="tag etiqueta primaria" placeholder="tagged">
+                <p lang="en-US">This paragraph has lang="en-US".</p>
+            </form>
+        </section>
+
+        <section id="seccion">
+            <h2>Destino interno</h2>
+            <p>Sección de prueba para enlaces internos.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 — Curso CSS</p>
+    </footer>
+</body>
+
+</html>

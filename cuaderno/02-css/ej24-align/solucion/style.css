@@ -1,0 +1,79 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+
+/* A) text-align en párrafos */
+.p-left {
+  text-align: left;
+}
+.p-right {
+  text-align: right;
+}
+.p-center {
+  text-align: center;
+}
+.p-just {
+  text-align: justify;
+}
+
+/* B) inline vs inline-block centrados */
+.caja {
+  text-align: center;
+  border: 1px dashed #94a3b8;
+  padding: 0.5rem;
+}
+.inl {
+  background: #fde68a;
+}
+.cuadro {
+  display: inline-block;
+  background: #bbf7d0;
+  width: 120px;
+  height: 60px;
+}
+
+/* C) Imagen centrada */
+.caja-img {
+  text-align: center;
+}
+
+/* D) Botón inline-block */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #3b82f6;
+  color: #fff;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+.btn:hover {
+  background: #2563eb;
+}
+
+/* Notas:
+   - text-align solo afecta a elementos inline/inline-block dentro del contenedor.
+   - No centra directamente elementos block: para eso usamos margin:auto o flexbox.
+   - justify ajusta espacios entre palabras para alinear ambos lados del texto.
+   - start/end en lugar de left/right dependen de la dirección (LTR vs RTL). */

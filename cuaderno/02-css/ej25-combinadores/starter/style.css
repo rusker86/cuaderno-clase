@@ -1,0 +1,63 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+
+/* Utilidades visuales (opcional) */
+.card {
+  border: 1px solid #cbd5e1;
+  padding: 0.75rem;
+  background: #fff;
+}
+
+/* === A) TODO: Descendiente A B ===
+   Estiliza solo los <a> que estén dentro de .card (en cualquier nivel).
+   Ej.: .card a { color: ...; }
+*/
+
+/* === B) TODO: Hijo directo A > B ===
+   Estiliza los li que son hijos directos del ul que esté dentro de .list
+   (pero NO a los li de sublistas).
+   Ej.: .list > ul > li { ... }
+*/
+
+/* === C) TODO: Hermano adyacente A + B ===
+   Estiliza solo el primer <p> inmediatamente después de un <h4>.
+   Ej.: h4 + p { ... }
+*/
+
+/* === D) TODO: Hermanos generales A ~ B ===
+   Estiliza TODOS los <p> que vienen después de un <h4>, compartiendo el mismo padre.
+   Ej.: h4 ~ p { ... }
+*/
+
+/* === (Opcional) Encadenamiento ===
+   Selecciona todos los li excepto el primero: .card > ul > li + li { ... }
+*/
+
+/* Notas didácticas:
+   - A B (descendiente): coincide con cualquier profundidad dentro de A.
+   - A > B (hijo): solo el nivel inmediatamente dentro de A.
+   - A + B (adyacente): el primer hermano justo después de A.
+   - A ~ B (generales): todos los hermanos posteriores a A.
+   - La especificidad NO aumenta por usar combinadores, cuenta la de los selectores simples. */

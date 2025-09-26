@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Avanzado — Ej12 Botones (solución)</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Ej12: Botones avanzados</h1>
+    </header>
+
+    <main class="panel">
+        <section>
+            <h2>Variantes</h2>
+            <div class="row">
+                <button class="btn btn--md btn--solid">Primario</button>
+                <button class="btn btn--md btn--outline">Outline</button>
+                <button class="btn btn--md btn--ghost">Ghost</button>
+                <button class="btn btn--md btn--danger">Danger</button>
+                <button class="btn btn--md btn--link">Link</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Tamaños</h2>
+            <div class="row">
+                <button class="btn btn--sm btn--solid">sm</button>
+                <button class="btn btn--md btn--solid">md</button>
+                <button class="btn btn--lg btn--solid">lg</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Iconos inline</h2>
+            <div class="row">
+                <button class="btn btn--md btn--outline">
+                    <span class="icon" aria-hidden="true">★</span><span>Favorito</span>
+                </button>
+                <button class="btn btn--md btn--solid btn--pill">
+                    <span class="icon" aria-hidden="true">➕</span><span>Añadir</span>
+                </button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Estados: disabled / loading</h2>
+            <div class="row">
+                <button class="btn btn--md btn--solid" disabled>Deshabilitado</button>
+                <button class="btn btn--md btn--solid btn--loading" aria-busy="true">
+                    <span>Procesando…</span>
+                </button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Grupo de botones</h2>
+            <div class="btn-group" role="group" aria-label="Navegación temporal">
+                <button class="btn btn--sm btn--outline">Prev</button>
+                <button class="btn btn--sm btn--solid">Hoy</button>
+                <button class="btn btn--sm btn--outline">Next</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Curso CSS Avanzado</p>
+    </footer>
+</body>
+
+</html>

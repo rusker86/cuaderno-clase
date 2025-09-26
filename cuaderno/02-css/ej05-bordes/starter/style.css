@@ -1,0 +1,74 @@
+/* Base visual mínima para ver los bloques */
+:root {
+  --bg: #f8fafc;
+  --ink: #0f172a;
+  --muted: #e5e7eb;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+h1 {
+  margin: 1rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+.box {
+  background: white;
+  min-height: 100px;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+/* A) TODO: usar border shorthand (width style color) */
+/* .box-a { border: 2px solid #0ea5e9; } */
+
+/* B) TODO: bordes por lado con estilos diferentes */
+/*
+.box-b {
+  border-top: 4px solid #22c55e;
+  border-right: 4px dashed #f97316;
+  border-bottom: 4px dotted #a78bfa;
+  border-left: 4px double #ef4444;
+}
+*/
+
+/* C) TODO: esquinas redondeadas (8px, por ejemplo) */
+/* .box-c { border: 2px solid #94a3b8; border-radius: 8px; } */
+
+/* D) TODO: píldora (radio muy alto) */
+/* .box-d { border: 2px solid #64748b; border-radius: 9999px; } */
+
+/* E) TODO: círculo (50%) — asegúrate de ancho=alto */
+/*
+.box-e {
+  width: 140px; height: 140px; margin: 0 auto;
+  border: 6px solid #0ea5e9;
+  border-radius: 50%;
+}
+*/
+
+/* F) TODO: distintos estilos — dashed/dotted/double */
+/*
+.box-f { border: 6px double #0ea5e9; }
+*/
+
+/* (Opcional) G) border-image (requiere ancho de borde y fuente) */
+/*
+.box-g {
+  border: 10px solid transparent;
+  border-image-source: linear-gradient(45deg, #f43f5e, #22d3ee);
+  border-image-slice: 1;  /\* toma todo el gradiente *\/
+}
+*/

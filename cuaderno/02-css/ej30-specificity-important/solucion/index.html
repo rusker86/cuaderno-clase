@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS — Ej30 Especificidad (solución)</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Ejercicio 30: !important y especificidad</h1>
+    </header>
+
+    <main class="panel">
+        <section>
+            <h2>A) Conflicto de reglas</h2>
+            <article class="card">
+                <p id="especial" style="color: purple;">
+                    Soy un párrafo con varios estilos en conflicto.
+                    El inline style (purple) gana sobre los selectores.
+                </p>
+            </article>
+        </section>
+
+        <section>
+            <h2>B) !important</h2>
+            <div class="caja">
+                Esta caja es roja porque la regla con !important anula otras más específicas.
+            </div>
+        </section>
+
+        <section>
+            <h2>(Opcional) Mal uso</h2>
+            <p>Ejemplo: <code>* { margin:0 !important; }</code> resetea TODO y es difícil de sobrescribir.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 — Curso CSS</p>
+    </footer>
+</body>
+
+</html>

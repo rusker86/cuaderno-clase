@@ -1,0 +1,91 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #0f172a;
+  background: #f8fafc;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+}
+section {
+  margin-bottom: 1rem;
+}
+
+/* Orden recomendado: :link, :visited, :focus (o :focus-visible), :hover, :active */
+
+/* a:link — estilo base no visitado */
+a:link {
+  color: #1d4ed8; /* azul */
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* a:visited — color distinto (limitaciones por privacidad) */
+a:visited {
+  color: #6d28d9; /* púrpura */
+}
+
+/* a:focus — foco accesible (teclado) */
+a:focus {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* Si el navegador soporta :focus-visible, podrías sustituir el anterior por:
+a:focus-visible { outline: 3px solid #0ea5e9; outline-offset: 2px; }
+*/
+
+/* a:hover — refuerzo visual al pasar el ratón */
+a:hover {
+  color: #0f766e; /* verde azulado */
+  text-decoration-thickness: 2px;
+}
+
+/* a:active — durante el clic */
+a:active {
+  color: #b91c1c; /* rojo */
+}
+
+/* Botón estilo enlace */
+.btn-link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #94a3b8;
+  border-radius: 0.5rem;
+  color: #0f172a;
+  background: #ffffff;
+  transition: filter 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+.btn-link:hover {
+  background: #f1f5f9;
+}
+.btn-link:focus {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+}
+.btn-link:active {
+  filter: brightness(0.95);
+}
+
+/* Estado deshabilitado visual (demo)
+   Nota: no existe <a disabled>; aquí se simula para la práctica. */
+.is-disabled {
+  color: #94a3b8;
+  text-decoration: none;
+  cursor: not-allowed;
+  pointer-events: none; /* demo: bloquea clic y focus */
+}
+
+/* Comentarios:
+   - Foco accesible imprescindible para usuarios de teclado.
+   - :visited solo permite cambios seguros (color, etc.).
+   - No relies solo en color para estados; añade subrayado/outline. */

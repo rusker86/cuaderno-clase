@@ -1,0 +1,168 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* A) Botón */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  background: #0ea5e9;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #0284c7;
+  /* TODO: transition para color, background-color, transform */
+  /* transition: color .2s ease, background-color .2s ease, transform .2s ease; */
+}
+.btn:hover {
+  background: #0284c7;
+  transform: translateY(-2px);
+}
+.btn:focus {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* B) Tarjeta elevación */
+.card {
+  width: 240px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(2, 6, 23, 0.06), 0 6px 16px rgba(2, 6, 23, 0.1);
+  /* TODO: transiciones con duraciones distintas (box-shadow más lenta) */
+  /* transition: transform .2s ease, box-shadow .3s ease; */
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px rgba(2, 6, 23, 0.08), 0 12px 28px rgba(2, 6, 23, 0.18);
+}
+
+/* C) Acordeón CSS-only (animar max-height + opacity) */
+.accordion {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.acc-title {
+  display: block;
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  cursor: pointer;
+}
+.acc-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  opacity: 0;
+  /* TODO: transition de max-height y opacity (misma duración) */
+  /* transition: max-height .35s ease, opacity .35s ease; */
+}
+#acc1:checked ~ .acc-content {
+  max-height: 200px; /* pista: suficiente para el contenido demo */
+  opacity: 1;
+  padding: 0.5rem 1rem 1rem;
+}
+
+/* D) Stagger con delay */
+.stagger {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+.stagger li {
+  background: #e0f2fe;
+  border: 1px solid #94a3b8;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  transform: translateY(6px);
+  opacity: 0.001;
+  /* TODO: transition + delays diferentes por nth-child */
+  /* transition: transform .25s ease, opacity .25s ease; */
+}
+.stagger:hover li {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* .stagger li:nth-child(1) { transition-delay: 0s; } */
+/* .stagger li:nth-child(2) { transition-delay: .05s; } */
+/* .stagger li:nth-child(3) { transition-delay: .1s; } */
+/* .stagger li:nth-child(4) { transition-delay: .15s; } */
+
+/* E) Timing functions */
+.timings {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.box {
+  width: 120px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  background: #bbf7d0;
+  border: 1px solid #86efac;
+  border-radius: 0.5rem;
+  transform: translateX(0);
+  /* Todas con misma duración; cambia solo timing-function */
+  transition: transform 0.6s ease;
+}
+.timings:hover .box {
+  transform: translateX(80px);
+}
+.ease {
+  transition-timing-function: ease;
+}
+.easeio {
+  transition-timing-function: ease-in-out;
+}
+/* Custom cubic-bezier — acelera fuerte y frena al final */
+.bezier {
+  transition-timing-function: cubic-bezier(0.2, 0.7, 0.1, 1);
+}
+/* (Opcional) steps:
+.steps { transition-timing-function: steps(5, end); } */
+
+/* Prefiere reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .card,
+  .acc-content,
+  .stagger li,
+  .box {
+    transition: none;
+  }
+}
+
+/* Notas:
+ - Evita `transition: all` en producción: declara solo lo que cambias.
+ - Prioriza transform/opacity para mejor rendimiento.
+ - `height:auto` no es animable; usa `max-height` como aproximación.
+ - Orquesta con `transition-delay` por `:nth-child`. */

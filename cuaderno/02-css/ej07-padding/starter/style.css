@@ -1,0 +1,38 @@
+/* Base visual */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #0f172a;
+  background: #f8fafc;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+.box {
+  border: 2px solid #94a3b8;
+  background: #e0f2fe;
+}
+
+/* A) TODO: aplicar padding a un solo lado (p. ej. padding-top) */
+/* .box-a { padding-top: 20px; } */
+
+/* B) TODO: padding uniforme con un solo valor */
+/* .box-b { padding: 20px; } */
+
+/* C) TODO: shorthand con dos valores (vertical | horizontal) */
+/* .box-c { padding: 10px 30px; } */
+
+/* D) TODO: shorthand con cuatro valores (top | right | bottom | left) */
+/* .box-d { padding: 5px 10px 15px 20px; } */
+
+/* (Opcional) E) mostrar cómo padding aumenta el tamaño total si no usamos box-sizing: border-box */
+/* .box-e { width: 200px; height: 100px; padding: 20px; background:#fef3c7; } */

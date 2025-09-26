@@ -1,0 +1,26 @@
+/* TODO: Establece una tipografía base en body (herencia) */
+body {
+  /* font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; */
+}
+
+/* TODO: Selector de elemento (ej.: header o p) */
+/* header { } */
+/* p { } */
+
+/* TODO: Selector de clase (ej.: .destacado) */
+/* .destacado { } */
+
+/* TODO: Selector de ID (ej.: #hero) */
+/* #hero { } */
+
+/* TODO: Selector descendiente (ej.: main p) */
+/* main p { } */
+
+/* TODO: Selector agrupado (ej.: h1, h2) */
+/* h1, h2 { } */
+
+/* TODO: Conflicto intencionado para ver la cascada y la especificidad
+   1) p { color: ... } (tipo)
+   2) .destacado { color: ... } (clase)
+   Explica con un comentario cuál gana y por qué.
+*/

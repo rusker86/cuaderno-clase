@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS — Ej25 Combinadores (solución)</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Ejercicio 25: Combinadores de selectores</h1>
+    </header>
+
+    <main class="panel">
+        <section id="a">
+            <h2>A) Descendiente (A B)</h2>
+            <article class="card">
+                <h3>Título</h3>
+                <p>Texto con <a href="#">enlace 1</a>.</p>
+                <div>
+                    <p>Otro texto con <a href="#">enlace 2</a> más profundo.</p>
+                </div>
+                <a href="#" class="externo">enlace fuera de párrafo</a>
+            </article>
+            <p><a href="#" class="fuera">Enlace fuera</a></p>
+        </section>
+
+        <section id="b">
+            <h2>B) Hijo directo (A > B)</h2>
+            <div class="list">
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2
+                        <ul>
+                            <li>Subitem 2.1</li>
+                            <li>Subitem 2.2</li>
+                        </ul>
+                    </li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="c">
+            <h2>C) Hermano adyacente (A + B)</h2>
+            <h4>Encabezado</h4>
+            <p>Primer párrafo (A + B)</p>
+            <p>Segundo párrafo (no adyacente directo)</p>
+        </section>
+
+        <section id="d">
+            <h2>D) Hermanos generales (A ~ B)</h2>
+            <h4>Otro encabezado</h4>
+            <p>Hermano 1 (A ~ B)</p>
+            <p>Hermano 2 (A ~ B)</p>
+            <div>Div intermedio</div>
+            <p>Hermano 3 (A ~ B)</p>
+        </section>
+
+        <section id="op">
+            <h2>(Opcional) Encadenamiento</h2>
+            <article class="card opcional">
+                <ul>
+                    <li>Primero</li>
+                    <li>Segundo</li>
+                    <li>Tercero</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 — Curso CSS</p>
+    </footer>
+</body>
+
+</html>

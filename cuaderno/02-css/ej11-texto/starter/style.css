@@ -1,0 +1,36 @@
+/* Base */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #0f172a;
+  background: #f8fafc;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+/* TODO: aplicar propiedades de texto */
+
+/* .texto-a { text-align: left; } */
+/* .texto-b { text-align: center; } */
+/* .texto-c { text-align: right; } */
+/* .texto-d { text-align: justify; } */
+
+/* .texto-e { text-decoration: underline line-through overline; } */
+
+/* .texto-f { text-transform: uppercase; } */
+/* Otra opción: text-transform: lowercase; o capitalize; */
+
+/* .texto-g { line-height: 2; } /\* doble interlineado *\/ */
+
+/* .texto-h { letter-spacing: 4px; } */
+
+/* .texto-i { word-spacing: 12px; } */
+
+/* .texto-j { text-align:center; text-transform:uppercase; text-decoration:underline; } */

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>JS — Ej11 Eventos (starter)</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            line-height: 1.6;
+        }
+
+        .row {
+            display: flex;
+            gap: .75rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: .5rem;
+            padding: 1rem;
+        }
+
+        ul {
+            padding-left: 1rem;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JS — Ej11 Eventos</h1>
+
+    <section class="card">
+        <h2>1) Click</h2>
+        <div class="row">
+            <button id="btn-click">Haz click</button>
+            <span>Clicks: <strong id="count">0</strong></span>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>2) Input en vivo</h2>
+        <div class="row">
+            <label>Nombre: <input id="name" type="text" placeholder="Escribe aquí…"></label>
+            <span>Vista previa: <strong id="preview">—</strong></span>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>3) Form submit</h2>
+        <form id="demo-form">
+            <div class="row">
+                <label>Email: <input id="email" type="email" placeholder="nombre@dominio.com"></label>
+                <button type="submit">Enviar</button>
+            </div>
+            <p id="form-msg" aria-live="polite"></p>
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>4) Teclado</h2>
+        <div class="row">
+            <button id="toggle-keys" type="button">Desactivar teclas</button>
+            <span>Última tecla: <strong id="last-key">—</strong></span>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>5) Delegación de eventos</h2>
+        <ul id="list">
+            <li>Tarea 1 <button class="del" type="button">Eliminar</button></li>
+            <li>Tarea 2 <button class="del" type="button">Eliminar</button></li>
+            <li>Tarea 3 <button class="del" type="button">Eliminar</button></li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>6) Opciones de listener</h2>
+        <button id="btn-once" type="button">Solo una vez</button>
+    </section>
+
+    <section class="card" id="bubble-card">
+        <h2>7) (Opcional) Propagación</h2>
+        <p>Haz click en la tarjeta o en el botón interior.</p>
+        <button id="inner-btn" type="button">Botón interior</button>
+    </section>
+
+    <!-- <script src="./main.js"></script> -->
+</body>
+
+</html>

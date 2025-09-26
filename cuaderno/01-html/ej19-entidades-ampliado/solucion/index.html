@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej19 — Entidades HTML (ampliado)</title>
+</head>
+
+<body>
+    <header>
+        <h1>Entidades HTML — Repaso ampliado</h1>
+        <p>
+            En HTML podemos usar <strong>entidades con nombre</strong> (p.ej. <code>&amp;copy;</code>)
+            o <strong>entidades numéricas</strong> (p.ej. <code>&amp;#169;</code>). Son útiles cuando
+            un carácter se confunde con la sintaxis de HTML (como <code>&lt;</code>, <code>&amp;</code>)
+            o para tipografía correcta (elipsis, guiones, símbolos).
+        </p>
+    </header>
+
+    <main>
+        <!-- Tabla de entidades de uso común -->
+        <table border="1" cellpadding="6" cellspacing="0">
+            <caption>Entidades prácticas para contenido web</caption>
+            <thead>
+                <tr>
+                    <th>Categoría</th>
+                    <th>Ejemplo</th>
+                    <th>Entidad (nombre)</th>
+                    <th>Entidad (numérica)</th>
+                    <th>Uso / comentario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Espacios</td>
+                    <td>100&nbsp;kg</td>
+                    <td>&amp;nbsp;</td>
+                    <td>&amp;#160;</td>
+                    <td>Evitar salto entre número y unidad.</td>
+                </tr>
+                <tr>
+                    <td>Guiones</td>
+                    <td>1990–2000</td>
+                    <td>&amp;ndash;</td>
+                    <td>&amp;#8211;</td>
+                    <td>Rango (en dash, más largo que <code>-</code>).</td>
+                </tr>
+                <tr>
+                    <td>Guiones</td>
+                    <td>Pensamiento — inciso</td>
+                    <td>&amp;mdash;</td>
+                    <td>&amp;#8212;</td>
+                    <td>Incisos (em dash, más largo que en dash).</td>
+                </tr>
+                <tr>
+                    <td>Puntuación</td>
+                    <td>Esperando&hellip;</td>
+                    <td>&amp;hellip;</td>
+                    <td>&amp;#8230;</td>
+                    <td>Elipsis tipográfica.</td>
+                </tr>
+                <tr>
+                    <td>Monedas</td>
+                    <td>25&nbsp;&euro;</td>
+                    <td>&amp;euro;</td>
+                    <td>&amp;#8364;</td>
+                    <td>Euro.</td>
+                </tr>
+                <tr>
+                    <td>Monedas</td>
+                    <td>30&nbsp;$</td>
+                    <td>(no estándar) &amp;dollar;</td>
+                    <td>&amp;#36;</td>
+                    <td>Dólar (numérica es universal).</td>
+                </tr>
+                <tr>
+                    <td>Flechas</td>
+                    <td>Siguiente &rarr;</td>
+                    <td>&amp;rarr;</td>
+                    <td>&amp;#8594;</td>
+                    <td>Navegación/asistente.</td>
+                </tr>
+                <tr>
+                    <td>Matemáticos</td>
+                    <td>a &times; b</td>
+                    <td>&amp;times;</td>
+                    <td>&amp;#215;</td>
+                    <td>Signo de multiplicar (×), no la X.</td>
+                </tr>
+                <tr>
+                    <td>Matemáticos</td>
+                    <td>&plusmn;5&nbsp;V</td>
+                    <td>&amp;plusmn;</td>
+                    <td>&amp;#177;</td>
+                    <td>Más/menos.</td>
+                </tr>
+                <tr>
+                    <td>Matemáticos</td>
+                    <td>x &le; y, y &ge; z</td>
+                    <td>&amp;le; / &amp;ge;</td>
+                    <td>&amp;#8804; / &amp;#8805;</td>
+                    <td>Menor/Mayor o igual.</td>
+                </tr>
+                <tr>
+                    <td>Derechos</td>
+                    <td>&copy; 2025 MiMarca</td>
+                    <td>&amp;copy;</td>
+                    <td>&amp;#169;</td>
+                    <td>Copyright.</td>
+                </tr>
+                <tr>
+                    <td>Derechos</td>
+                    <td>Marca&reg;</td>
+                    <td>&amp;reg;</td>
+                    <td>&amp;#174;</td>
+                    <td>Registrada.</td>
+                </tr>
+                <tr>
+                    <td>Derechos</td>
+                    <td>Nombre&trade;</td>
+                    <td>&amp;trade;</td>
+                    <td>&amp;#8482;</td>
+                    <td>Trademark.</td>
+                </tr>
+                <tr>
+                    <

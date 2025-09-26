@@ -1,0 +1,56 @@
+/* Base visual */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #0f172a;
+  background: #f8fafc;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+.box {
+  border: 2px solid #94a3b8;
+  background: #e0f2fe;
+}
+
+/* A) Padding aplicado a un solo lado */
+.box-a {
+  padding-top: 20px;
+  /* Empuja el contenido hacia abajo, dejando 20px entre borde superior y texto */
+}
+
+/* B) Padding uniforme (un solo valor → todos los lados) */
+.box-b {
+  padding: 20px;
+}
+
+/* C) Shorthand con dos valores (vertical | horizontal) */
+.box-c {
+  padding: 10px 30px; /* 10px arriba/abajo, 30px izquierda/derecha */
+}
+
+/* D) Shorthand con cuatro valores (top | right | bottom | left) */
+.box-d {
+  padding: 5px 10px 15px 20px;
+}
+
+/* (Opcional) Márgenes vs Padding:
+   - margin separa la caja de elementos externos
+   - padding empuja el contenido hacia dentro */
+.box-e {
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+  background: #fef3c7;
+  border: 2px solid #f59e0b;
+  /* Sin box-sizing: border-box, el padding aumenta el tamaño total más allá de 200x100 */
+}

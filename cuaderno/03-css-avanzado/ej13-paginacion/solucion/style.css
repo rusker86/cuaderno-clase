@@ -1,0 +1,130 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.count {
+  color: #475569;
+}
+
+/* SR-only */
+.sr {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Paginación */
+.pagination ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.page,
+.ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0.55rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: #0f172a;
+  background: #fff;
+  font-weight: 600;
+}
+.ellipsis {
+  border-style: dashed;
+  color: #64748b;
+  background: #f8fafc;
+}
+.page:hover {
+  background: #f1f5f9;
+}
+.page:active {
+  transform: translateY(1px);
+}
+.page:focus-visible {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* Activo */
+[aria-current="page"] {
+  background: #0ea5e9;
+  color: #fff;
+  border-color: #0284c7;
+  cursor: default;
+}
+
+/* Prev/Next disabled */
+.page[aria-disabled="true"] {
+  pointer-events: none;
+  opacity: 0.45;
+  background: #f8fafc;
+}
+
+/* Compacta */
+.pagination--compact .page,
+.pagination--compact .ellipsis {
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.4rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .pagination ul {
+    gap: 0.2rem;
+  }
+  .page,
+  .ellipsis {
+    min-width: 2rem;
+    height: 2rem;
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* RTL opcional */
+:root:dir(rtl) .pagination ul {
+  flex-direction: row-reverse;
+}
+
+/* Notas:
+ - `aria-current="page"` anuncia la página activa al lector de pantalla.
+ - `aria-disabled="true"` comunica inactividad ( además de pointer-events:none ).
+ - Usa <span class="sr">…</span> para etiquetas textuales de iconos flecha. */

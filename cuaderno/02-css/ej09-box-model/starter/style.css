@@ -1,0 +1,83 @@
+/* Base visual */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #0f172a;
+  background: #f8fafc;
+}
+h1 {
+  margin: 1rem;
+}
+h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+}
+.panel {
+  padding: 1rem;
+}
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.demo {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
+}
+.box {
+  background: #e0f2fe;
+}
+
+/* A) TODO: content-box (por defecto) con width 200px, padding y border */
+/*
+.box-a {
+  box-sizing: content-box;      /\* por defecto *\/
+  width: 200px;
+  padding: 16px;
+  border: 8px solid #38bdf8;
+}
+*/
+
+/* B) TODO: border-box con mismos padding y border y width 200px */
+/*
+.box-b {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 16px;
+  border: 8px solid #38bdf8;
+}
+*/
+
+/* C) TODO: margin externo visible (no suma al tamaño de la caja) */
+/*
+.box-c {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 16px;
+  border: 8px solid #38bdf8;
+  margin: 24px;                 /\* espacio FUERA de la caja *\/
+  background:#fde68a;
+}
+*/
+
+/* D) TODO: comparativa lado a lado */
+.row-compare {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.compare {
+  width: 200px;
+  padding: 16px;
+  border: 8px solid #38bdf8;
+  background: #bae6fd;
+}
+/* .content-box { box-sizing: content-box; } */
+/* .border-box  { box-sizing: border-box; } */
+
+/* (Opcional) Outline para ver contorno sin afectar al tamaño */
+/* .compare { outline: 2px dashed #0ea5e9; } */
+
+/* (Opcional) Reset global: * { box-sizing: border-box; } — comentar cuándo se usa */

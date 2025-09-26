@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS — Ej21 Overflow (solución)</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Ejercicio 21: overflow</h1>
+    </header>
+
+    <main class="panel">
+        <section>
+            <h2>Valores básicos</h2>
+            <div class="grid">
+                <div class="box demo-a">A) visible — El contenido puede sobresalir del contenedor. Lorem ipsum dolor sit
+                    amet, consectetur adipisicing elit. Inventore, cumque, fuga, voluptatum.</div>
+                <div class="box demo-b">B) hidden — El contenido extra se recorta y no aparecen barras. Lorem ipsum
+                    dolor sit amet, consectetur adipisicing elit. Inventore, cumque, fuga, voluptatum.</div>
+                <div class="box demo-c">C) scroll — Siempre verás barras (aunque no hagan falta). Lorem ipsum dolor sit
+                    amet, consectetur adipisicing elit. Inventore, cumque, fuga, voluptatum.</div>
+                <div class="box demo-d">D) auto — Barras solo si es necesario. Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Inventore, cumque, fuga, voluptatum.</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Por ejes (x / y)</h2>
+            <div class="box eje-x">
+                E) Horizontal — Este texto es larguísimo y no hace saltos de línea, así que se habilita el scroll en el
+                eje X —➡➡➡➡➡➡➡➡➡➡— fin.
+            </div>
+
+            <div class="box eje-y">
+                F) Vertical —
+                Línea 1<br>Línea 2<br>Línea 3<br>Línea 4<br>Línea 5<br>Línea 6<br>Línea 7<br>Línea 8<br>Línea 9<br>Línea
+                10<br>Línea 11<br>Línea 12
+            </div>
+        </section>
+
+        <section>
+            <h2>(Opcional) Texto con ellipsis</h2>
+            <p class="ellipsis">Un título extremadamente largo que debería truncarse con puntos suspensivos para no
+                romper el layout en espacios reducidos.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 — Curso CSS</p>
+    </footer>
+</body>
+
+</html>

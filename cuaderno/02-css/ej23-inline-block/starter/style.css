@@ -1,0 +1,25 @@
+/* Base mínima */
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, sans-serif; background:#f8fafc; color:#0f172a; line-height:1.5; }
+h1 { margin:1rem; }
+.panel { padding:1rem; display:grid; gap:1.25rem; }
+section { background:#fff; border:1px solid #e5e7eb; padding:1rem; }
+.nota { color:#475569; font-size:.9rem; }
+
+/* Utilidades */
+.demo { border:1px solid #94a3b8; background:#e0f2fe; padding:.5rem; }
+
+/* === A) TODO: mostrar efectos de display === */
+/* .d-inline { display:inline; width:200px; height:80px; }      /\* inline ignora width/height *\/ */
+/* .d-block  { display:block;  width:200px; height:80px; }      /\* block sí respeta dimensiones y rompe línea *\/ */
+/* .d-inline-block { display:inline-block; width:200px; height:80px; } /\* inline-block respeta dimensiones y se mantiene en línea *\/ */
+
+/* === B) TODO: tarjetas inline-block con wrap === */
+/* .fila { } */
+/* .card { display:inline-block; width:220px; min-height:120px; padding: .75rem; border:1px solid #cbd5e1; background:#fff; } */
+
+/* === C) TODO: eliminar el gap entre inline-block ===
+   El espacio en blanco del HTML entre elementos inline-block genera un hueco.
+   Técnicas: font-size:0 en el contenedor, comentarios HTML, o “pegar” etiquetas.
+*/
+/* .gap-dem*

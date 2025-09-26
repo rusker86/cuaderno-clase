@@ -1,0 +1,37 @@
+/* Base visual */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+.box {
+  border: 2px solid #94a3b8;
+  padding: 1rem;
+  background: #f1f5f9;
+}
+
+/* A) TODO: ancho y alto fijos (px) */
+/* .box-a { width: 200px; height: 100px; background: #bfdbfe; } */
+
+/* B) TODO: ancho relativo (%) dentro de .panel */
+/* .box-b { width: 50%; background: #bbf7d0; } */
+
+/* C) TODO: min-width / max-width */
+/* .box-c { min-width: 150px; max-width: 400px; background: #fde68a; } */
+
+/* D) TODO: min-height / max-height */
+/* .box-d { min-height: 60px; max-height: 120px; overflow:auto; background: #fecaca; } */
+
+/* E) TODO: unidades de viewport (vw, vh) */
+/* .box-e { width: 50vw; height: 20vh; background: #c4b5fd; } */

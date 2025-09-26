@@ -1,0 +1,128 @@
+/* Base mínima */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --c1: #22d3ee;
+  --c2: #a78bfa;
+  --c3: #f472b6;
+  --ink: #0f172a;
+  --stripe: #0ea5e9;
+  --stripe-bg: #e0f2fe;
+  --stripe-w: 12px;
+  --gap: 8px;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: var(--ink);
+  line-height: 1.6;
+}
+h1 {
+  margin: 1rem;
+}
+.panel {
+  padding: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+
+.swatch {
+  width: 320px;
+  height: 160px;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+/* 1) Overlay en capas */
+/* .card {
+  padding:1rem; border-radius:.75rem; color:#0b1020; border:1px solid #e5e7eb;
+  min-height: 180px; display:flex; flex-direction:column; justify-content:flex-end;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.25), rgba(255,255,255,0)),
+    linear-gradient(225deg, rgba(34,211,238,.2), rgba(167,139,250,.15) 60%, rgba(244,114,182,.1));
+}
+.card--overlay {
+  position:relative; overflow:hidden;
+}
+.card--overlay::after{
+  content:""; position:absolute; inset:0;
+  /* overlay al pie *\/
+  /* background: linear-gradient(to top, rgba(2,6,23,.55), rgba(2,6,23,0) 45%); *\/
+  pointer-events:none;
+} */
+
+/* 2) Rayas repetidas */
+/* .stripes{
+  --stripe:#0ea5e9; --stripe-bg:#e0f2fe; --stripe-w:12px; --gap:8px;
+  background:
+    repeating-linear-gradient( 45deg,
+      var(--stripe) 0 calc(var(--stripe-w)),
+      var(--stripe-bg) calc(var(--stripe-w)) calc(var(--stripe-w) + var(--gap))
+    );
+} */
+
+/* 3) Sol con conic + máscara radial */
+/* .sun{
+  width: 220px; height: 220px; border-radius:999px; margin: .5rem;
+  background:
+    radial-gradient(closest-side, rgba(253,224,71,.6), rgba(253,224,71,0) 70%),
+    conic-gradient(from -20deg, #fde047, #fb923c, #f472b6, #a78bfa, #22d3ee, #fde047);
+  /* recortar con máscara radial (hard edge) *\/
+  /* -webkit-mask-image: radial-gradient(circle, #000 65%, transparent 68%); *\/
+  /* mask-image: radial-gradient(circle, #000 65%, transparent 68%); *\/
+  /* box-shadow: 0 10px 24px rgba(2,6,23,.16) inset; *\/
+} */
+
+/* 4) Aros + máscara diagonal */
+/* .rings{
+  width: 320px; height: 320px; border-radius:.75rem;
+  background:
+    repeating-radial-gradient(circle at 50% 50%,
+      rgba(15,23,42,.9) 0 6px,
+      rgba(15,23,42,0) 6px 16px
+    ),
+    radial-gradient(circle at 50% 50%, #22d3ee, #a78bfa 60%, #f472b6);
+  /* máscara diagonal de rayas *\/
+  /* -webkit-mask-image: repeating-linear-gradient(135deg, #000 0 14px, transparent 14px 24px); *\/
+  /* mask-image: repeating-linear-gradient(135deg, #000 0 14px, transparent 14px 24px); *\/
+} */
+
+/* 5) Texto con gradiente + máscara de brillo */
+/* .shiny-text{
+  font: 900 clamp(2rem, 6vw, 4rem)/1.1 system-ui, sans-serif; margin:0; text-align:center;
+  background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3));
+  -webkit-background-clip:text; background-clip:text; color: transparent;
+  position:relative; display:block;
+  /* bar de brillo como máscara lineal en ::after *\/
+}
+.shiny-text::after{
+  content:""; position:absolute; inset:0;
+  /* -webkit-mask-image: linear-gradient(75deg, transparent 40%, #000 50%, transparent 60%); *\/
+  /* mask-image: linear-gradient(75deg, transparent 40%, #000 50%, transparent 60%); *\/
+  /* background: #fff; opacity:.55; mix-blend-mode: screen; transform: translateX(-30%); *\/
+  /* animation: sweep 2s ease-in-out infinite; *\/
+}
+@keyframes sweep{ 50% { transform: translateX(30%); } }
+
+/* 6) Tablero (opcional) */
+/* .board{
+  background:
+    repeating-linear-gradient(90deg, #111 0 16px, #fff 16px 32px),
+    repeating-linear-gradient(0deg,  #111 0 16px, #fff 16px 32px);
+  background-blend-mode: multiply; /* ajusta contraste si quieres *\/
+  border:1px solid #cbd5e1;
+}
+
+/* Notas:
+ - Capas: la última va al fondo. Controla cada capa con su size/position si hace falta.
+ - Máscara: blanco = visible; transparente/negro = oculta.
+ - Usa prefijos -webkit-mask-* para Safari/iOS.
+ - Evita composiciones con demasiadas capas en elementos grandes. */
