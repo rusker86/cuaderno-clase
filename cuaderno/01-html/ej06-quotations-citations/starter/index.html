@@ -1,28 +1,54 @@
 <!doctype html>
 <html lang="es">
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ej06 — Quotation & Citation</title>
-</head>
+	<head>
+	  <meta charset="utf-8" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1" />
+	  <title>Ej06 — Quotation & Citation</title>
+	</head>
 
-<body>
-    <header>
-        <h1>Ejemplo de citas y referencias en HTML5</h1>
-    </header>
+	<body>
+	  <header>
+      <h1>Ejemplo de citas y referencias en HTML5</h1>
+	  </header>
 
-    <main>
-        <!-- TODO: Párrafo con una cita breve en línea usando <q> -->
-        <!-- TODO: Bloque de cita larga con <blockquote cite="..."> -->
-        <!-- TODO: Dentro del blockquote usar <cite> para el autor -->
-        <!-- TODO: Abreviatura con <abbr title="..."> -->
-        <!-- TODO: address con nombre, email y ciudad -->
-    </main>
+	  <main>
+	    <!-- Párrafo con una cita breve en línea usando <q> -->
+		  <q>Ser o no ser... Esa es la cuestión <br> —<cite style="font-style: italic">Shakespeare</cite></q>
 
-    <footer>
-        <p>Ejercicio realizado por Tu Nombre — 2025</p>
-    </footer>
-</body>
+	    <!-- Bloque de cita larga con <blockquote cite="..."> -->
+	    <blockquote cite="https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/blockquote">
+		    <p>
+			    <code>&lt;blockquote&gt;</code>Cita en bloque. Crea citas en bloque, marca las citas a otros autores o documentos.
+			    <br>
+			    <a href="https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/blockquote" target="_blank">Fuente: MDN Mozilla</a>
+		    </p>
+	    </blockquote>
 
+		  <!-- Dentro del blockquote usar <cite> para el autor -->
+			<blockquote>
+				<p>
+					Soy más viejo que Google
+					— <cite style="font-style: italic">Moisés Morente</cite>
+				</p>
+			</blockquote>
+		  <!-- Abreviatura con <abbr title="..."> -->
+		  <p>La molécula que da energía a las células es el <abbr title="Adenosín trifosfato"><mark>ATP</mark></abbr></p>
+
+		  <!-- address con nombre, email y ciudad -->
+			<address>
+				<p>
+					Escrito por Moisés Morente Salazar
+					<br>
+					Contacto: <a href="mailto:moises@gmail.com">moises@gmail.com</a>
+					<br>
+					Ciudad: Murcia
+				</p>
+			</address>
+	  </main>
+
+	  <footer>
+      <p>Ejercicio realizado por Moisés — 2025</p>
+	  </footer>
+	</body>
 </html>
