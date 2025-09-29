@@ -1,27 +1,78 @@
 <!doctype html>
 <html lang="es">
 
-<head>
+	<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ej07 — Listas en HTML5</title>
-</head>
+	</head>
 
-<body>
+	<body>
     <header>
-        <h1>Ejemplos de listas en HTML5</h1>
+      <h1>Ejemplos de listas en HTML5</h1>
     </header>
 
     <main>
-        <!-- TODO: Lista no ordenada (ul) -->
-        <!-- TODO: Lista ordenada (ol) -->
-        <!-- TODO: Lista de definición (dl) -->
-        <!-- TODO: Lista anidada -->
+      <!-- TODO: Lista no ordenada (ul) -->
+	    <p>Lenguajes de programación</p>
+	    <ul>
+		    <li>C</li>
+		    <li>C++</li>
+		    <li>Rust</li>
+		    <li>Ada</li>
+		    <li>Ensamblador</li>
+	    </ul>
+
+      <!-- TODO: Lista ordenada (ol) -->
+	    <p>Pasos para escribir un programa</p>
+	    <ol>
+		    <li>Planificar el desarrollo del software</li>
+		    <li>Descargar el entorno de desarrollo o editor de código</li>
+		    <li>Escribir el programa</li>
+		    <li>Realizar test para buscar bugs. En caso de que los haya corregirlos</li>
+		    <li>Ejecutar y probar el programa completo</li>
+		    <li>Escribir documentación (aburrido)</li>
+		    <li></li>
+	    </ol>
+
+	    <!-- Lista de definición (dl) -->
+	    <dl>
+		    <dt><abbr title="HyperText Markup Language">HTML</abbr></dt>
+		    <dd>HyperText Markup Language: Lenguaje de Marcado de HiperTexto. Se usa para maquetar páginas web</dd>
+
+		    <dt><abbr title="Cascade Style Sheet">CSS</abbr></dt>
+		    <dd>Cascade Style Sheet: Hoja de estilos en cascada. Se usa para darle estilos a la página web</dd>
+
+		    <dt><abbr title="JavaScript">JS</abbr></dt>
+		    <dd>JavaScript: No confundir con Java. este se usa para darle funcionalidad a las páginas. Java es un lenguaje multiplataforma para entornos de escritorio</dd>
+	    </dl>
+
+      <!-- Lista anidada -->
+	    <ul>
+		    <li>
+			    Lenguajes compilados:
+
+			    <ol>
+				    <li>C</li>
+				    <li>C++</li>
+				    <li>Rust</li>
+			    </ol>
+		    </li>
+
+		    <li>
+			    Lenguajes interpretados:
+
+			    <ol>
+				    <li>JavaScript</li>
+				    <li>Python</li>
+			    </ol>
+		    </li>
+	    </ul>
     </main>
 
     <footer>
-        <p>Ejercicio realizado por Tu Nombre — 2025</p>
+      <p>Ejercicio realizado por Tu Nombre — 2025</p>
     </footer>
-</body>
+	</body>
 
 </html>
