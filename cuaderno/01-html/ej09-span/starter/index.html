@@ -1,26 +1,38 @@
 <!doctype html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ej09 — El elemento span</title>
-</head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ej09 — El elemento span</title>
+	</head>
 
-<body>
-    <header>
-        <h1>Ejemplo de uso de span</h1>
-    </header>
+	<body>
+		<header>
+			<h1>Ejemplo de uso de span</h1>
+		</header>
 
-    <main>
-        <!-- TODO: párrafo con palabras envueltas en span -->
-        <!-- TODO: segundo párrafo con términos clave en span -->
-        <!-- TODO: al menos 3 spans distintos con atributos diferentes -->
-    </main>
+		<main>
+			<!-- párrafo con palabras envueltas en span -->
+			<p>Hola, soy <span>Moisés</span>. <span>Programador</span> web</p>
 
-    <footer>
-        <p>Ejercicio realizado por Tu Nombre — 2025</p>
-    </footer>
-</body>
+			<!-- segundo párrafo con términos clave en span -->
+			<p>Mis lenguajes son: 
+				<span>HTML</span>, <span>CSS</span>, <span>JavaScript</span>, <span>PHP</span>, y <span>Java</span>
+			</p>
+
+			<!-- Al menos 3 spans distintos con atributos diferentes -->
+			<!-- Los span que he puesto son: Uno con un id único para el nombre. Otro con una clase lenguajes para los lenguajes y el último para la fecha -->
+			<p>
+				<p>
+					Como ya he dicho. Soy <span id="nombre">Moisés</span> y mis lenguajes son <span class="lenguajes">HTML</span>, <span class="lenguajes">CSS</span>, <span class="lenguajes">JavaScript</span>, <span class="lenguajes">PHP</span> y <span class="lenguajes">Java</span>. Y hoy es <span data="fecha">02/10/2025</span>
+				</p>
+			 </p>
+		</main>
+
+		<footer>
+			<p>Ejercicio realizado por Moisés — 2025</p>
+		</footer>
+	</body>
 
 </html>
