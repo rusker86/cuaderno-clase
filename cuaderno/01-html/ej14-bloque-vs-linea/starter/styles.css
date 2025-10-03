@@ -56,3 +56,28 @@ footer {
 /* PISTA para el alumno:
    Añade aquí clases como .as-block { display:block } o .as-inline-block { display:inline-block }
    y prueba a aplicarlas a <span> o <a>. */
+
+
+.as-block {
+  display: block;
+}
+
+.as-in-line-block {
+  display: inline-block;
+}
+
+.as-in-line {
+  display: inline;
+}
+
+.margin-padding {
+  margin-top: 1rem;
+  padding-top: 1rem;
+
+  border: 1px solid black;
+}
+
+.width-height {
+  width: 100px;
+  height: 100px;
+}

@@ -2,49 +2,61 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ej14 — Bloque vs En línea</title>
-    <link rel="stylesheet" href="./styles.css" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Ej14 — Bloque vs En línea</title>
+	<link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
-    <header>
-        <h1>Elementos de bloque vs elementos en línea</h1>
-        <p>Compara el comportamiento por defecto y con distintos valores de <code>display</code>.</p>
-    </header>
+	<header>
+		<h1>Elementos de bloque vs elementos en línea</h1>
+		<p>Compara el comportamiento por defecto y con distintos valores de <code>display</code>.</p>
+	</header>
 
-    <main>
-        <!-- Sección: Bloque -->
-        <section class="panel">
-            <h2>Bloque</h2>
-            <!-- TODO: añade varios elementos de bloque (div, p, section, h2) y observa que ocupan el ancho completo -->
-        </section>
+	<main>
+		<!-- Sección: Bloque -->
+		<section class="panel">
+			<h2>Bloque</h2>
+			<!-- añade varios elementos de bloque (div, p, section, h2) y observa que ocupan el ancho completo -->
+			 <h2>Esto es un H2 para probar el elemento bloque</h2>
+			 <p>Esto es un párrafo de prueba</p>
+		</section>
 
-        <!-- Sección: En línea -->
-        <section class="panel">
-            <h2>En línea</h2>
-            <!-- TODO: añade varios elementos en línea (span, a, strong, em, img opcional) y observa que no fuerzan salto de línea -->
-        </section>
+		<!-- Sección: En línea -->
+		<section class="panel">
+			<h2>En línea</h2>
+			<!-- añade varios elementos en línea (span, a, strong, em, img opcional) y observa que no fuerzan salto de línea -->
+			<strong>Esto es un elemento <code>strong</code> junto con un elemento <code>code</code> para probar los estilos en linea</strong>
+			<a href="www.google.com">Enlace a Google.com</a>
+			<em>Esto es una cursiva</em>
+		</section>
 
-        <!-- Sección: Experimentos -->
-        <section class="panel">
-            <h2>Experimentos</h2>
+		<!-- Sección: Experimentos -->
+		<section class="panel">
+			<h2>Experimentos</h2>
 
-            <h3>Experimento A — Márgenes y padding en inline vs bloque</h3>
-            <!-- TODO: crea dos etiquetas, una inline y otra block, con margin-top/padding-top visibles y comenta qué pasa -->
+			<h3>Experimento A — Márgenes y padding en inline vs bloque</h3>
+			<!-- Crea dos etiquetas, una inline y otra block, con margin-top/padding-top visibles y comenta qué pasa -->
 
-            <h3>Experimento B — Cambiando display</h3>
-            <!-- TODO: convierte un <span> a display:block y un <a> a display:inline-block, compara -->
+			<p class="as-block margin-padding">Esto es un párrafo comportándose como un elemento en bloque</p>
+			<h3 class="as-inline-block margin-padding">Esto es un h3 como inline block</h3>
 
-            <h3>Experimento C — width/height</h3>
-            <!-- TODO: intenta poner width/height a un inline y a un inline-block. ¿En cuál surte efecto? -->
-        </section>
-    </main>
+			<h3>Experimento B — Cambiando display</h3>
+			<!-- Convierte un <span> a display:block y un <a> a display:inline-block, compara -->
+			<span class="as-block">Esto es un span como block</span>
+			<a href="#" class="inline-block">Esto es un enlace como inline-block</a>
 
-    <footer>
-        <p>Ejercicio realizado por Tu Nombre — 2025</p>
-    </footer>
+			<h3>Experimento C — width/height</h3>
+			<!-- Intenta poner width/height a un inline y a un inline-block. ¿En cuál surte efecto? -->
+			 <p class="width-height">Esto es un elemento inline</p>
+			 <p class="as-inline-block width-height">Esto es un <code>p</code> comportándose como un inline-block</p>
+		</section>
+	</main>
+
+	<footer>
+		<p>Ejercicio realizado por Moisés — 2025</p>
+	</footer>
 </body>
 
 </html>
