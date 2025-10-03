@@ -2,27 +2,105 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ej12 — Tablas en HTML5</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Ej12 — Tablas en HTML5</title>
 </head>
 
+<style>
+	td {
+		text-align: center;	/*Estilo añadido para centrar el texto*/
+
+		padding: 0.3rem;
+	}
+</style>
+
 <body>
-    <header>
-        <h1>Ejemplo de tablas en HTML5</h1>
-    </header>
+	<header>
+		<h1>Ejemplo de tablas en HTML5: Horario de clases</h1>
+	</header>
 
-    <main>
-        <p>
-            <!-- TODO: Explica en este párrafo qué información mostrará tu tabla -->
-        </p>
+	<main>
+		<p>
+			<!-- Explica en este párrafo qué información mostrará tu tabla -->
+			Esta tabla mostrará la información de un horario de clases
+		</p>
 
-        <!-- TODO: Crea aquí la tabla con caption, thead, tbody y tfoot -->
-    </main>
+		<!-- Crea aquí la tabla con caption, thead, tbody y tfoot -->
+		<table>
+			<caption><strong>Calendario escolar</strong></caption>
+			<thead>
+				<tr>
+					<th scope="col">Hora</th>
+					<th scope="col">Lunes</th>
+					<th scope="col">Martes</th>
+					<th scope="col">Miercoles</th>
+					<th scope="col">Jueves</th>
+					<th scope="col">Viernes</th>
+				</tr>
+			</thead>
 
-    <footer>
-        <p>Ejercicio realizado por Tu Nombre — 2025</p>
-    </footer>
+			<tbody>
+				<tr> <!--Primera hora-->
+					<td scope="row"><strong>8:15 - 9:10</strong></td>
+					<td>Lengua</td>	<!--Lunes-->
+					<td rowspan="2">Matemáticas</td>
+					<td>Física</td>
+					<td>Química</td>
+					<td>Gimnasia</td>
+				</tr>
+				<tr> <!--Segunda hora-->
+					<td scope="row"><strong>9:10 - 10:05</strong></td>
+					<td>Gimnasia</td>
+					<td rowspan="2">Química</td>
+					<td>Arte</td>
+					<td>Lengua</td>
+				</tr>
+				<tr> <!--Tercera hora-->
+					<td scope="row"><strong>10:05 - 11:00</strong></td>
+					<td>Matemáticas</td>
+					<td>Física</td>
+					<td>Lengua</td>
+					<td>Matemáticas</td>
+				</tr>
+				<tr> <!--Recreo-->
+					<td scope="row"><strong>11:00 - 11:30</strong></td>
+					<td colspan="5">RECREO</td>
+				</tr>
+				<tr> <!--Cuarta hora-->
+					<td scope="row"><strong>11:30 - 12:25</strong></td>
+					<td rowspan="2">Física</td>
+					<td>Arte</td>
+					<td>Lengua</td>
+					<td rowspan="2">Física</td>
+					<td>Matemáticas</td>
+				</tr>
+				<tr> <!--Quinta hora-->
+					<td scope="row"><strong>12:25 - 13:20</strong></td>
+					<td rowspan="2">Química</td>
+					<td>Gimnasia</td>
+					<td>Arte</td>
+				</tr>
+				<tr> <!--Sexta hora-->
+					<td scope="row"><strong>13:20 - 14:15</strong></td>
+					<td>Química</td>
+					<td>Matemáticas</td>
+					<td>Gimnasia</td>
+					<td>Física</td>
+				</tr>
+			</tbody>
+
+			<tfoot>
+				<tr>
+					<td colspan="6" style="color: #f00;"><strong>Este horario no es definitivo y puede estar sujeto a cambios</strong></td>
+				</tr>
+			</tfoot>
+		</table>
+	</main>
+
+	<footer>
+		<p>Ejercicio realizado por Moisés — 2025</p>
+	</footer>
 </body>
 
 </html>
