@@ -2,25 +2,42 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ej16 — Caracteres especiales</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Ej16 — Caracteres especiales</title>
 </head>
 
 <body>
-    <header>
-        <h1>Caracteres especiales en HTML</h1>
-    </header>
+	<header>
+		<h1>Caracteres especiales en HTML</h1>
+	</header>
 
-    <main>
-        <!-- TODO: primer párrafo con &lt;, &gt;, &amp;, &quot;, &apos; -->
-        <!-- TODO: segundo párrafo con &euro;, &dollar;, &copy;, &reg;, &rarr; -->
-        <!-- TODO: opcional, tu nombre con acentos usando entidades numéricas -->
-    </main>
+	<main>
+		<!-- Primer párrafo con &lt;, &gt;, &amp;, &quot;, &apos; -->
+		<!--Estas entidades se usan cuando es necesario utilizar sus símbolos correspondientes-->
+		<p>&lt;code&gt;</p>
+		<p>&amp; &quot;Ampersand&quot;</p>
+		<p>&apos;Comillas simples&apos;</p>
 
-    <footer>
-        <p>Ejercicio realizado por Tu Nombre — 2025</p>
-    </footer>
+		
+		<!-- Segundo párrafo con &euro;, &dollar;, &copy;, &reg;, &rarr; -->
+		 <span>Otros símbolos</span>
+		 <ul>
+			<li>Euro: &euro;</li>
+			<li>Dolar: &dollar;</li>
+			<li>Copyright: &copy;</li>
+			<li>Marca registrada: &reg;</li>
+			<li>Flecha derecha: &rarr;</li>
+		 </ul>
+
+		<!-- Opcional, tu nombre con acentos usando entidades numéricas -->
+		 <!--Esta entidad se usa cuando no podemos usar el meta charset="UTF8" y queremos poner un acento-->
+		 <span>Mi nombre es: Mois&#xE9;s</span>
+	</main>
+
+	<footer>
+		<p>Ejercicio realizado por Moisés — 2025</p>
+	</footer>
 </body>
 
 </html>
