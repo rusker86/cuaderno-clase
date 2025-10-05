@@ -2,31 +2,89 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ej19 — Entidades HTML (ampliado)</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ej19 — Entidades HTML (ampliado)</title>
 </head>
 
 <body>
-    <header>
-        <h1>Entidades HTML — Repaso ampliado</h1>
-        <!-- TODO: breve introducción sobre entidades con nombre vs numéricas -->
-    </header>
+	<header>
+		<h1>Entidades HTML — Repaso ampliado</h1>
+		<!-- Breve introducción sobre entidades con nombre vs numéricas -->
+		 <p>
+			Las entidades con nombre son aquellas que tienen el nombre del símbolo en su declaracíon. Mientras que las entidades numéricas usa el código ASCII del símbolo correspondiente
+		 </p>
+	</header>
 
-    <main>
-        <!-- TODO: tabla con Categoría | Ejemplo | Entidad (nombre) | Entidad (numérica) | Uso -->
-        <!-- Debe incluir: &nbsp;, &ndash;, &mdash;, &hellip;, &euro;, &#36;, &rarr;, &times;, &plusmn;, &le;, &ge;, &copy;, &reg;, &trade; -->
+	<main>
+		<!-- TODO: tabla con Categoría | Ejemplo | Entidad (nombre) | Entidad (numérica) | Uso -->
+		<!-- Debe incluir: &nbsp;, &ndash;, &mdash;, &hellip;, &euro;, &#36;, &rarr;, &times;, &plusmn;, &le;, &ge;, &copy;, &reg;, &trade; -->
+		 <table>
+			<thead>
+				<tr>
+					<th>Categoría</th>
+					<th>Ejemplo renderizado</th>
+					<th>Entidad con nombre</th>
+					<th>Entidad numérica</th>
+					<th>Uso/Comentario</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr> <!--Fila 1-->
+					<td>Moneda</td>
+					<td>&euro</td>
+					<td>&amp;euro;</td>
+					<td></td>
+					<td>Se usa para representar cantidades monetarias</td>
+				</tr>
 
-        <!-- TODO: párrafo comparando - vs &ndash; vs &mdash; -->
+				<tr> <!--Fila 2-->
+					<td>Flecha</td>
+					<td>&rarr;</td>
+					<td>&amp;rarr;</td>
+					<td></td>
+					<td>Se usa para representar flechas</td>
+				</tr>
 
-        <!-- TODO: ejemplo con espacio no separable entre número y unidad: 100&nbsp;kg -->
+				<tr> <!--Fila 3-->
+					<td>Elipsis</td>
+					<td>&hellip;</td>
+					<td>&amp;hellip;</td>
+					<td></td>
+					<td>Se usa para mostrar una elipsis</td>
+				</tr>
 
-        <!-- Añade comentarios explicando cuándo usar entidades -->
-    </main>
+				<tr> <!--Fila 4-->
+					<td>Derechos y marcas</td>
+					<td>&copy;</td>
+					<td>&amp;copy;</td>
+					<td></td>
+					<td>Se usa para representar marcas comerciales y de derechos de autor</td>
+				</tr>
 
-    <footer>
-        <p>Ejercicio realizado por Tu Nombre — 2025</p>
-    </footer>
+				<tr> <!--Fila 5-->
+					<td>Espacio</td>
+					<td><mark>&nbsp;</mark></td>
+					<td>&amp;nbsp;</td>
+					<td></td>
+					<td>Se usa para introducir un espacio en blanco (Se ha resaltado con <code>mark</code> para ver el espacio)</td>
+				</tr>
+			</tbody>
+		 </table>
+
+		<!-- TODO: párrafo comparando - vs &ndash; vs &mdash; -->
+		 <p>&amp;ndash;: &ndash;</p>
+		 <p>&amp;mdash;: &mdash;</p>
+		<!-- TODO: ejemplo con espacio no separable entre número y unidad: 100&nbsp;kg -->
+		 <p><mark>100&nbsp;kg</mark></p>
+
+		<!-- Añade comentarios explicando cuándo usar entidades -->
+		 <p>Las entidades se utilizan cuando se quiere mostrar un caracter que HTML considera reservado como por ejemplo <code>&lt;</code></p>
+	</main>
+
+	<footer>
+		<p>Ejercicio realizado por Moisés — 2025</p>
+	</footer>
 </body>
 
 </html>
