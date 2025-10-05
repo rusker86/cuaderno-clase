@@ -2,25 +2,41 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ej17 — class e id</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Ej17 — class e id</title>
 </head>
 
 <body>
-    <header>
-        <h1>Uso de class e id en HTML</h1>
-    </header>
+	<header>
+		<h1>Uso de class e id en HTML</h1>
+	</header>
 
-    <main>
-        <!-- TODO: section con id="intro", h2 y párrafo -->
-        <!-- TODO: lista ul con 3 elementos con class="item", y uno con id="especial" -->
-        <!-- TODO: enlace interno para volver a intro -->
-    </main>
+	<main>
+		<!-- Section con id="intro", h2 y párrafo -->
+		 <section>
+			<div id="intro">
+				<h2>Introducción</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, alias exercitationem nam odio perspiciatis praesentium assumenda voluptate, quidem ducimus, eaque voluptatem quisquam. Rerum, sunt. Autem libero earum laudantium architecto debitis.</p>
+			</div>
+		 </section>
+		<!-- Lista ul con 3 elementos con class="item", y uno con id="especial" -->
+		 <ul>
+			<li class="item">Elemento 1</li>
+			<li class="item">Elemento 2</li>
+			<li class="item" id="especial">Elemento 3</li>
+		 </ul>
+		<!-- TODO: enlace interno para volver a intro -->
+		 <a href="#intro">Volver a intro</a>
 
-    <footer>
-        <p>Ejercicio realizado por Tu Nombre — 2025</p>
-    </footer>
+			<!--El elemento id es único para cada elemento-->
+			<!--Mientras que el elemento class se puede repetir-->
+
+	</main>
+
+	<footer>
+		<p>Ejercicio realizado por Moisés — 2025</p>
+	</footer>
 </body>
 
 </html>
