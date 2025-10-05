@@ -2,28 +2,62 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ej18 — Código y elementos relacionados</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Ej18 — Código y elementos relacionados</title>
 </head>
 
 <body>
-    <header>
-        <h1>Ejemplo de código en HTML5</h1>
-    </header>
+	<header>
+		<h1>Ejemplo de código en HTML5</h1>
+	</header>
 
-    <main>
-        <!-- TODO: párrafo introductorio -->
-        <!-- TODO: ejemplo de <code> en línea -->
-        <!-- TODO: bloque <pre><code> con varias líneas -->
-        <!-- TODO: ejemplo de <kbd> -->
-        <!-- TODO: ejemplo de <samp> -->
-        <!-- TODO: ejemplo de <var> -->
-    </main>
+	<main>
+		<!-- Párrafo introductorio -->
+		<!--En este párrafo se explica lo que se va a hacer-->
+		<p>En este ejercicio se va a ver la etiqueta code. Además de otras etiquetas similares en programación / informática</p>
 
-    <footer>
-        <p>Ejercicio realizado por Tu Nombre — 2025</p>
-    </footer>
+		<!-- Ejemplo de <code> en línea -->
+		<!--En este párrafo la etiqueta code se usa para mostrar código en una sola linea-->
+		<code>console.log("Hola mundo");</code>
+
+		<!-- Bloque <pre><code> con varias líneas -->
+		<!--Si combinamos la etiqueta <pre> con la etiqueta <code> podemos escribir código de varias lineas-->
+		<pre>
+			<code>
+				function suma(num1, num2) {
+					return num1 + num2;
+				}
+
+				const resultado = suma(10 + 20);
+			</code>
+		</pre>
+
+		<!-- Ejemplo de <kbd> -->
+		<!--Esta etiqueta se utiliza para mostrar combinaciones de teclas-->
+		<p>
+			Para copiar un texto se pulsa <kbd>Ctrl</kbd> + <kbd>C</kbd>
+		</p>
+
+		<p>
+			Para pegar el texto se pulsa <kbd>Ctrl</kbd> + <kbd>V</kbd>
+		</p>
+
+		<!-- Ejemplo de <samp> -->
+		<!--Con esta etiqueta podemos mostrar salidas por consola-->
+			
+		<p>
+			El resultado de la función mostrada más arriba es: <samp>30</samp>
+		</p>
+
+		<!-- Ejemplo de <var> -->
+		<!--Con la etiqueta <var> se muestran variables-->
+		let <var>miVariable;</var>
+	</main>
+
+	<footer>
+		<p>Ejercicio realizado por Moisés — 2025</p>
+	</footer>
 </body>
 
 </html>
