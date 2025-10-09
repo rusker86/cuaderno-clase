@@ -1,31 +1,186 @@
 <!doctype html>
 <html lang="es">
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ej24 — Formularios en HTML5</title>
-</head>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Ej24 — Formularios en HTML5</title>
+	</head>
 
-<body>
-    <header>
-        <h1>Formulario de ejemplo (HTML5)</h1>
-        <p>Demostración de entradas modernas y validación nativa. (Acción simulada)</p>
-    </header>
+	<body>
+		<header>
+			<h1>Formulario de ejemplo (HTML5)</h1>
+			<p>Demostración de entradas modernas y validación nativa. (Acción simulada)</p>
+		</header>
 
-    <main>
-        <!-- TODO: crea aquí el formulario con action="#" method="post" -->
-        <!-- Pistas:
-           - Usa fieldset/legend para agrupar secciones
-           - Usa label/for e ids únicos
-           - Aplica required, min, max, step, pattern si procede
-           - Añade datalist y output para el range
-      -->
-    </main>
+		<main>
+			<!-- Crea aquí el formulario con action="#" method="post" -->
+			<!-- Pistas:
+				- Usa fieldset/legend para agrupar secciones
+				- Usa label/for e ids únicos
+				- Aplica required, min, max, step, pattern si procede
+				- Añade datalist y output para el range
+			-->
 
-    <footer>
-        <p>Ejercicio realizado por Tu Nombre — 2025</p>
-    </footer>
-</body>
+			<form action="#">
+				<fieldset>
+					<legend>Datos personales</legend>
+
+					<label for="name">Nombre</label>
+					<input 
+						type="text" 
+						name="name" 
+						id="name" 
+						placeholder="Nombre"
+						autocomplete="name"
+						required
+					>
+
+					<label for="age">Edad</label>
+					<input 
+						type="number" 
+						name="age" 
+						id="age"
+						min="18"
+						max="50"
+						placeholder="Edad"
+						required
+					>
+
+					<br>
+
+					<label for="birth">Fecha de nacimiento</label>
+					<input 
+						type="date" 
+						name="birth" 
+						id="birth"
+						autocomplete="bday"
+						required
+					>
+
+					<br>
+
+					<input
+						type="text" 
+						id="country" 
+						name="country" 
+						list="paises" 
+						placeholder="Pais de origen"
+						autocomplete="country-name">
+			
+						<datalist id="paises">
+							<option value="España"></option>
+							<option value="Suiza"></option>
+							<option value="Suecia"></option>
+							<option value="Finlandia"></option>
+					</datalist>
+
+					<br>
+
+					<label for="mail">Correo electrónico</label>
+					<input 
+						type="email" 
+						name="mail" 
+						id="mail"
+						autocomplete="email"
+						placeholder="example@email.com"
+						required
+					>
+
+					<br>
+
+					<label for="url">Página web</label>
+					<input 
+						type="url" 
+						name="web" 
+						id="web"
+						placeholder="www.example.com"
+						autocomplete="url"
+						required
+					>
+
+					<br>
+
+
+				</fieldset>
+
+				<fieldset>
+					<legend>Preferencias</legend>
+
+					<fieldset>
+						<legend>Plan de suscripción</legend>
+
+						<input type="radio" id="plan-free" name="plan" value="plan-free" checked>
+						<label for="plan-free">Plan gratuito</label>
+						
+						<br>
+						
+						<input type="radio" id="plan-pro" name="plan" value="plan-pro">
+						<label for="plan-pro">Plan profesional</label>
+						
+						<br>
+						
+						<input type="radio" id="plan-prem" name="plan" value="plan-prem">
+						<label for="plan-prem">Plan premium</label>
+					
+					</fieldset>
+
+					<br>
+					<br>
+
+					<fieldset>
+						<legend>Intereses</legend>
+						<input type="checkbox" name="tech" id="tech">
+						<label for="tech">Tecnología</label>
+										<input type="checkbox" name="art" id="art">
+						<label for="art">Arte</label>
+
+						<br>
+
+						<input type="checkbox" name="science" id="science">
+						<label for="science">Ciencia</label>
+					</fieldset>
+
+					<fieldset>
+						<legend>Selección</legend>
+
+						<label for="rol">Rol</label><br>
+						<select id="rol" name="rol" autocomplete="title" required>
+							<optgroup label="Rol">
+								<option value="back">Backend</option>
+								<option value="front">Frontend</option>
+								<option value="full">Fullstack</option>
+							</optgroup>
+				
+							<optgroup label="Puesto">
+								<option value="dev">Programador</option>
+								<option value="ops">DevOps</option>
+							</optgroup>
+						</select>
+					</fieldset>
+
+				</fieldset>
+
+				<br>
+				<br>
+
+				<textarea 
+					name="comentarios" 
+					id="comentarios"
+					placeholder="Introduce tus comentarios"
+				></textarea>
+
+				<br>
+				<br>
+
+				<input type="submit" value="Enviar formulario">
+				<input type="reset" value="Reiniciar formulario">
+			</form>
+		</main>
+
+		<footer>
+			<p>Ejercicio realizado por Moises — 2025</p>
+		</footer>
+	</body>
 
 </html>
