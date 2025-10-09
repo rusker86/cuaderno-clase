@@ -1,62 +1,62 @@
 <!doctype html>
 <html lang="es">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ej20 — Contenido embebido con iframe</title>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ej20 — Contenido embebido con iframe</title>
+	</head>
 
-  <body>
-    <header>
-      <h1>Contenido embebido con &lt;iframe&gt;</h1>
-      <p>
-        <!-- Breve introducción explicando qué vas a embeber y por qué -->
-        Aquí vamos a embeber un vídeo, un documento PDF, un mapa, y un sandbox para cumplir con el Ejercicio
-      </p>
-    </header>
+	<body>
+		<header>
+			<h1>Contenido embebido con &lt;iframe&gt;</h1>
+			<p>
+				<!-- Breve introducción explicando qué vas a embeber y por qué -->
+				Aquí vamos a embeber un vídeo, un documento PDF, un mapa, y un sandbox para cumplir con el Ejercicio
+			</p>
+		</header>
 
-    <main>
-      <!--Iframe de vídeo (YouTube u otro) con title, width/height, loading, referrerpolicy, allow -->
-      <iframe 
-        width="560" 
-        height="315" 
-        src="https://www.youtube.com/embed/po5d5Zdzwt0?si=8ww7pSKrVrJn_hXh" 
-        title="Ingenieros de Netflix descubren fallo en la JVM" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-        El vídeo no se puede reproducir. Visitalo en su página original <a href="https://www.youtube.com/watch?v=po5d5Zdzwt0">Ingenieros de Netflix descubren fallo en la JVM</a>
-      </iframe>
+		<main>
+			<!--Iframe de vídeo (YouTube u otro) con title, width/height, loading, referrerpolicy, allow -->
+			<iframe 
+				width="560" 
+				height="315" 
+				src="https://www.youtube.com/embed/po5d5Zdzwt0?si=8ww7pSKrVrJn_hXh" 
+				title="Ingenieros de Netflix descubren fallo en la JVM" 
+				frameborder="0" 
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+				referrerpolicy="strict-origin-when-cross-origin" 
+				allowfullscreen>
+				El vídeo no se puede reproducir. Visitalo en su página original <a href="https://www.youtube.com/watch?v=po5d5Zdzwt0">Ingenieros de Netflix descubren fallo en la JVM</a>
+			</iframe>
 
-      <!-- Añade texto alternativo dentro del iframe -->
-      <!-- Iframe de mapa con title y loading="lazy" -->
-      <!--   Añade texto alternativo dentro del iframe -->
+			<!-- Añade texto alternativo dentro del iframe -->
+			<!-- Iframe de mapa con title y loading="lazy" -->
+			<!--   Añade texto alternativo dentro del iframe -->
 
-      <!-- Iframe de documento local (ej. docs/guia.pdf o docs/indice.html) con title -->
-      <!--   Debajo del iframe, añade un enlace alternativo al recurso embebido -->
-      <iframe 
-        src="./docs/compiladores.pdf"
-        title="Introducción a la construcción de compiladores">El pdf no se ha podido cargar</iframe>
-        <a href="https://www.infor.uva.es/~mluisa/talf/docs/aula/A7.pdf">Introducción a la construcción de compiladores</a>
-      <!-- Iframe con sandbox (explica en un comentario qué permisos concedes y por qué) -->
-      <iframe 
-        src="./docs/compiladores.pdf"
-        sandbox="allow-scripts"
-        >
-        El documento no se ha podido cargar
-      </iframe> 
-      <!-- Sección de buenas prácticas (párrafo o lista corta en HTML plano) -->
-      <ul>
-        <li>Usar siempre el sandbox</li>
-        <li>Elegir bien los permisos del sandbox para evitar acciones maliciosas</li>
-      </ul>
-    </main>
+			<!-- Iframe de documento local (ej. docs/guia.pdf o docs/indice.html) con title -->
+			<!--   Debajo del iframe, añade un enlace alternativo al recurso embebido -->
+			<iframe 
+				src="./docs/compiladores.pdf"
+				title="Introducción a la construcción de compiladores">El pdf no se ha podido cargar</iframe>
+				<a href="https://www.infor.uva.es/~mluisa/talf/docs/aula/A7.pdf">Introducción a la construcción de compiladores</a>
+			<!-- Iframe con sandbox (explica en un comentario qué permisos concedes y por qué) -->
+			<iframe 
+				src="./docs/compiladores.pdf"
+				sandbox="allow-scripts"
+				>
+				El documento no se ha podido cargar
+			</iframe> 
+			<!-- Sección de buenas prácticas (párrafo o lista corta en HTML plano) -->
+			<ul>
+				<li>Usar siempre el sandbox</li>
+				<li>Elegir bien los permisos del sandbox para evitar acciones maliciosas</li>
+			</ul>
+		</main>
 
-    <footer>
-      <p>Ejercicio realizado por Moisés — 2025</p>
-    </footer>
-  </body>
+		<footer>
+			<p>Ejercicio realizado por Moisés — 2025</p>
+		</footer>
+	</body>
 
 </html>

@@ -2,36 +2,49 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ej21 — Imágenes en HTML5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Ej21 — Imágenes en HTML5</title>
 </head>
 
 <body>
-    <header>
-        <h1>Trabajando con imágenes en HTML5</h1>
-    </header>
+	<header>
+		<h1>Trabajando con imágenes en HTML5</h1>
+	</header>
 
-    <main>
-        <!-- TODO 1: Imagen informativa con alt descriptivo y width/height -->
-        <!-- Ejemplo de ruta: images/paisaje-640.jpg -->
+	<main>
+		<!-- 1: Imagen informativa con alt descriptivo y width/height -->
+		<!-- Ejemplo de ruta: images/paisaje-640.jpg -->
+		<img src="./images/img.jpg" alt="Imagen de lorem picsum" width="300" height="300">
 
-        <!-- TODO 2: Figure + figcaption (leyenda) -->
-        <!-- Ejemplo de ruta: images/diagrama-800.jpg -->
+		<!-- 2: Figure + figcaption (leyenda) -->
+		<!-- Ejemplo de ruta: images/diagrama-800.jpg -->
+		<figure>
+			<img src="./images/img.jpg" alt="Imagen de LoremPicsum">
+			<figcaption>Imagen de lorem picsum</figcaption>
+		</figure>
 
-        <!-- TODO 3: Imagen decorativa con alt="" (explica en comentario por qué va vacío) -->
-        <!-- Ejemplo de ruta: images/patron-200.png -->
+		<!-- 3: Imagen decorativa con alt="" (explica en comentario por qué va vacío) -->
+		<!-- Ejemplo de ruta: images/patron-200.png -->
+		<img src="./images/img.jpg" alt="">
+		<!--El alt va vacío para que los lectores la ignoren. Esto no es recomendable-->
+		<br>
+		<!-- 4: Imagen responsive con srcset (320w, 640w, 1024w), sizes y loading="lazy" + decoding="async" -->
+		<!-- Ejemplo de ruta: images/foto-320.jpg, foto-640.jpg, foto-1024.jpg -->
+		<img src="./images/img.jpg" alt="Imagen de lorem picsum" srcset="320w 640w 1024w" loading="lazy" decoding="async">
 
-        <!-- TODO 4: Imagen responsive con srcset (320w, 640w, 1024w), sizes y loading="lazy" + decoding="async" -->
-        <!-- Ejemplo de ruta: images/foto-320.jpg, foto-640.jpg, foto-1024.jpg -->
 
-        <!-- TODO 5: <picture> con source WebP y fallback JPG; conservar alt y tamaños en <img> -->
-        <!-- Ejemplo de rutas: images/portada-1024.webp y images/portada-1024.jpg -->
-    </main>
+		<!-- 5: <picture> con source WebP y fallback JPG; conservar alt y tamaños en <img> -->
+		<!-- Ejemplo de rutas: images/portada-1024.webp y images/portada-1024.jpg -->
+		<picture>
+			<source type="image/webp">
+			<img src="./images/img.jpg" alt="Imagen de lorem picsum">
+		</picture>
+	</main>
 
-    <footer>
-        <p>Ejercicio realizado por Tu Nombre — 2025</p>
-    </footer>
+	<footer>
+		<p>Ejercicio realizado por Tu Nombre — 2025</p>
+	</footer>
 </body>
 
 </html>
