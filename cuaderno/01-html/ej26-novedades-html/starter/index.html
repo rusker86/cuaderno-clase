@@ -2,50 +2,65 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ej26 — Novedades HTML (LS)</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Ej26 — Novedades HTML (LS)</title>
 </head>
 
 <body>
-    <header>
-        <h1>Novedades del estándar vivo de HTML</h1>
-        <!-- TODO: Imagen principal priorizada -->
-        <!-- Ej.: <img src="images/logo.svg" alt="Logo del sitio" fetchpriority="high" width="160" height="40"> -->
-    </header>
+	<header>
+		<h1>Novedades del estándar vivo de HTML</h1>
+		<!-- TODO: Imagen principal priorizada -->
+		<!-- Ej.: <img src="images/logo.svg" alt="Logo del sitio" fetchpriority="high" width="160" height="40"> -->
+		<img src="images/img.png" alt="Logo" fetchpriority="high" loading="lazy">
+	</header>
 
-    <main>
-        <section>
-            <h2>Diálogo nativo</h2>
-            <!-- TODO: diálogo con open, h2, texto, form method="dialog" y botón cerrar -->
-            <!-- TODO: botón externo meramente ilustrativo (sin JS) -->
-        </section>
+	<main>
+		<section>
+			<h2>Diálogo nativo</h2>
+			<!-- TODO: diálogo con open, h2, texto, form method="dialog" y botón cerrar -->
+			<!-- TODO: botón externo meramente ilustrativo (sin JS) -->
+			<h2>Dialogo</h2>
 
-        <section>
-            <h2>Popover nativo</h2>
-            <!-- TODO: contenedor con popover + botones con popovertarget / popovertargetaction -->
-        </section>
+			<dialog>
+				<h3>Dialogo de prueba</h3>
 
-        <section>
-            <h2>Sección inerte</h2>
-            <!-- TODO: sección con inert y comentario explicativo -->
-        </section>
+				<p>Esto es un dialogo de prueba</p>
 
-        <section>
-            <h2>Rendimiento en medios</h2>
-            <!-- TODO: imagen lazy + decoding="async" -->
-            <!-- TODO: iframe con loading="lazy" (opcional) -->
-        </section>
+				<form method="dialog"">
+					<button autofocus>Cerrar dialogo</button>
+				</form>
+			</dialog>
 
-        <section>
-            <h2>Plus opcional</h2>
-            <!-- TODO: usa uno: autofocus, inputmode/enterkeyhint, o details/summary -->
-        </section>
-    </main>
+			<button title="Esto es un botón de prueba">Abrir dialogo (No funciona)</button>
+		</section>
 
-    <footer>
-        <p>Ejercicio realizado por Tu Nombre — 2025</p>
-    </footer>
+		<section>
+			<h2>Popover nativo</h2>
+			<!-- TODO: contenedor con popover + botones con popovertarget / popovertargetaction -->
+		</section>
+
+		<section>
+			<h2>Sección inerte</h2>
+			<!-- TODO: sección con inert y comentario explicativo -->
+		</section>
+
+		<section>
+			<h2>Rendimiento en medios</h2>
+			<!-- TODO: imagen lazy + decoding="async" -->
+			<img src="./images/img.jpg" alt="imagen de prueba" loading="lazy" decoding="async">
+			<!-- TODO: iframe con loading="lazy" (opcional) -->
+		</section>
+
+		<section>
+			<h2>Plus opcional</h2>
+			<!-- TODO: usa uno: autofocus, inputmode/enterkeyhint, o details/summary -->
+		</section>
+	</main>
+
+	<footer>
+		<p>Ejercicio realizado por Moisés — 2025</p>
+	</footer>
 </body>
 
 </html>
