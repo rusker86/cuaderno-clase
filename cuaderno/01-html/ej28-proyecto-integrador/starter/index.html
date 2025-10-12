@@ -2,65 +2,94 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Proyecto integrador — HTML</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Proyecto integrador — HTML</title>
 </head>
 
 <body>
-    <!-- TODO: Enlace de salto -->
-    <!-- <a href="#contenido">Saltar al contenido</a> -->
+	<!-- Enlace de salto -->
+	<!-- <a href="#contenido">Saltar al contenido</a> -->
+	<a href="#contenido"> Saltar al contenido </a>
+	<header>
+		<h1><!-- Título principal --> Proyecto integrador</h1>
+		<nav aria-label="Navegación principal">
+			<ul>
+				<!-- Enlaces internos a secciones del main -->
+				<!-- <li><a href="#intro">Introducción</a></li> -->
+				<li><a href="#intro">Introducción</a></li>
+				<li><a href="#tabla">Tabla</a></li>
+				<li><a href="#imagenes">Imágenes</a></li>
+				<li><a href="#multimedia">Multimedia</a></li>
+				<li><a href="#embed">Embed</a></li>
+				<li><a href="#contacto">Contacto</a></li>
+			</ul>
+		</nav>
+	</header>
 
-    <header>
-        <h1><!-- TODO: Título principal --></h1>
-        <nav aria-label="Navegación principal">
-            <ul>
-                <!-- TODO: enlaces internos a secciones del main -->
-                <!-- <li><a href="#intro">Introducción</a></li> -->
-            </ul>
-        </nav>
-    </header>
+	<main id="contenido">
+		<section id="intro">
+			<h2>Sección de introducción</h2>
+			<!-- Párrafos con strong/em/mark/abbr y una cita q o blockquote -->
+			<p>
+				<strong>Lorem ipsum</strong><em> dolor sit amet</em> <mark>consectetur</mark> adipisicing elit. Accusantium quam vero cupiditate blanditiis ab laborum, asperiores quidem mollitia id obcaecati, cum explicabo, quos cumque nesciunt. Nam porro eligendi consequuntur eum?
+				<abbr title="HyperText Markup Language">HTML</abbr>
 
-    <main id="contenido">
-        <section id="intro">
-            <h2><!-- TODO --></h2>
-            <!-- TODO: párrafos con strong/em/mark/abbr y una cita q o blockquote -->
-            <!-- TODO: lista ul y lista ol (una con anidada) -->
-        </section>
+				<q>Ser o no ser...</q>
+			</p>
+			<!-- Lista ul y lista ol (una con anidada) -->
+			<h3>Listado de lenguajes</h3>
+			<ol>
+				<li>Lenguajes medio nivel</li>
+				<ul>
+					<li>C</li>
+					<li>C++</li>
+				</ul>
+				<li>Lenguajes de alto nivel</li>
+				<ul>
+					<li>Java</li>
+					<li>Kotlin</li>
+				</ul>
+			</ol>
+		</section>
 
-        <section id="tabla">
-            <h2><!-- TODO: título de la sección de tabla --></h2>
-            <!-- TODO: table con caption, thead, tbody, tfoot; scope y un colspan/rowspan -->
-        </section>
+		<section id="tabla">
+			<h2><!-- Título de la sección de tabla --> Sección de la tabla</h2>
+			<!-- <Table con caption, thead, tbody, tfoot; scope y un colspan/rowspan -->
+			
+		</section>
 
-        <section id="imagenes">
-            <h2><!-- TODO: imágenes --></h2>
-            <!-- TODO: img informativa con alt y width/height -->
-            <!-- TODO: img decorativa alt="" -->
-            <!-- TODO: figure + figcaption -->
-            <!-- (Opcional) picture/srcset/sizes -->
-        </section>
+		<section id="imagenes">
+			<h2><!-- TODO: imágenes --></h2>
+			<!-- TODO: img informativa con alt y width/height -->
+			<!-- TODO: img decorativa alt="" -->
+			<!-- TODO: figure + figcaption -->
+			<!-- (Opcional) picture/srcset/sizes -->
+		</section>
 
-        <section id="multimedia">
-            <h2><!-- TODO: multimedia --></h2>
-            <!-- TODO: audio con 2 sources y preload="metadata" + texto fallback -->
-            <!-- TODO: video con 2 sources, poster, preload="metadata", playsinline y track VTT + fallback -->
-        </section>
+		<section id="multimedia">
+			<h2><!-- TODO: multimedia --></h2>
+			<!-- TODO: audio con 2 sources y preload="metadata" + texto fallback -->
+			<!-- TODO: video con 2 sources, poster, preload="metadata", playsinline y track VTT + fallback -->
+		</section>
 
-        <section id="embed">
-            <h2><!-- TODO: embebido --></h2>
-            <!-- TODO: iframe con title + loading="lazy" -->
-        </section>
+		<section id="embed">
+			<h2><!-- TODO: embebido --></h2>
+			<!-- TODO: iframe con title + loading="lazy" -->
+		</section>
 
-        <section id="contacto">
-            <h2><!-- TODO: formulario --></h2>
-            <!-- TODO: form con fieldset/legend, label/for, inputs variados, aria-describedby, output del range, submit/reset -->
-        </section>
-    </main>
+		<section id="contacto">
+			<h2><!-- TODO: formulario --></h2>
+			<!-- TODO: form con fieldset/legend, label/for, inputs variados, aria-describedby, output del range, submit/reset -->
+		</section>
+	</main>
 
-    <footer>
-        <p><!-- TODO: &copy; y año actual --></p>
-    </footer>
+	<footer>
+		<p>
+			<!-- &copy; y año actual -->
+			Creado por Moises - &copy;2025
+		</p>
+	</footer>
 </body>
 
 </html>
