@@ -2,47 +2,93 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ej27 — Atributos de “calidad de vida”</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Ej27 — Atributos de “calidad de vida”</title>
 </head>
 
 <body>
-    <header>
-        <h1>Atributos “de calidad de vida” en HTML</h1>
-    </header>
+	<header>
+		<h1>Atributos “de calidad de vida” en HTML</h1>
+	</header>
 
-    <main>
-        <section>
-            <h2>Idiomas y dirección</h2>
-            <!-- TODO: párrafo con cita en inglés usando lang="en" -->
-            <!-- TODO: fragmento con dir="rtl" (texto de ejemplo en árabe/hebreo) -->
-        </section>
+	<main>
+		<section>
+			<h2>Idiomas y dirección</h2>
+			<!-- Párrafo con cita en inglés usando lang="en" -->
+			<p lang="en">Hello World</p>
+			<!-- Fragmento con dir="rtl" (texto de ejemplo en árabe/hebreo) -->
+			<p dir="rtl">Texto en dirección RTL</p>
+		</section>
 
-        <section>
-            <h2>Edición y revisión</h2>
-            <!-- TODO: párrafo contenteditable y spellcheck="true" -->
-            <!-- TODO: elemento editable con spellcheck="false" y comentario de por qué -->
-            <!-- TODO: input con autocapitalize y (si procede) autocorrect -->
-        </section>
+		<section>
+			<h2>Edición y revisión</h2>
+			<!-- Párrafo contenteditable y spellcheck="true" -->
+			<p contenteditable="true" spellcheck="true">
+				Este párrafo es editable
+			</p>
+			<!-- Elemento editable con spellcheck="false" y comentario de por qué -->
+			<p contenteditable="true" spellcheck="false">Este párrafo es editable con spellcheck en falso</p>
 
-        <section>
-            <h2>Arrastrar y traducción</h2>
-            <!-- TODO: elemento con translate="no" para no traducir -->
-            <!-- TODO: elemento con draggable="true" -->
-        </section>
+			<!-- Input con autocapitalize y (si procede) autocorrect -->
+			<label for="text">Introduce tu nommbre: </label>
+			<input 
+				type="text" 
+				name="text" 
+				id="text" 
+				autocapitalize="words" 
+				autocorrect="on"
+			>
+		</section>
 
-        <section>
-            <h2>Teclado y entrada en móviles</h2>
-            <!-- TODO: input tel con inputmode="numeric" y enterkeyhint="done" -->
-            <!-- TODO: input email con autocomplete="email" -->
-            <!-- TODO: input search con enterkeyhint="search" -->
-        </section>
-    </main>
+		<section>
+			<h2>Arrastrar y traducción</h2>
+			<!-- Elemento con translate="no" para no traducir -->
+			<p translate="no">Elemento sin translate</p>
+			<!-- Elemento con draggable="true" -->
+			<p draggable="true">Este elemento se puede arrastrar</p>
+		</section>
 
-    <footer>
-        <p>Ejercicio realizado por Tu Nombre — 2025</p>
-    </footer>
+		<section>
+			<h2>Teclado y entrada en móviles</h2>
+			<!-- Input tel con inputmode="numeric" y enterkeyhint="done" -->
+			<label for="tlf">Teléfono: </label>
+			<input 
+				type="tel"
+				name="tlf" 
+				id="tlf" 
+				inputmode="numeric"
+				enterkeyhint="done"
+			/>
+
+			<br>
+
+			<!-- Input email con autocomplete="email" -->
+			<label for="mail">Correo electrónico: </label>
+			<input 
+				type="email" 
+				name="mail" 
+				id="mail"
+				autocomplete="email"
+			>
+			
+			<br>
+
+			<!-- Input search con enterkeyhint="search" -->
+			<label for="search">Buscar: </label>
+			<input 
+				type="search" 
+				name="search" 
+				id="search"
+				enterkeyhint="search"
+			>
+			
+		</section>
+	</main>
+
+	<footer>
+		<p>Ejercicio realizado por Moisés — 2025</p>
+	</footer>
 </body>
 
 </html>
