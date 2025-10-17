@@ -1,95 +1,290 @@
 <!doctype html>
 <html lang="es">
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Proyecto integrador — HTML</title>
-</head>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Proyecto integrador — HTML</title>
+	</head>
 
-<body>
-	<!-- Enlace de salto -->
-	<!-- <a href="#contenido">Saltar al contenido</a> -->
-	<a href="#contenido"> Saltar al contenido </a>
-	<header>
-		<h1><!-- Título principal --> Proyecto integrador</h1>
-		<nav aria-label="Navegación principal">
-			<ul>
-				<!-- Enlaces internos a secciones del main -->
-				<!-- <li><a href="#intro">Introducción</a></li> -->
-				<li><a href="#intro">Introducción</a></li>
-				<li><a href="#tabla">Tabla</a></li>
-				<li><a href="#imagenes">Imágenes</a></li>
-				<li><a href="#multimedia">Multimedia</a></li>
-				<li><a href="#embed">Embed</a></li>
-				<li><a href="#contacto">Contacto</a></li>
-			</ul>
-		</nav>
-	</header>
+	<body>
+		<!-- Enlace de salto -->
+		<!-- <a href="#contenido">Saltar al contenido</a> -->
+		<a href="#contenido"> Saltar al contenido </a>
+		<header>
+			<h1><!-- Título principal --> Proyecto integrador</h1>
+			<nav aria-label="Navegación principal">
+				<ul>
+					<!-- Enlaces internos a secciones del main -->
+					<!-- <li><a href="#intro">Introducción</a></li> -->
+					<li><a href="#intro">Introducción</a></li>
+					<li><a href="#tabla">Tabla</a></li>
+					<li><a href="#imagenes">Imágenes</a></li>
+					<li><a href="#multimedia">Multimedia</a></li>
+					<li><a href="#embed">Embed</a></li>
+					<li><a href="#contacto">Contacto</a></li>
+				</ul>
+			</nav>
+		</header>
 
-	<main id="contenido">
-		<section id="intro">
-			<h2>Sección de introducción</h2>
-			<!-- Párrafos con strong/em/mark/abbr y una cita q o blockquote -->
+		<main id="contenido">
+			<section id="intro">
+				<h2>Sección de introducción</h2>
+				<!-- Párrafos con strong/em/mark/abbr y una cita q o blockquote -->
+				<p>
+					<strong>Lorem ipsum</strong><em> dolor sit amet</em> <mark>consectetur</mark> adipisicing elit. Accusantium quam vero cupiditate blanditiis ab laborum, asperiores quidem mollitia id obcaecati, cum explicabo, quos cumque nesciunt. Nam porro eligendi consequuntur eum?
+					<abbr title="HyperText Markup Language">HTML</abbr>
+
+					<q>Ser o no ser...</q>
+				</p>
+				<!-- Lista ul y lista ol (una con anidada) -->
+				<h3>Listado de lenguajes</h3>
+				<ol>
+					<li>Lenguajes medio nivel</li>
+					<ul>
+						<li>C</li>
+						<li>C++</li>
+					</ul>
+					<li>Lenguajes de alto nivel</li>
+					<ul>
+						<li>Java</li>
+						<li>Kotlin</li>
+					</ul>
+				</ol>
+			</section>
+
+			<section id="tabla">
+				<h2><!-- Título de la sección de tabla --> Sección de la tabla</h2>
+				<!-- <Table con caption, thead, tbody, tfoot; scope y un colspan/rowspan -->
+				<table>
+					<caption>Horario del evento (Día 1)</caption>
+
+					<thead>
+						<tr>
+							<th scope="col">Hora</th>
+							<th scope="col">Sala</th>
+							<th scope="col">Tema</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>10:00</td>
+							<td>Sala multiusos 1</td>
+							<td>Despliegue de aplicaciones en AWS</td>
+						</tr>
+
+						<tr>
+							<td>11:00</td>
+							<td>Auditorio 2</td>
+							<td>Presentación de un nuevo servicio en AWS</td>
+						</tr>
+
+						<tr>
+							<td colspan="3" style="text-align: center;">Descanso</td>
+						</tr>
+
+						<tr>
+							<td>13:00</td>
+							<td>Auditorio 1</td>
+							<td>Conferencia sobre el impacto de la IA</td>
+						</tr>
+
+						<tr>
+							<td>14:00</td>
+							<td>Sala multiusos 3</td>
+							<td>Beneficios del uso de CDNs</td>
+						</tr>
+					</tbody>
+
+					<tfoot>
+						<tr>
+							<td colspan="3">Evento patrocinado por Amazon y CloudFlare</td>
+						</tr>
+						
+					</tfoot>
+				</table>
+				
+			</section>
+
+			<section id="imagenes">
+				<h2><!-- Imágenes --> Sección de imágenes</h2>
+				<!-- Img informativa con alt y width/height -->
+				<img 
+					src="images/img01.jpg"
+					alt="Presentación del servicio de AWS"
+					width="300"
+					height="300"
+				>
+				<!-- Img decorativa alt="" -->
+				<img 
+					src="images/img02.jpg"
+					alt=""
+					width="400"
+					height="400"
+				>
+				<!-- Figure + figcaption -->
+				<figure>
+					<img
+						src="images/img03.jpg"
+						alt="Marcos Ruíz. Ingeniero de software">
+					<figcaption>
+						Presentación de la charla sobre intenigencia artificial
+					</figcaption>
+				</figure>
+				<!-- (Opcional) picture/srcset/sizes -->
+
+			</section>
+
+			<section id="multimedia">
+				<h2><!-- Multimedia -->Sección de multimedia</h2>
+				<!-- Audio con 2 sources y preload="metadata" + texto fallback -->
+				<audio controls preload="metadata">
+					<source src="assets/audio/presentacion.mp3" type="audio/mpeg">
+					<source src="assets/audio/charla01.mp3" type="audio/mpeg">
+					Audio no disponible. Descargalo
+					<a href="assets/audio/charlaCompleta.mp3">MP3</a>.
+				</audio>
+
+				<!-- Video con 2 sources, poster, preload="metadata", playsinline y track VTT + fallback -->
+
+				<video 
+					controls preload="metadata"
+					poster="asssets/img/portada01.png"
+					playsinline
+					width="640" 
+					height="360"
+				>
+					<source src="video/presentacion01.mp4" type="video/mp4">
+					<source src="video/presentacion02.mp4" type="video/mp4">
+					
+					<track
+						src="video/highlights.es.vtt"
+						srclang="es"
+						label="Español"
+						default
+					>
+						Video no disponible. Descargalo.
+					<a href="video/highlights.mp4">descargar el MP4</a>.
+				</video>
+			</section>
+
+			<section id="embed">
+				<h2><!-- TODO: embebido -->Sección de iframe</h2>
+				<!-- TODO: iframe con title + loading="lazy" -->
+				<iframe 
+					title="ubicación" 
+					width="500" 
+					height="300" 
+					loading="lazy" 
+					referrerpolicy="no-referrer"
+					src="https://www.openstreetmap.org/export/embed.html?bbox=-1.2,37.9,-1.0,38.1"
+				>
+					No se puede cargar el mapa embebido. Abre el mapa en su sitio oficial.
+				</iframe>
+			</section>
+
+			<section id="contacto">
+				<h2><!-- Formulario -->Sección de formularios</h2>
+				<!-- Form con fieldset/legend, label/for, inputs variados, aria-describedby, output del range, submit/reset -->
+				
+				<form action="#" method="post">
+					<fieldset>
+						<legend>Datos personales</legend>
+						<p>
+							<label for="nombre">Nombre</label>
+							<input 
+								type="text" 
+								name="nombre"
+								autocomplete="name"
+								placeholder="Introduce tu nombre" 
+								required
+							>
+						</p>
+
+						<p>
+							<label for="correo">Correo electrónico</label>
+							<input 
+								type="email" 
+								name="correo"
+								autocomplete="email"
+								placeholder="Introduce tu correo electrónico"
+								aria-describedby="ayuda-email"
+								required
+							>
+						</p>
+
+						<p>
+							<label for="web">Sitio web (Solo para ponentes)</label>
+							<input  
+								name="web" 
+								type="url" 
+								placeholder="https://www.ponente.es" 
+								autocomplete="url"
+							>
+						</p>
+					</fieldset>
+
+					<fieldset>
+						<legend>Preferencias</legend>
+
+						<p>
+							<label for="asistentes">Número de asistentes: </label>
+							<input 
+								type="number" 
+								name="asistentes"
+								id="asistentes"
+								min="1"
+								max="5"
+								placeholder="Número de asistentes"
+							>
+						</p>
+
+						<p>
+							<label for="charlas">Charlas a las que asistirá: </label>
+							<select name="charla" id="charla">
+								<option value="despliegue">Despliegue de aplicaciones en AWS</option>
+								<option value="presentacion">Presentación de un nuevo servicio en AWS</option>
+								<option value="conferencia">Conferencia sobre el impacto de la IA</option>
+								<option value="beneficios">Beneficios del uso de CDNs</option>
+							</select>
+						</p>
+
+						<p>
+							<label>
+								<input type="checkbox" name="aviso">
+								Avisame cuando empiece una charla
+							</label>
+						</p>
+
+						<p>
+							<label for="comentarios">Cuentanos algo que debamos saber</label>
+							<br>
+							<textarea 
+								name="comentarios"
+								id="comentarios"
+								rows="6"
+								placeholder="Añade un comentario (Opcional)"
+							>
+							</textarea>
+						</p>
+					</fieldset>
+
+					<p><small>Formulario de prueba. No funciona</small></p>
+					<br>
+					<input type="submit" value="Enviar">
+					<input type="reset" value="Vaciar formulario">
+				</form>
+
+			</section>
+		</main>
+
+		<footer>
 			<p>
-				<strong>Lorem ipsum</strong><em> dolor sit amet</em> <mark>consectetur</mark> adipisicing elit. Accusantium quam vero cupiditate blanditiis ab laborum, asperiores quidem mollitia id obcaecati, cum explicabo, quos cumque nesciunt. Nam porro eligendi consequuntur eum?
-				<abbr title="HyperText Markup Language">HTML</abbr>
-
-				<q>Ser o no ser...</q>
+				<!-- &copy; y año actual -->
+				Creado por Moises - &copy;2025
 			</p>
-			<!-- Lista ul y lista ol (una con anidada) -->
-			<h3>Listado de lenguajes</h3>
-			<ol>
-				<li>Lenguajes medio nivel</li>
-				<ul>
-					<li>C</li>
-					<li>C++</li>
-				</ul>
-				<li>Lenguajes de alto nivel</li>
-				<ul>
-					<li>Java</li>
-					<li>Kotlin</li>
-				</ul>
-			</ol>
-		</section>
-
-		<section id="tabla">
-			<h2><!-- Título de la sección de tabla --> Sección de la tabla</h2>
-			<!-- <Table con caption, thead, tbody, tfoot; scope y un colspan/rowspan -->
-			
-		</section>
-
-		<section id="imagenes">
-			<h2><!-- TODO: imágenes --></h2>
-			<!-- TODO: img informativa con alt y width/height -->
-			<!-- TODO: img decorativa alt="" -->
-			<!-- TODO: figure + figcaption -->
-			<!-- (Opcional) picture/srcset/sizes -->
-		</section>
-
-		<section id="multimedia">
-			<h2><!-- TODO: multimedia --></h2>
-			<!-- TODO: audio con 2 sources y preload="metadata" + texto fallback -->
-			<!-- TODO: video con 2 sources, poster, preload="metadata", playsinline y track VTT + fallback -->
-		</section>
-
-		<section id="embed">
-			<h2><!-- TODO: embebido --></h2>
-			<!-- TODO: iframe con title + loading="lazy" -->
-		</section>
-
-		<section id="contacto">
-			<h2><!-- TODO: formulario --></h2>
-			<!-- TODO: form con fieldset/legend, label/for, inputs variados, aria-describedby, output del range, submit/reset -->
-		</section>
-	</main>
-
-	<footer>
-		<p>
-			<!-- &copy; y año actual -->
-			Creado por Moises - &copy;2025
-		</p>
-	</footer>
-</body>
+		</footer>
+	</body>
 
 </html>
