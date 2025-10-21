@@ -1,26 +1,39 @@
-/* TODO: Establece una tipografía base en body (herencia) */
+/* Establece una tipografía base en body (herencia) */
 body {
-  /* font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; */
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
-/* TODO: Selector de elemento (ej.: header o p) */
-/* header { } */
-/* p { } */
+/* Selector de elemento (ej.: header o p) */
 
-/* TODO: Selector de clase (ej.: .destacado) */
-/* .destacado { } */
+p {
+	text-align: center;
+}
 
-/* TODO: Selector de ID (ej.: #hero) */
-/* #hero { } */
+/* Selector de clase (ej.: .destacado) */
+.destacado {
+	color: brown;
+}
 
-/* TODO: Selector descendiente (ej.: main p) */
-/* main p { } */
+/* Selector de ID (ej.: #hero) */
+#hero {
+	background-color:antiquewhite;
+	padding: 1rem;
+}
 
-/* TODO: Selector agrupado (ej.: h1, h2) */
-/* h1, h2 { } */
+/* Selector descendiente (ej.: main p) */
+main p {
+	font-style: oblique;
+}
 
-/* TODO: Conflicto intencionado para ver la cascada y la especificidad
-   1) p { color: ... } (tipo)
-   2) .destacado { color: ... } (clase)
-   Explica con un comentario cuál gana y por qué.
-*/
+/* Selector agrupado (ej.: h1, h2) */
+h1, h2 {
+	color: brown;
+}
+
+/* Conflicto intencionado para ver la cascada y la especificidad*/
+p {
+	color:blue
+}
+.destacado {
+	color:red
+}
