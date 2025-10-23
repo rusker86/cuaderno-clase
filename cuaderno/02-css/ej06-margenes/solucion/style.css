@@ -53,8 +53,8 @@ h3 {
 }
 
 /* C) Colapso entre hermanos:
-   .item-1 tiene margin-bottom:24px
-   .item-2 tiene margin-top:32px
+  .item-1 tiene margin-bottom:24px
+  .item-2 tiene margin-top:32px
    Al ser márgenes verticales adyacentes, **colapsan** → el espacio visible entre ellas es 32px (el mayor). */
 .stack {
   background: #eef2ff;
@@ -69,8 +69,8 @@ h3 {
 }
 
 /* D) Colapso con el contenedor:
-   Si el primer hijo tiene margin-top y el padre NO tiene padding/border,
-   el margen "sube" y aparece fuera del contenedor (colapso). */
+  Si el primer hijo tiene margin-top y el padre NO tiene padding/border,
+  el margen "sube" y aparece fuera del contenedor (colapso). */
 .wrap {
   background: #f1f5f9;
   border: 1px solid #cbd5e1;
