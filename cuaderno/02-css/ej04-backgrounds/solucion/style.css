@@ -68,8 +68,8 @@ h2 {
 /* F) Múltiples fondos (opcional) */
 .demo-f {
   /* De arriba (primero) a abajo (último):
-     1) icono colocado en la esquina
-     2) patrón que se repite
+    1) icono colocado en la esquina
+    2) patrón que se repite
   */
   background-image: url("../images/icono.png"), url("../images/patron.png");
   background-repeat: no-repeat, repeat;

@@ -12,13 +12,36 @@ body {
 }
 
 /* A) TODO: background-color */
+.demo-a {
+  background-color: antiquewhite;
+}
 
 /* B) TODO: background-image con repeat (p. ej. images/patron.png) */
 
+.demo-b {
+  background-image: url(./images/hedy-lamarr.jpg);
+  background-repeat: repeat;
+}
 /* C) TODO: no-repeat + background-position (p. ej. right bottom) */
+.demo-c {
+  background-image: url(./images/ada+lovelace.webp);
+  background-position: right;
+}
 
 /* D) TODO: background-size: cover y/o contain (usa una foto grande) */
+.demo-d {
+  background-image: url(./images/ada+lovelace.webp);
+  background-size: contain;
+}
 
 /* E) TODO: background-attachment: fixed */
+.demo-e {
+  background-image: url(./images/ada+lovelace.webp);
+  background-attachment: fixed;
+}
 
 /* F) TODO (opcional): múltiples fondos con background-image: url(...), url(...); */
+.demo-e {
+  background-image: url(./images/ada+lovelace.webp), url(./images/hedy-lamarr.jpg);
+  background-attachment: fixed;
+}
