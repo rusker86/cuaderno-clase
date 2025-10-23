@@ -1,19 +1,23 @@
-/* TODO: aplica los distintos formatos de color */
+/* Aplica los distintos formatos de color */
 
 /* Ejemplo con nombre */
-/* .color-nombre { color: red; } */
+.color-nombre { color: red; }
 
 /* Ejemplo con HEX */
-/* .color-hex { color: #3498db; } */
+.color-hex { color: #3498db; }
 
 /* Ejemplo con RGB */
-/* .color-rgb { color: rgb(255, 99, 71); } */
+.color-rgb { color: rgb(255, 99, 71); }
 
 /* Ejemplo con RGBA (transparente) */
-/* .color-rgba { background-color: rgba(255, 99, 71, 0.5); } */
+.color-rgba { background-color: rgba(255, 99, 71, 0.5); }
 
 /* Ejemplo con HSL */
-/* .color-hsl { color: hsl(120, 100%, 25%); } */
+.color-hsl { color: hsl(120, 100%, 25%); }
 
 /* Ejemplo con HSLA (transparente) */
-/* .color-hsla { background-color: hsla(200, 80%, 40%, 0.3); } */
+.color-hsla { background-color: hsla(200, 80%, 40%, 0.3); }
+
+/* Fondo coloreado */
+section { background-color: #3498db; }
+
