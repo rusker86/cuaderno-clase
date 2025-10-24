@@ -21,17 +21,17 @@ h1 {
   background: #f1f5f9;
 }
 
-/* A) TODO: ancho y alto fijos (px) */
-/* .box-a { width: 200px; height: 100px; background: #bfdbfe; } */
+/* A) ancho y alto fijos (px) */
+.box-a { width: 200px; height: 100px; background: #bfdbfe; }
 
-/* B) TODO: ancho relativo (%) dentro de .panel */
-/* .box-b { width: 50%; background: #bbf7d0; } */
+/* B) ancho relativo (%) dentro de .panel */
+.box-b { width: 50%; background: #bbf7d0; }
 
-/* C) TODO: min-width / max-width */
-/* .box-c { min-width: 150px; max-width: 400px; background: #fde68a; } */
+/* C) min-width / max-width */
+.box-c { min-width: 150px; max-width: 400px; background: #fde68a; }
 
-/* D) TODO: min-height / max-height */
-/* .box-d { min-height: 60px; max-height: 120px; overflow:auto; background: #fecaca; } */
+/* D) min-height / max-height */
+.box-d { min-height: 60px; max-height: 120px; overflow:auto; background: #fecaca; }
 
-/* E) TODO: unidades de viewport (vw, vh) */
-/* .box-e { width: 50vw; height: 20vh; background: #c4b5fd; } */
+/* E) unidades de viewport (vw, vh) */
+.box-e { width: 50vw; height: 20vh; background: #c4b5fd; }
