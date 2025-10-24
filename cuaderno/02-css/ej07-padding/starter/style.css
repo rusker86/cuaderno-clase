@@ -22,17 +22,17 @@ h1 {
   background: #e0f2fe;
 }
 
-/* A) TODO: aplicar padding a un solo lado (p. ej. padding-top) */
-/* .box-a { padding-top: 20px; } */
+/* A) aplicar padding a un solo lado (p. ej. padding-top) */
+.box-a { padding-top: 20px; }
 
-/* B) TODO: padding uniforme con un solo valor */
-/* .box-b { padding: 20px; } */
+/* B) padding uniforme con un solo valor */
+.box-b { padding: 20px; }
 
-/* C) TODO: shorthand con dos valores (vertical | horizontal) */
-/* .box-c { padding: 10px 30px; } */
+/* C) shorthand con dos valores (vertical | horizontal) */
+.box-c { padding: 10px 30px; }
 
-/* D) TODO: shorthand con cuatro valores (top | right | bottom | left) */
-/* .box-d { padding: 5px 10px 15px 20px; } */
+/* D) shorthand con cuatro valores (top | right | bottom | left) */
+.box-d { padding: 5px 10px 15px 20px; }
 
 /* (Opcional) E) mostrar cómo padding aumenta el tamaño total si no usamos box-sizing: border-box */
-/* .box-e { width: 200px; height: 100px; padding: 20px; background:#fef3c7; } */
+.box-e { width: 200px; height: 100px; padding: 20px; background:#fef3c7; }
