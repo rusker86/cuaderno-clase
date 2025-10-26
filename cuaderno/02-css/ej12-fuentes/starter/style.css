@@ -1,30 +1,30 @@
 /* =========================================================
-   Opción A: @font-face con archivos locales (ficticios)
-   - Copia tus .woff2 a /fonts y descomenta esta sección
+  Opción A: @font-face con archivos locales (ficticios)
+  - Copia tus .woff2 a /fonts y descomenta esta sección
 ========================================================= */
-/*
+
 @font-face {
   font-family: "InterCustom";
   src: url("../fonts/Inter-Variable.woff2") format("woff2");
-  font-weight: 100 900;         /\* variable font range *\/
+  font-weight: 100 900;
   font-style: normal;
-  font-display: swap;           /\* muestra fallback y cambia a la fuente cuando cargue *\/
+  font-display: swap;
 }
-*/
+
 
 /* =========================================================
-   Base
+  Base
 ========================================================= */
 
 html {
   /* Puedes cambiar el tamaño raíz si quieres ver rems escalar, p. ej. 18px */
-  /* font-size: 16px; */
+  font-size: 16px; 
 }
 
 body {
   margin: 0;
   /* TODO: pila de fuentes (elige InterCustom si usas @font-face o una pila de sistema) */
-  /* font-family: "InterCustom", system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif; */
+  font-family: "InterCustom", system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu,
     "Helvetica Neue", Arial, sans-serif;
   line-height: 1.5; /* sin unidad: multiplica el font-size del elemento */
@@ -40,7 +40,7 @@ h1 {
 }
 
 /* TODO: usa shorthand font en h1 o h2 (style weight size/line-height family) */
-/* h1 { font: italic 700 2rem/1.2 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; } */
+h1 { font: italic 700 2rem/1.2 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
 
 /* Títulos con rems y line-height sin unidad */
 h2 {
@@ -67,8 +67,8 @@ p {
 }
 
 /* Comentarios didácticos:
-   - Usamos line-height SIN unidad para mantener una relación estable al cambiar el font-size.
-   - Una pila de fuentes incluye: preferida, alternativas y la genérica (serif, sans-serif, monospace...).
-   - em vs rem:
+  - Usamos line-height SIN unidad para mantener una relación estable al cambiar el font-size.
+  - Una pila de fuentes incluye: preferida, alternativas y la genérica (serif, sans-serif, monospace...).
+  - em vs rem:
      * em se calcula respecto al font-size del elemento PADRE.
      * rem se calcula respecto al font-size de la RAÍZ (html). */
