@@ -17,20 +17,20 @@ h1 {
 
 /* TODO: aplicar propiedades de texto */
 
-/* .texto-a { text-align: left; } */
-/* .texto-b { text-align: center; } */
-/* .texto-c { text-align: right; } */
-/* .texto-d { text-align: justify; } */
+.texto-a { text-align: left; }
+.texto-b { text-align: center; }
+.texto-c { text-align: right; }
+.texto-d { text-align: justify; }
 
-/* .texto-e { text-decoration: underline line-through overline; } */
+.texto-e { text-decoration: underline line-through overline; }
 
-/* .texto-f { text-transform: uppercase; } */
+.texto-f { text-transform: uppercase; }
 /* Otra opción: text-transform: lowercase; o capitalize; */
 
-/* .texto-g { line-height: 2; } /\* doble interlineado *\/ */
+.texto-g { line-height: 2; }
 
-/* .texto-h { letter-spacing: 4px; } */
+.texto-h { letter-spacing: 4px; }
 
-/* .texto-i { word-spacing: 12px; } */
+.texto-i { word-spacing: 12px; }
 
-/* .texto-j { text-align:center; text-transform:uppercase; text-decoration:underline; } */
+.texto-j { text-align:center; text-transform:uppercase; text-decoration:underline; }
