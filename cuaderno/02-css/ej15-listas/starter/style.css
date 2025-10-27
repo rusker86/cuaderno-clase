@@ -12,12 +12,24 @@ h1 {
   padding: 1rem;
 }
 
-/* TODO: aplica distintos list-style-type en cada lista */
+.li-ul-1 {
+  list-style-type: square;
+  list-style-position: outside;
+}
 
-/* TODO: usa list-style-position: inside/outside */
+.li-ul-2 {
+  list-style-type: upper-roman;
+  list-style-position: inside;
+}
 
+/* Lista anidada con shorthand */
+.li-ol-1 {
+  list-style: disc outside;
+}
+.li-ul-2 ul {
+  list-style: circle inside;
+}
 /* TODO: prueba list-style-image (puede ser un icono pequeño o emoji con content) */
-
-/* TODO: usa shorthand list-style */
-
-/* TODO opcional: reset de lista para menú horizontal (list-style: none, display:flex o inline-block) */
+.li-ul-2 ul::marker {
+  content: "👉 ";
+}
